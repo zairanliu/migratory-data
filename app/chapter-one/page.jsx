@@ -1,15 +1,40 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { motion, useTransform, useScroll } from "motion/react";
+
+import throttle from "lodash-es/throttle";
+import { useRef } from "react";
+import useSocket from "@/hooks/useSocket";
+import useMousemoveEvent from "@/hooks/useMousemoveEvent";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
 import { ReactLenis } from "lenis/react";
 import TransitionLink from "@/components/TransitionLink";
 
 export default function ChapterOne() {
   const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollY, scrollYProgress } = useScroll({
     target: targetRef,
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+
+  const socket = useSocket();
+
+  useMotionValueEvent(
+    scrollY,
+    "change",
+    throttle((latest) => {
+      socket.emit("message", { type: "scroll", value: latest });
+    }, 10)
+  );
+
+  useMousemoveEvent(
+    throttle(({ x, y }) => {
+      socket.emit("message", { type: "mousemove", value: { x, y } });
+    }, 200)
+  );
 
   return (
     <ReactLenis root>
@@ -45,7 +70,10 @@ export default function ChapterOne() {
                     This website uses cookies to create a secure and effective
                     browsing experience and to understand how you use our site.
                   </p>
-                  <p className="text-2xl flex items-center gap-2">
+                  <p
+                    className="text-2xl flex items-center gap-2"
+                    onClick={() => socket.emit("message", { scroll: 1 })}
+                  >
                     <span className="h-6 w-6 border border-black rounded-full"></span>
                     understand and proceed
                   </p>

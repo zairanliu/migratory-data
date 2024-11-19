@@ -1,4 +1,7 @@
 "use client";
+
+import { useEffect } from "react";
+import { socket } from "@/services/socket";
 import { motion } from "motion/react";
 import TransitionLink from "@/components/TransitionLink";
 
