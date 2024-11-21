@@ -34,7 +34,9 @@ export default function ChapterOne() {
             ref={mouseRef}
           >
             <p className="p-2 font-pitch">
-              current user cookie
+              <span className="text-sm">current user cookie</span>
+              <br />
+              <br />
               <br />
               user-id: 01254
               <br />
@@ -55,7 +57,7 @@ export default function ChapterOne() {
               <div className=" text-orange-600 font-pitch pl-10 pt-10 text-[14px]">
                 <div>
                   <motion.p
-                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    className="absolute -z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black"
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [0, 1, 0],
@@ -97,7 +99,7 @@ export default function ChapterOne() {
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 4, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 10, ease: "linear" }}
                   >
                     Cookie Stored in Browser
                   </motion.p>
@@ -118,7 +120,7 @@ export default function ChapterOne() {
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 3, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 8, ease: "linear" }}
                   >
                     Server Sets Cookie
                   </motion.p>
@@ -144,7 +146,7 @@ export default function ChapterOne() {
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 2, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 6, ease: "linear" }}
                   >
                     Server Detection <br /> and Cookie Creation
                   </motion.p>
@@ -163,7 +165,7 @@ export default function ChapterOne() {
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 1, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 4, ease: "linear" }}
                   >
                     Initial User Visit <br /> and Detection
                   </motion.p>

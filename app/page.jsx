@@ -14,28 +14,38 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 1 }}
       >
-        <h1 className="text-[144px] text-blue-900">Migratory Data</h1>
-       
-          <TransitionLink
-            className="flex items-center  mx-auto text-3xl transition-colors font-pitch text-blue-900 hover:underline decoration-1 underline-offset-4"
-            href="/chapter-one"
-          >
-            Launch story
-          </TransitionLink>
-         
+        <motion.h1
+          className="text-blue-900 text-8xl"
+          initial={{
+            scale: 1,
+          }}
+          animate={{
+            scale: 2,
+          }}
+          transition={{ ease: "easeInOut", duration: 3, delay: 3 }}
+        >
+          Migratory Data
+        </motion.h1>
+
+        <TransitionLink
+          className="flex items-center  mx-auto text-3xl transition-colors font-pitch text-blue-900 hover:underline decoration-1 underline-offset-4"
+          href="/chapter-one"
+        >
+          Launch story
+        </TransitionLink>
       </motion.main>
       <video
-                autoPlay
-                playsInline
-                muted
-                loop
-                className="absolute -z-10 w-screen h-screen object-cover inset-0"
-              >
-                <source
-                  src="https://asset.togusj.com/intro.mov"
-                  type="video/mp4"
-                ></source>
-              </video>
+        autoPlay
+        playsInline
+        muted
+        loop
+        className="absolute -z-10 w-screen h-screen object-cover inset-0"
+      >
+        <source
+          src="https://asset.togusj.com/intro.mov"
+          type="video/mp4"
+        ></source>
+      </video>
     </div>
   );
 }
