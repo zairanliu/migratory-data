@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Work Sans Variable", ...defaultTheme.fontFamily.sans],
+        serif: ["Saol", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: "var(--background)",

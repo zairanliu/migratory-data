@@ -14,8 +14,8 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 1 }}
       >
-        <h1 className="text-5xl font-bold">Birds as Data</h1>
-        <p>A story about birds and data</p>
+        <h1 className="text-5xl text-blue-900">Migatory Data</h1>
+
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <TransitionLink
@@ -24,6 +24,20 @@ export default function Home() {
           >
             Launch story
           </TransitionLink>
+
+          <video
+                autoPlay
+                playsInline
+                muted
+                loop
+                className="absolute object-cover -z-10"
+              >
+                <source
+                  src="https://asset.togusj.com/banding.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+
         </div>
       </motion.main>
     </div>

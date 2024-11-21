@@ -10,7 +10,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Work Sans Variable", Arial, Helvetica, sans-serif;
+  font-family: "Saol", serif;
   transition-property: opacity, filter;
   transition-timing-function: ease-in-out;
   transition-duration: 0.5s;
@@ -23,4 +23,17 @@ body {
 .page-transition {
   opacity: 0;
   filter: blur(8px);
+}
+
+@layer base {
+  @font-face {
+    font-family: "Saol";
+    font-style: normal;
+    src: url(../font/SaolDisplay-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Saol";
+    font-style: italic;
+    src: url(../font/SaolDisplay-RegularItalic.woff2) format("woff2");
+  }
 }
