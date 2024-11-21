@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --background: #ededed;
   --foreground: #0a0a0a;
 }
 
@@ -35,5 +34,20 @@ body {
     font-family: "Saol";
     font-style: italic;
     src: url(../font/SaolDisplay-RegularItalic.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Pitch";
+    font-style: normal;
+    src: url(../font/Pitch-regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Eiko";
+    font-style: normal;
+    src: url(../font/Eiko-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Pitch-Sans";
+    font-style: normal;
+    src: url(../font/Pitch-sans-bold.woff2) format("woff2");
   }
 }

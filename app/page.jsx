@@ -14,32 +14,28 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 1 }}
       >
-        <h1 className="text-5xl text-blue-900">Migatory Data</h1>
-
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <h1 className="text-[144px] text-blue-900">Migratory Data</h1>
+       
           <TransitionLink
-            className="flex items-center rounded-full transition-colors bg-foreground text-background hover:bg-[#ccc] h-12 px-5"
+            className="flex items-center  mx-auto text-3xl transition-colors font-pitch text-blue-900 hover:underline decoration-1 underline-offset-4"
             href="/chapter-one"
           >
             Launch story
           </TransitionLink>
-
-          <video
+         
+      </motion.main>
+      <video
                 autoPlay
                 playsInline
                 muted
                 loop
-                className="absolute object-cover -z-10"
+                className="absolute -z-10 w-screen h-screen object-cover inset-0"
               >
                 <source
-                  src="https://asset.togusj.com/banding.mp4"
+                  src="https://asset.togusj.com/intro.mov"
                   type="video/mp4"
                 ></source>
               </video>
-
-        </div>
-      </motion.main>
     </div>
   );
 }

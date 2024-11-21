@@ -30,35 +30,150 @@ export default function ChapterOne() {
       <div ref={targetRef} className="relative h-[300vh]">
         <main className="fixed top-0">
           <div
-            className="fixed z-10 w-4 h-4 bg-black rounded-full transition-transform duration-1000"
+            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-orange-600 transition-transform duration-1000"
             ref={mouseRef}
-          ></div>
+          >
+            <p className="p-2 font-pitch">
+              current user cookie
+              <br />
+              user-id: 01254
+              <br />
+              device: Macintosh, M2, Sequoia 15.1
+              <br />
+              browser: chrome
+              <br />
+              expires=Thu, 07-Dec-2025 12:00:00 GMT
+            </p>
+          </div>
           {/* This div is the scrolling content */}
           <motion.div style={{ x }} className="flex">
             <section className="w-screen flex">
-              <div className="w-3/5 h-screen object-cover bg-stone-300 flex items-center justify-center text-xl">
+              <div className="w-3/5 h-screen object-cover bg-orange-600 flex items-center justify-center text-xl text-white font-pitch">
                 ../video/bird-banding-1080p.mp4
               </div>
-            </section>
 
-            <section className="w-screen flex py-40 items-end">
-              <motion.p className="ml-40 text-2xl font-serif max-w-[600px]">
-                In order to identify and keep track of individual birds,
-                scientists put aluminum or colored bands on birds’ legs. Similar
-                to the license plate on a car, each aluminum band is engraved
-                with a unique set of numbers. Bird banding is one of the oldest
-                and most important techniques used for studying and identifying
-                individual birds. In the early 1800s, John James Audubon tied
-                threads to birds’ legs to identify individuals that were
-                visiting his farm. In 1902, the first scientific study to use
-                bird banding took place in the United States: Smithsonian
-                scientists attached bands to the legs of black-crowned night
-                herons at the Smithsonian’s National Zoo in Washington, D.C.
-                <span className="block mt-8 text-sm">
-                  Smithsonian’s National Zoo &<br></br> Conservation Biology
-                  Institute
-                </span>
-              </motion.p>
+              <div className=" text-orange-600 font-pitch pl-10 pt-10 text-[14px]">
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 6, ease: "linear" }}
+                  >
+                    Subsequent Requests (Browser {"->"} Server)
+                  </motion.p>
+                  GET / HTTP/1.1 <br />
+                  Cookie: session_data=uid:01254;
+                  <br />
+                  ts:1707682406;
+                  <br />
+                  os:mac;br:chr15.1;px:0;
+                  <br />
+                  exp:1731571200 <br />
+                </div>
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 5, ease: "linear" }}
+                  >
+                    Physical Storage (cookie.txt)
+                  </motion.p>
+                  user-id: 01254 <br />
+                  login: 11/02/2024 15:33:26 EST <br />
+                  device detection: Macintosh, chrome 15.1 <br />
+                  Proxy: N/A <br />
+                  cookie expires = Thu, 14-Nov-2024 12:00:00 GMT <br />
+                </div>
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 4, ease: "linear" }}
+                  >
+                    Cookie Stored in Browser
+                  </motion.p>
+                  Name: session_data <br />
+                  Value: uid:01254; <br />
+                  ts:1707682406; <br />
+                  os:mac;br:chr15.1;
+                  <br />
+                  px:0;exp:1731571200 <br />
+                  Domain:.migratorydata.com <br />
+                  Expires: Thu, 14-Nov-2024 12:00:00 GMT
+                  <br />
+                </div>
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 3, ease: "linear" }}
+                  >
+                    Server Sets Cookie
+                  </motion.p>
+                  HTTP/1.1 200{" "}
+                  <span className="underline decoration-orange-600 underline-offset-4">
+                    OK{" "}
+                  </span>
+                  <br />
+                  Set-Cookie: <br />
+                  session_data=uid:01254; <br />
+                  ts:1707682406;os:mac; <br />
+                  br:chr15.1;px:0;
+                  <br />
+                  exp:1731571200;
+                  <br />
+                  path=/; <br />
+                  domain=.migratorydata.com <br />
+                </div>
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 2, ease: "linear" }}
+                  >
+                    Server Detection <br /> and Cookie Creation
+                  </motion.p>
+                  Time detected:
+                  <br />
+                  15:33:26 EST <br />
+                  Device detected: Macintosh <br />
+                  Browser detected: Chrome 15.1 <br />
+                  Proxy check: N/A <br />
+                  Generated user-id: 01254 <br />
+                </div>
+                <div>
+                  <motion.p
+                    className="absolute -z-10 text-4xl font-pitchSans pl-[200px] text-black"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 1, ease: "linear" }}
+                  >
+                    Initial User Visit <br /> and Detection
+                  </motion.p>
+                  Browser Request {"->"} Server
+                  <br />
+                  GET / HTTP/1.1
+                  <br />
+                  User-Agent: Mozilla/5.0 (Macintosh) Chrome/15.1
+                </div>
+              </div>
             </section>
           </motion.div>
         </main>
