@@ -15,15 +15,16 @@ export default function TransitionLink({ href, children, ...props }) {
 
     body?.classList.add("page-transition");
 
-    await sleep(600);
+    await sleep(500);
 
     router.push(href);
+    await sleep(50);
 
     body?.classList.remove("page-transition");
   };
 
   return (
-    <Link onClick={handleClick} href={href} {...props}>
+    <Link onClick={handleClick} href={href} {...props} prefetch={true}>
       {children}
     </Link>
   );

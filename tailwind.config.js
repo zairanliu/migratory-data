@@ -13,7 +13,7 @@ module.exports = {
       fontFamily: {
         serif: ["Saol", ...defaultTheme.fontFamily.sans],
         pitch: ["Pitch", ...defaultTheme.fontFamily.sans],
-        pitchSans:["Pitch-Sans", ...defaultTheme.fontFamily.sans],
+        pitchSans: ["Pitch-Sans", ...defaultTheme.fontFamily.sans],
         Eiko: ["Eiko", ...defaultTheme.fontFamily.sans],
       },
       colors: {

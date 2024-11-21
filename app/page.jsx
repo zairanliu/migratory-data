@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { socket } from "@/services/socket";
 import { motion } from "motion/react";
 import TransitionLink from "@/components/TransitionLink";
 
@@ -40,12 +38,63 @@ export default function Home() {
         muted
         loop
         className="absolute -z-10 w-screen h-screen object-cover inset-0"
+        style={{
+          animation: "grayOut 4s ease-out 4s forwards",
+          clipPath: 'url("#myClip")',
+        }}
       >
         <source
-          src="https://asset.togusj.com/intro.mov"
+          src="https://asset.togusj.com/intro-birds-color.mp4"
           type="video/mp4"
         ></source>
       </video>
+
+      <svg width="100%" height="100%" className="absolute inset-0 -z-10">
+        <defs>
+          <clipPath id="myClip">
+            <circle cx="35%" cy="50%" r="25%">
+              <animate
+                attributeName="cx"
+                values="35%; 65%;"
+                dur="2s"
+                begin="1s"
+                fill="freeze"
+                calcMode="spline"
+                keySplines=".42 0 .58 1"
+              />
+              <animate
+                attributeName="r"
+                values="25%; 100%;"
+                dur="3s"
+                begin="3s"
+                fill="freeze"
+                calcMode="spline"
+                keySplines=".42 0 .58 1"
+              />
+            </circle>
+            <circle cx="65%" cy="50%" r="25%">
+              <animate
+                attributeName="cx"
+                values="65%; 35%;"
+                dur="2s"
+                begin="1s"
+                fill="freeze"
+                calcMode="spline"
+                keySplines=".42 0 .58 1"
+              />
+              <animate
+                attributeName="r"
+                values="25%; 100%;"
+                dur="3s"
+                begin="3s"
+                fill="freeze"
+                calcMode="spline"
+                keySplines=".42 0 .58 1"
+              />
+            </circle>
+          </clipPath>
+        </defs>
+      </svg>
     </div>
   );
 }

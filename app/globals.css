@@ -51,3 +51,14 @@ body {
     src: url(../font/Pitch-sans-bold.woff2) format("woff2");
   }
 }
+
+/* Keyframes */
+
+@keyframes grayOut {
+  from {
+    filter: none;
+  }
+  to {
+    filter: grayscale(90%);
+  }
+}
