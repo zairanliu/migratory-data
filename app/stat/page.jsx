@@ -62,7 +62,7 @@ export default function ChapterOne() {
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 6, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 14, ease: "linear" }}
                   >
                     Subsequent Requests (Browser {"->"} Server)
                   </motion.p>
@@ -75,26 +75,19 @@ export default function ChapterOne() {
                   <br />
                   exp:1731571200 <br />
                 </div>
-                <div>
+                <div className="-z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black">
                   <motion.p
-                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    className="absolute"
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [0, 1, 0],
                     }}
-                    transition={{ duration: 0.8, delay: 5, ease: "linear" }}
+                    transition={{ duration: 0.8, delay: 12, ease: "linear" }}
                   >
                     Physical Storage (cookie.txt)
                   </motion.p>
-                  user-id: 01254 <br />
-                  login: 11/02/2024 15:33:26 EST <br />
-                  device detection: Macintosh, chrome 15.1 <br />
-                  Proxy: N/A <br />
-                  cookie expires = Thu, 14-Nov-2024 12:00:00 GMT <br />
-                </div>
-                <div>
                   <motion.p
-                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
+                    className="absolute"
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [0, 1, 0],
@@ -103,6 +96,53 @@ export default function ChapterOne() {
                   >
                     Cookie Stored in Browser
                   </motion.p>
+                  <motion.p
+                    className="absolute"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 8, ease: "linear" }}
+                  >
+                    Server Sets Cookie
+                  </motion.p>
+                  <motion.p
+                    className="absolute"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 6, ease: "linear" }}
+                  >
+                    Server Detection <br /> and Cookie Creation
+                  </motion.p>
+                  <motion.p
+                    className="absolute"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 4, ease: "linear" }}
+                  >
+                    Initial User Visit <br /> and Detection
+                  </motion.p>
+                  <motion.p
+                    className="absolute"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{ duration: 0.8, delay: 18, ease: "linear" }}
+                  >
+                    IP Analysis
+                  </motion.p>
+                </div>
+                <div>
+                  user-id: 01254 <br />
+                  login: 11/02/2024 15:33:26 EST <br />
+                  device detection: Macintosh, chrome 15.1 <br />
+                  Proxy: N/A <br />
+                  cookie expires = Thu, 14-Nov-2024 12:00:00 GMT <br />
                   Name: session_data <br />
                   Value: uid:01254; <br />
                   ts:1707682406; <br />
@@ -112,18 +152,6 @@ export default function ChapterOne() {
                   Domain:.migratorydata.com <br />
                   Expires: Thu, 14-Nov-2024 12:00:00 GMT
                   <br />
-                </div>
-                <div>
-                  <motion.p
-                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{ duration: 0.8, delay: 8, ease: "linear" }}
-                  >
-                    Server Sets Cookie
-                  </motion.p>
                   HTTP/1.1 200{" "}
                   <span className="underline decoration-orange-600 underline-offset-4">
                     OK{" "}
@@ -140,16 +168,6 @@ export default function ChapterOne() {
                   domain=.migratorydata.com <br />
                 </div>
                 <div>
-                  <motion.p
-                    className="absolute -z-10 text-4xl pl-[200px] font-pitchSans p-5 text-black"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{ duration: 0.8, delay: 6, ease: "linear" }}
-                  >
-                    Server Detection <br /> and Cookie Creation
-                  </motion.p>
                   Time detected:
                   <br />
                   15:33:26 EST <br />
@@ -157,18 +175,6 @@ export default function ChapterOne() {
                   Browser detected: Chrome 15.1 <br />
                   Proxy check: N/A <br />
                   Generated user-id: 01254 <br />
-                </div>
-                <div>
-                  <motion.p
-                    className="absolute -z-10 text-4xl font-pitchSans pl-[200px] text-black"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{ duration: 0.8, delay: 4, ease: "linear" }}
-                  >
-                    Initial User Visit <br /> and Detection
-                  </motion.p>
                   Browser Request {"->"} Server
                   <br />
                   GET / HTTP/1.1
@@ -176,6 +182,34 @@ export default function ChapterOne() {
                   User-Agent: Mozilla/5.0 (Macintosh) Chrome/15.1
                 </div>
               </div>
+              <motion.p
+                className="h-screen pb-10 flex items-end font-pitch text-3xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 16 }}
+              >
+                User IP Detected: <br />
+                68.229.79.117
+                <br />
+                Decimal: 1155878773
+                <br />
+                Hostname:ip68-229-79-117.ri.ri.cox.net
+                <br />
+                ASN:22773 ISP:Cox Communications LLC
+                <br />
+                Services:None detected
+                <br />
+                Country:United States State
+                <br />
+                Region:Rhode Island
+                <br />
+                City:Providence Latitude:41.8238 
+                <br />
+                (41° 49′ 25.80″ N) Longitude:-71.4127 
+                <br />
+                (71° 24′ 45.71″ W)
+                <br />
+              </motion.p>
             </section>
           </motion.div>
         </main>

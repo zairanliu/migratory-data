@@ -130,9 +130,9 @@ export default function ChapterOne() {
                 >
                   <motion.line
                     x1="80"
-                    y1="446"
+                    y1="440"
                     x2="455"
-                    y2="446"
+                    y2="440"
                     stroke="#1e3a8a"
                     strokeWidth="1.5px"
                     variants={draw}
@@ -202,7 +202,7 @@ export default function ChapterOne() {
             </section>
             <section className="w-screen flex items-center">
               <motion.p
-                className=" ml-40 mt-[45px] max-w-[600px] text-3xl leading-10 text-blue-900 font-Eiko"
+                className="mt-[45px] max-w-[600px] text-3xl leading-10 text-blue-900 font-Eiko"
                 initial={{ opacity: 0 }}
                 animate={{
                   y: [100, 0],
@@ -216,6 +216,14 @@ export default function ChapterOne() {
                 band numbers can be reported. This helps scientists to track
                 migration patterns and to understand population dynamics.
               </motion.p>
+              <motion.svg
+                className="absolute"
+                width="600"
+                height="600"
+                viewBox="0 0 600 600"
+                initial="hidden"
+                animate="visible"
+              ></motion.svg>
             </section>
           </motion.div>
         </main>
