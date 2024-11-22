@@ -30,7 +30,7 @@ export default function ChapterOne() {
       <div ref={targetRef} className="relative h-[300vh]">
         <main className="fixed top-0">
           <div
-            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-orange-600 transition-transform duration-1000"
+            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-[#fe6c00] transition-transform duration-1000"
             ref={mouseRef}
           >
             <p className="p-2 font-pitch">
@@ -50,11 +50,11 @@ export default function ChapterOne() {
           {/* This div is the scrolling content */}
           <motion.div style={{ x }} className="flex">
             <section className="w-screen flex">
-              <div className="w-3/5 h-screen object-cover bg-orange-600 flex items-center justify-center text-xl text-white font-pitch">
+              <div className="w-3/5 h-screen object-cover bg-[#fe6c00] flex items-center justify-center text-xl text-white font-pitch">
                 ../video/bird-banding-1080p.mp4
               </div>
 
-              <div className=" text-orange-600 font-pitch pl-10 pt-10 text-[14px]">
+              <div className=" text-[#fe6c00] font-pitch pl-10 pt-10 text-[14px]">
                 <div>
                   <motion.p
                     className="absolute -z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black"
@@ -64,7 +64,8 @@ export default function ChapterOne() {
                     }}
                     transition={{ duration: 0.8, delay: 14, ease: "linear" }}
                   >
-                    Subsequent Requests (Browser {"->"} Server)
+                    Subsequent Requests
+                    <br /> (Browser {"->"} Server)
                   </motion.p>
                   GET / HTTP/1.1 <br />
                   Cookie: session_data=uid:01254;
@@ -75,7 +76,7 @@ export default function ChapterOne() {
                   <br />
                   exp:1731571200 <br />
                 </div>
-                <div className="-z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black">
+                <div className="-z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black absolute">
                   <motion.p
                     className="absolute"
                     initial={{ opacity: 0 }}
@@ -153,7 +154,7 @@ export default function ChapterOne() {
                   Expires: Thu, 14-Nov-2024 12:00:00 GMT
                   <br />
                   HTTP/1.1 200{" "}
-                  <span className="underline decoration-orange-600 underline-offset-4">
+                  <span className="underline decoration-[#fe6c00] underline-offset-4">
                     OK{" "}
                   </span>
                   <br />

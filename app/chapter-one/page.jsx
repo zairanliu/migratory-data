@@ -60,24 +60,46 @@ export default function ChapterOne() {
             className="fixed top-12 left-20  block z-10 font-serif"
             href="/"
           >
-            <div className="italic text-7xl  text-blue-900 flex">
-              {"Banding—Tagging".split("").map((letter, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    y: [50, 0],
-                    opacity: 1,
-                    transition: {
-                      ease: "easeInOut",
-                      duration: 1,
-                      delay: index * 0.02,
-                    },
-                  }}
-                >
-                  {letter}
-                </motion.div>
-              ))}
+            <div className="flex">
+              <div className="italic text-7xl  text-[#195b9c]  flex">
+                {"Banding".split("").map((letter, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      y: [30, 0],
+                      opacity: 1,
+                      transition: {
+                        ease: "easeIn",
+                        duration: 1,
+                        delay: index * 0.04,
+                      },
+                    }}
+                  >
+                    {letter}
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="italic text-7xl  text-[#195b9c] flex">
+                {"—Tagging".split("").map((letter, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      y: [30, 0],
+                      opacity: 1,
+                      transition: {
+                        ease: "easeIn",
+                        duration: 1,
+                        delay: 0.02 + index * 0.04,
+                      },
+                    }}
+                  >
+                    {letter}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </TransitionLink>
 
@@ -102,7 +124,7 @@ export default function ChapterOne() {
               <div className="flex flex-col justify-between">
                 <div className="ml-[80px] flex-1 flex flex-col justify-center gap-10">
                   <motion.p
-                    className="max-w-[500px] text-3xl leading-10 text-blue-900 font-Eiko"
+                    className="max-w-[500px] text-3xl leading-10  text-[#195b9c] font-Eiko"
                     initial={{ opacity: 0 }}
                     animate={{
                       y: [100, 0],
@@ -130,9 +152,9 @@ export default function ChapterOne() {
                 >
                   <motion.line
                     x1="80"
-                    y1="440"
+                    y1="435"
                     x2="455"
-                    y2="440"
+                    y2="435"
                     stroke="#1e3a8a"
                     strokeWidth="1.5px"
                     variants={draw}
@@ -140,7 +162,7 @@ export default function ChapterOne() {
                   />
                 </motion.svg>
                 <motion.p
-                  className="pl-[90px] py-12 text-xl justify-end text-blue-900 font-pitch"
+                  className="pl-[90px] py-12 text-xl justify-end  text-[#003162] font-pitch"
                   initial={{ opacity: 0, filter: "blur(10px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ ease: "easeInOut", duration: 1, delay: 3 }}
@@ -153,7 +175,7 @@ export default function ChapterOne() {
             <section className="w-screen flex pt-[100px] items-end">
               \
               <motion.p
-                className="ml-40 mb-[45px] max-w-[600px] text-3xl leading-10 text-blue-900 font-Eiko"
+                className="ml-40 mb-[45px] max-w-[600px] text-3xl leading-10  text-[#003162] font-Eiko"
                 initial={{ opacity: 0 }}
                 animate={{
                   y: [100, 0],
@@ -161,7 +183,7 @@ export default function ChapterOne() {
                   transition: { ease: "easeInOut", duration: 0.5 },
                 }}
               >
-                <span className="font-pitch block mb-[40px] text-[14px] leading-normal">
+                <span className="font-pitchSans tracking-tighter block mb-[40px] text-[14px] leading-normal">
                   Smithsonian’s National Zoo and<br></br> Conservation Biology
                   Institute
                 </span>
@@ -170,7 +192,7 @@ export default function ChapterOne() {
                 1800s, John James Audubon tied threads to birds’ legs to
                 identify individuals that were visiting his farm.
               </motion.p>
-              <motion.p className=" ml-20 max-w-[600px] mb-[45px] text-3xl leading-10 text-blue-900 font-Eiko">
+              <motion.p className=" ml-20 max-w-[600px] mb-[45px] text-3xl leading-10  text-[#003162] font-Eiko">
                 In 1902, the first scientific study to use bird banding took
                 place in the United States: Smithsonian scientists attached
                 bands to the legs of black-crowned night herons at the

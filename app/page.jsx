@@ -13,11 +13,13 @@ export default function Home() {
         transition={{ ease: "easeInOut", duration: 1 }}
       >
         <motion.h1
-          className="text-blue-900 text-8xl"
+          className="text-[#003162] text-8xl"
           initial={{
             scale: 1,
+            opacity: 0,
           }}
           animate={{
+            opacity: 1,
             scale: 2,
           }}
           transition={{ ease: "easeInOut", duration: 3, delay: 3 }}
@@ -26,7 +28,7 @@ export default function Home() {
         </motion.h1>
 
         <TransitionLink
-          className="flex items-center  mx-auto text-3xl transition-colors font-pitch text-blue-900 hover:underline decoration-1 underline-offset-4"
+          className="flex items-center mt-[400px] mx-auto text-3xl transition-colors font-pitch text-[#003162] hover:underline decoration-1 underline-offset-4"
           href="/chapter-one"
         >
           Launch story
@@ -44,7 +46,7 @@ export default function Home() {
         }}
       >
         <source
-          src="https://asset.togusj.com/intro-birds-color.mp4"
+          src="https://asset.togusj.com/intro.mov"
           type="video/mp4"
         ></source>
       </video>
@@ -52,16 +54,16 @@ export default function Home() {
       <svg width="100%" height="100%" className="absolute inset-0 -z-10">
         <defs>
           <clipPath id="myClip">
-            <circle cx="35%" cy="50%" r="25%">
-              <animate
+            <circle cx="30%" cy="50%" r="25%">
+              {/* <animate
                 attributeName="cx"
-                values="35%; 65%;"
+                values="30%; 70%;"
                 dur="2s"
                 begin="1s"
                 fill="freeze"
                 calcMode="spline"
                 keySplines=".42 0 .58 1"
-              />
+              /> */}
               <animate
                 attributeName="r"
                 values="25%; 100%;"
@@ -72,16 +74,16 @@ export default function Home() {
                 keySplines=".42 0 .58 1"
               />
             </circle>
-            <circle cx="65%" cy="50%" r="25%">
-              <animate
+            <circle cx="70%" cy="50%" r="25%">
+              {/* <animate
                 attributeName="cx"
-                values="65%; 35%;"
+                values="70%; 30%;"
                 dur="2s"
                 begin="1s"
                 fill="freeze"
                 calcMode="spline"
                 keySplines=".42 0 .58 1"
-              />
+              /> */}
               <animate
                 attributeName="r"
                 values="25%; 100%;"
@@ -95,6 +97,7 @@ export default function Home() {
           </clipPath>
         </defs>
       </svg>
+      <div className="bg-[#003162] inset-0 absolute -z-20"></div>
     </div>
   );
 }
