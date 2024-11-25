@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import useSocket from "@/hooks/useSocket";
+import useChannel from "@/hooks/useChannel";
 import { motion, useTransform, useScroll } from "motion/react";
 import { ReactLenis } from "lenis/react";
 
@@ -13,7 +13,7 @@ export default function ChapterOne() {
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  useSocket((message) => {
+  useChannel((message) => {
     if (message.type === "scroll") {
       window.scrollTo(0, message.value);
     }
@@ -30,7 +30,7 @@ export default function ChapterOne() {
       <div ref={targetRef} className="relative h-[300vh]">
         <main className="fixed top-0">
           <div
-            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-[#fe6c00] transition-transform duration-1000"
+            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-[#fe6c00]"
             ref={mouseRef}
           >
             <p className="p-2 font-pitch">

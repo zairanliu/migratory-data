@@ -3,7 +3,7 @@
 import Link from "next/link";
 import throttle from "lodash-es/throttle";
 import { useRef } from "react";
-import useSocket from "@/hooks/useSocket";
+import useChannel from "@/hooks/useChannel";
 import useMousemoveEvent from "@/hooks/useMousemoveEvent";
 import {
   motion,
@@ -20,20 +20,20 @@ export default function ChapterOne() {
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  const socket = useSocket();
+  const messageChannel = useChannel();
 
   useMotionValueEvent(
     scrollY,
     "change",
     throttle((latest) => {
-      socket.emit("message", { type: "scroll", value: latest });
+      messageChannel.send({ type: "scroll", value: latest });
     }, 10)
   );
 
   useMousemoveEvent(
     throttle(({ x, y }) => {
-      socket.emit("message", { type: "mousemove", value: { x, y } });
-    }, 200)
+      messageChannel.send({ type: "mousemove", value: { x, y } });
+    }, 10)
   );
 
   const draw = {
