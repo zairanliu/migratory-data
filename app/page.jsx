@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import TransitionLink from "@/components/TransitionLink";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,12 +27,12 @@ export default function Home() {
           Migratory Data
         </motion.h1>
 
-        <TransitionLink
+        <Link
           className="flex items-center mt-[400px] mx-auto text-3xl transition-colors font-pitch text-[#003162] hover:underline decoration-1 underline-offset-4"
           href="/chapter-one"
         >
           Launch story
-        </TransitionLink>
+        </Link>
       </motion.main>
       <video
         autoPlay
@@ -46,7 +46,7 @@ export default function Home() {
         }}
       >
         <source
-          src="https://asset.togusj.com/intro.mov"
+          src="https://asset.togusj.com/intro.mp4"
           type="video/mp4"
         ></source>
       </video>

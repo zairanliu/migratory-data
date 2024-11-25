@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import throttle from "lodash-es/throttle";
 import { useRef } from "react";
-import useSocket from "@/hooks/useSocket";
+import useChannel from "@/hooks/useChannel";
 import useMousemoveEvent from "@/hooks/useMousemoveEvent";
 import {
   motion,
@@ -11,7 +12,6 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { ReactLenis } from "lenis/react";
-import TransitionLink from "@/components/TransitionLink";
 
 export default function ChapterOne() {
   const targetRef = useRef(null);
@@ -20,20 +20,20 @@ export default function ChapterOne() {
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  const socket = useSocket();
+  const messageChannel = useChannel();
 
   useMotionValueEvent(
     scrollY,
     "change",
     throttle((latest) => {
-      socket.emit("message", { type: "scroll", value: latest });
+      messageChannel.send({ type: "scroll", value: latest });
     }, 10)
   );
 
   useMousemoveEvent(
     throttle(({ x, y }) => {
-      socket.emit("message", { type: "mousemove", value: { x, y } });
-    }, 200)
+      messageChannel.send({ type: "mousemove", value: { x, y } });
+    }, 10)
   );
 
   const draw = {
@@ -56,7 +56,7 @@ export default function ChapterOne() {
       {/* This div is the scrolling area */}
       <div ref={targetRef} className="relative h-[300vh]">
         <main className="fixed top-0">
-          <TransitionLink
+          <Link
             className="fixed top-12 left-20  block z-10 font-serif"
             href="/"
           >
@@ -101,7 +101,7 @@ export default function ChapterOne() {
                 ))}
               </div>
             </div>
-          </TransitionLink>
+          </Link>
 
           {/* This div is the scrolling content */}
           <motion.div style={{ x }} className="flex">
@@ -130,7 +130,7 @@ export default function ChapterOne() {
                       y: [100, 0],
                       opacity: 1,
                       transition: {
-                        ease: "easeInOut",
+                        ease: "easeOut",
                         duration: 1,
                         delay: 0.8,
                       },
@@ -201,8 +201,9 @@ export default function ChapterOne() {
               <motion.img
                 className="max-w-[400px] absolute -z-10 top-40"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ ease: "easeInOut", duration: 1, delay: 6 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
                 src="https://asset.togusj.com/bird-band.jpg"
                 alt=""
               />
@@ -213,8 +214,9 @@ export default function ChapterOne() {
                 loop
                 className="ml-[800px] mb-[200px] w-[500px] h-[700px] absolute object-cover bg-white -z-10"
                 initial={{ opacity: 0 }}
-                animate={{ y: [-20, 0], opacity: 1 }}
-                transition={{ ease: "easeInOut", duration: 1, delay: 12 }}
+                whileInView={{ y: [-20, 0], opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
               >
                 <source
                   src="https://asset.togusj.com/banding.mp4"
