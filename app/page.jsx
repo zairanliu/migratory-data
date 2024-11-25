@@ -46,7 +46,7 @@ export default function Home() {
         }}
       >
         <source
-          src="https://asset.togusj.com/intro.mov"
+          src="https://asset.togusj.com/intro.mp4"
           type="video/mp4"
         ></source>
       </video>
