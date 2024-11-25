@@ -1,5 +1,5 @@
+import PageTransitionEffect from "@/components/PageTransitionEffect";
 import "./globals.css";
-import "@fontsource-variable/work-sans";
 
 export const metadata = {
   title: "Birds as Data",
@@ -9,7 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <PageTransitionEffect>{children}</PageTransitionEffect>
+      </body>
     </html>
   );
 }
