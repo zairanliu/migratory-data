@@ -37,7 +37,7 @@ const PageTransitionEffect = ({ children }) => {
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ ease: "easeInOut", duration: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
       >
         <FrozenRouter>{children}</FrozenRouter>
       </motion.div>
