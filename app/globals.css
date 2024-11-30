@@ -41,15 +41,32 @@ body {
     src: url(../font/Pitch-regular.woff2) format("woff2");
   }
   @font-face {
-    font-family: "Eiko";
-    font-style: normal;
-    src: url(../font/Eiko-Regular.woff2) format("woff2");
-  }
-  @font-face {
     font-family: "Pitch-Sans";
     font-style: normal;
     src: url(../font/Pitch-sans-bold.woff2) format("woff2");
   }
+}
+
+@font-face {
+  font-family: "Eiko";
+  font-style: normal;
+  src: url(../font/Eiko-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Eiko";
+  font-style: italic;
+  src: url(../font/Eiko-LightItalic.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Focal";
+  font-style: normal;
+  src: url(../font/Focal-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Focal";
+  font-style: italic;
+  src: url(../font/Focal-RegularItalic.woff2) format("woff2");
 }
 
 /* Keyframes */

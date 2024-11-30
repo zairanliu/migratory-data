@@ -15,6 +15,7 @@ export default {
         pitch: ["Pitch", ...defaultTheme.fontFamily.sans],
         pitchSans: ["Pitch-Sans", ...defaultTheme.fontFamily.sans],
         Eiko: ["Eiko", ...defaultTheme.fontFamily.sans],
+        grotesk: ["Focal", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: "var(--background)",
