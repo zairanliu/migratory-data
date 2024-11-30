@@ -13,7 +13,7 @@ export default function Home() {
         transition={{ ease: "easeInOut", duration: 1 }}
       >
         <motion.h1
-          className="text-[#003162] text-8xl"
+          className="text-[#103081] text-8xl"
           initial={{
             scale: 1,
             opacity: 0,
@@ -28,7 +28,7 @@ export default function Home() {
         </motion.h1>
 
         <Link
-          className="flex items-center mt-[400px] mx-auto text-3xl transition-colors font-pitch text-[#003162] hover:underline decoration-1 underline-offset-4"
+          className="flex items-center mt-[400px] mx-auto text-3xl transition-colors font-pitch text-[#103081] hover:underline decoration-1 underline-offset-4"
           href="/chapter-one"
         >
           Launch story
@@ -97,7 +97,7 @@ export default function Home() {
           </clipPath>
         </defs>
       </svg>
-      <div className="bg-[#003162] inset-0 absolute -z-20"></div>
+      <div className="bg-[#103081] inset-0 absolute -z-20"></div>
     </div>
   );
 }
