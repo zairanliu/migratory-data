@@ -61,7 +61,13 @@ body {
 @font-face {
   font-family: "Eiko";
   font-style: italic;
-  src: url(../font/Eiko-LightItalic.woff2) format("woff2");
+  src: url(../font/Eiko-MediumItalic.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Eiko";
+  font-weight: 500;
+  src: url(../font/Eiko-Medium.woff2) format("woff2");
 }
 
 @font-face {
@@ -73,6 +79,12 @@ body {
   font-family: "Focal";
   font-style: italic;
   src: url(../font/Focal-RegularItalic.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Focal";
+  font-weight: 300;
+  src: url(../font/Focal-Light.woff2) format("woff2");
 }
 
 /* Keyframes */
