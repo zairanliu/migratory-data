@@ -49,10 +49,10 @@ export default function ChapterOne() {
           >
             <section className="w-[40vw] flex flex-col justify-between">
               <div className="max-w-[36rem] px-20 py-12 font-grotesk text-lg">
-                <Link className="text-5xl font-serif italic" href="/">
+                <Link className="text-2xl font-serif italic " href="/">
                   <div className="flex">
                     <div className=" flex">
-                      {"Banding - ".split("").map((letter, index) => (
+                      {"Bird".split("").map((letter, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0 }}
@@ -61,8 +61,8 @@ export default function ChapterOne() {
                             opacity: 1,
                             transition: {
                               ease: "easeOut",
-                              duration: 1,
-                              delay: index * 0.08,
+                              duration: 0.6,
+                              delay: index * 0.02,
                             },
                           }}
                         >
@@ -72,7 +72,7 @@ export default function ChapterOne() {
                     </div>
 
                     <div className="flex">
-                      {"Tagging".split("").map((letter, index) => (
+                      {"\u00A0Banding".split("").map((letter, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0 }}
@@ -81,8 +81,8 @@ export default function ChapterOne() {
                             opacity: 1,
                             transition: {
                               ease: "easeOut",
-                              duration: 1,
-                              delay: 1 + index * 0.08,
+                              duration: 0.6,
+                              delay: 0.05 + index * 0.02,
                             },
                           }}
                         >
@@ -147,20 +147,66 @@ export default function ChapterOne() {
               </motion.video>
 
               <motion.div
-                className="absolute bottom-40 -left-20 -right-72 text-8xl font-Eiko font-bold italic leading-tight flex flex-col"
+                className="absolute bottom-40 -left-20 -right-72 text-8xl font-Eiko italic leading-tight flex flex-col"
                 style={{
                   x: largeTextOffset,
                 }}
               >
-                <div>Before a bird</div>
-                <div className="ml-60">can be banded, </div>
-                <div className="mt-40 self-end">it must be caught.</div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    y: [20, 0],
+                    opacity: 1,
+                    transition: {
+                      ease: "easeOut",
+                      duration: 1,
+                      delay: 2,
+                    },
+                  }}
+                >
+                  Before a bird
+                </motion.div>
+                <motion.div
+                  className="ml-60"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    y: [20, 0],
+                    opacity: 1,
+                    transition: {
+                      ease: "easeOut",
+                      duration: 1,
+                      delay: 2.5,
+                    },
+                  }}
+                >
+                  can be banded,{" "}
+                </motion.div>
+
+                <motion.div
+                  className="mt-40 self-end"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    y: [20, 0],
+                    opacity: 1,
+                    transition: {
+                      ease: "easeOut",
+                      duration: 1,
+                      delay: 1,
+                    },
+                  }}
+                >
+                  it must be caught.
+                </motion.div>
               </motion.div>
             </section>
 
             {/* section with three birds */}
             <section className="w-screen h-screen relative">
-              <div className="w-[calc(100%+10rem)] top-32 -left-80 border-b border-white relative">
+              <motion.div
+                className="w-[calc(100%+10rem)] top-32 -left-80 border-b border-white relative"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+              >
                 <div className="absolute right-0 bottom-0">
                   <div className="font-Eiko text-3xl">Mist Nest</div>
                   <div className="font-grotesk text-sm pb-2">
@@ -173,7 +219,7 @@ export default function ChapterOne() {
                     made of very fine threads that blend into the surroundings.
                   </p>
                 </div>
-              </div>
+              </motion.div>
               <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
                 <div className="w-0 flex-1 self-start relative">
                   <img
@@ -181,7 +227,7 @@ export default function ChapterOne() {
                     alt="eastern meadowlark on fence"
                     className="peer"
                   ></img>
-                  <div className="absolute top-0 left-[85%] font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
                     Eastern
                     <br />
                     Meadowlark
@@ -194,7 +240,7 @@ export default function ChapterOne() {
                     alt="indigo bunting in tree"
                     className="peer"
                   ></img>
-                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
                     Indigo
                     <br />
                     Bunting
@@ -207,7 +253,7 @@ export default function ChapterOne() {
                     alt="veery on branch"
                     className="peer"
                   ></img>
-                  <div className="absolute -top-[20%] right-0 font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
                     Veery
                   </div>
                 </div>

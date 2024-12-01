@@ -31,7 +31,7 @@ export default function ChapterOne() {
       </video>
 
       <Link
-        className="text-5xl absolute top-12 left-20 font-serif italic"
+        className="text-2xl absolute top-12 left-20 font-serif italic"
         href="/"
       >
         <div className="flex">
@@ -44,8 +44,8 @@ export default function ChapterOne() {
                 opacity: 1,
                 transition: {
                   ease: "easeOut",
-                  duration: 1,
-                  delay: index * 0.08,
+                  duration: 0.6,
+                  delay: index * 0.02,
                 },
               }}
             >
@@ -60,7 +60,7 @@ export default function ChapterOne() {
       </div>
 
       <div className="w-full absolute bottom-0 left-0 right-0">
-        <div className="p-20 flex justify-between items-center text-[4vw] font-Eiko font-bold leading-none">
+        <div className="p-20 flex justify-between items-center text-[4vw] font-Eiko font-medium leading-none">
           <div>
             Eastern
             <br />
