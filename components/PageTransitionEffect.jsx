@@ -30,7 +30,7 @@ const PageTransitionEffect = ({ children }) => {
   const key = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="popLayout">
       <motion.div
         key={key}
         initial="hidden"
