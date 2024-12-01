@@ -12,10 +12,9 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Saol", ...defaultTheme.fontFamily.sans],
-        pitch: ["Pitch", ...defaultTheme.fontFamily.sans],
-        pitchSans: ["Pitch-Sans", ...defaultTheme.fontFamily.sans],
         Eiko: ["Eiko", ...defaultTheme.fontFamily.sans],
         grotesk: ["Focal", ...defaultTheme.fontFamily.sans],
+        mono: ["Fragment", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: "var(--background)",

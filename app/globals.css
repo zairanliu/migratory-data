@@ -87,6 +87,12 @@ body {
   src: url(../font/Focal-Light.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: "Fragment";
+  font-style: normal;
+  src: url(../font/FragmentMono-Regular.woff2) format("woff2");
+}
+
 /* Keyframes */
 
 @keyframes grayOut {

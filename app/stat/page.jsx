@@ -27,34 +27,36 @@ export default function ChapterOne() {
   return (
     <ReactLenis root>
       {/* This div is the scrolling area */}
-      <div ref={targetRef} className="relative h-[300vh]">
+      <div ref={targetRef} className="relative h-[300vh] font-mono text-base">
         <main className="fixed top-0">
           <div
-            className="fixed z-10 w-[200px] h-[300px] bg-white border border-solid border-[#fe6c00]"
+            className="fixed z-10 w-[200px] h-[80px] bg-white border border-solid border-[#fe6c00]"
             ref={mouseRef}
           >
-            <p className="p-2 font-pitch">
-              <span className="text-sm">current user cookie</span>
+            <p className="p-2 ">
+              Date
               <br />
-              <br />
-              <br />
-              user-id: 01254
-              <br />
-              device: Macintosh, M2, Sequoia 15.1
-              <br />
-              browser: chrome
-              <br />
-              expires=Thu, 07-Dec-2025 12:00:00 GMT
+              Time
             </p>
           </div>
+
           {/* This div is the scrolling content */}
           <motion.div style={{ x }} className="flex">
             <section className="w-screen flex">
-              <div className="w-3/5 h-screen object-cover bg-[#fe6c00] flex items-center justify-center text-xl text-white font-pitch">
-                ../video/bird-banding-1080p.mp4
+              <div className="w-screen h-screen absolute flex items-center justify-center">
+                mouse move detected
+              </div>
+              <div className="font-mono w-[40vw] p-8">
+                <pre>
+                  <p>&lt;p&gt;Bird Banding&lt;/p&gt;</p>
+                  <p>&lt;p&gt;...&lt;/p&gt;</p>
+                  <p>&lt;p&gt;...&lt;/p&gt;</p>
+                </pre>
               </div>
 
-              <div className=" text-[#fe6c00] font-pitch pl-10 pt-10 text-[14px]">
+              <div className="w-screen object-cover bg-[#fe6c00] flex items-center justify-center"></div>
+
+              <div className=" text-[#fe6c00] pl-10 pt-10 text-[14px]">
                 <div>
                   <motion.p
                     className="absolute -z-10 text-4xl pl-[150px] font-pitchSans p-5 text-black"
