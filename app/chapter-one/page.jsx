@@ -223,7 +223,7 @@ export default function ChapterOne() {
               <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
                 <div className="w-0 flex-1 self-start relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/Meadowlark.webp"
                     alt="eastern meadowlark on fence"
                     className="peer"
                   ></img>
@@ -236,7 +236,7 @@ export default function ChapterOne() {
 
                 <div className="w-0 flex-1 relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/Indigo-Bunting.webp"
                     alt="indigo bunting in tree"
                     className="peer"
                   ></img>
@@ -249,7 +249,7 @@ export default function ChapterOne() {
 
                 <div className="w-0 flex-1 self-end relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/Veery.webp"
                     alt="veery on branch"
                     className="peer"
                   ></img>
