@@ -24,6 +24,12 @@ body {
   filter: blur(8px);
 }
 
+@layer utilities {
+  .animate-oscillating {
+    animation: oscillating 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: "Saol";
@@ -77,5 +83,15 @@ body {
   }
   to {
     filter: grayscale(90%);
+  }
+}
+
+@keyframes oscillating {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(2%);
   }
 }

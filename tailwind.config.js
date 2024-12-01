@@ -20,6 +20,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        themeblue: "#123CA8",
       },
     },
   },

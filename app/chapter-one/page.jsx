@@ -18,7 +18,8 @@ export default function ChapterOne() {
   const { scrollY, scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70.6%"]);
+  const largeTextOffset = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   const messageChannel = useChannel();
 
@@ -36,203 +37,241 @@ export default function ChapterOne() {
     }, 10)
   );
 
-  const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-      const delay = 5 + i * 0.5;
-      return {
-        pathLength: 1,
-        opacity: 1,
-        transition: {
-          pathLength: { delay, type: "spring", duration: 1, bounce: 0 },
-          opacity: { delay, duration: 0.01 },
-        },
-      };
-    },
-  };
-
   return (
     <ReactLenis root>
       {/* This div is the scrolling area */}
-      <div ref={targetRef} className="relative h-[300vh]">
+      <div ref={targetRef} className="h-[400vh]">
         <main className="fixed top-0">
-          <Link
-            className="fixed top-12 left-20  block z-10 font-seif text-5xl   text-white italic "
-            href="/"
-          >
-            <div className="flex">
-              <div className=" flex">
-                {"Bird - ".split("").map((letter, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      y: [20, 0],
-                      opacity: 1,
-                      transition: {
-                        ease: "easeOut",
-                        duration: 1,
-                        delay: index * 0.04,
-                      },
-                    }}
-                  >
-                    {letter}
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="flex">
-                {"Banding".split("").map((letter, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      y: [20, 0],
-                      opacity: 1,
-                      transition: {
-                        ease: "easeOut",
-                        duration: 1,
-                        delay: 0.3 + index * 0.02,
-                      },
-                    }}
-                  >
-                    {letter}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </Link>
-
           {/* This div is the scrolling content */}
-          <motion.div style={{ x }} className="flex">
-            <section className="w-screen relative">
+          <motion.div
+            style={{ x }}
+            className="h-screen flex bg-themeblue text-white"
+          >
+            <section className="w-[40vw] flex flex-col justify-between">
+              <div className="max-w-[36rem] px-20 py-12 font-grotesk text-lg">
+                <Link className="text-5xl font-serif italic" href="/">
+                  <div className="flex">
+                    <div className=" flex">
+                      {"Banding - ".split("").map((letter, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0 }}
+                          animate={{
+                            y: [20, 0],
+                            opacity: 1,
+                            transition: {
+                              ease: "easeOut",
+                              duration: 1,
+                              delay: index * 0.08,
+                            },
+                          }}
+                        >
+                          {letter}
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <div className="flex">
+                      {"Tagging".split("").map((letter, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0 }}
+                          animate={{
+                            y: [20, 0],
+                            opacity: 1,
+                            transition: {
+                              ease: "easeOut",
+                              duration: 1,
+                              delay: 1 + index * 0.08,
+                            },
+                          }}
+                        >
+                          {letter}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+
+                <p className="mt-20">
+                  Bird banding is one of the oldest and most important
+                  techniques used for studying and identifying individual birds.
+                </p>
+                <p className="mt-8">
+                  Today in the U.S., bird banding is regulated and supervised by
+                  the federal government. Every band placed on a wild bird in
+                  the United States must be issued by the Bird Banding
+                  Laboratory, ensuring that each bird receives a unique
+                  identifier that can be recognized by researchers worldwide.
+                </p>
+                <p className="mt-12 text-base font-light">
+                  Smithsonian’s National Zoo and
+                  <br />
+                  Conservation Biology Institute
+                </p>
+              </div>
+              <div className="font-grotesk px-20 py-12 flex items-center gap-2 animate-oscillating">
+                scroll to continue
+                {/* right arrow icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="size-4"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </section>
+
+            {/* section with video and large text */}
+            <section className="w-[100vw] relative">
               <motion.video
                 autoPlay
                 playsInline
                 muted
                 loop
-                className="w-screen h-screen object-cover bg-white"
+                className="w-full h-screen object-cover"
                 initial={{ opacity: 0 }}
                 animate={{ y: [-10, 0], opacity: 1 }}
                 transition={{ ease: "easeInOut", duration: 1 }}
               >
                 <source
-                  src="https://asset.togusj.com/banding.mp4"
+                  src="https://asset.togusj.com/migratory-data/chapter-one/nest-caught.mp4"
                   type="video/mp4"
                 ></source>
               </motion.video>
 
-              <div className="flex flex-col justify-between z-10 absolute top-0 bottom-0 right-[300px]  text-white ">
-                <div className=" flex-1 flex flex-col justify-center gap-10">
-                  <p className="font-grotesk text-[12pt] leading-tight max-w-[300px]">
-                    Bird banding is one of the oldest and most important
-                    techniques used for studying and identifying individual
-                    birds.
-                  </p>
-                  <motion.p
-                    className="max-w-[600px] text-5xl leading-tight  text-white font-Eiko -indent-5"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      y: [100, 0],
-                      opacity: 1,
-                      transition: {
-                        ease: "easeOut",
-                        duration: 1,
-                        delay: 0.8,
-                      },
-                    }}
-                  >
-                    “In order to identify and keep track of individual birds,
-                    scientists put aluminum or colored bands on birds’ legs.”
-                  </motion.p>
+              <motion.div
+                className="absolute bottom-40 -left-20 -right-72 text-8xl font-Eiko font-bold italic leading-tight flex flex-col"
+                style={{
+                  x: largeTextOffset,
+                }}
+              >
+                <div>Before a bird</div>
+                <div className="ml-60">can be banded, </div>
+                <div className="mt-40 self-end">it must be caught.</div>
+              </motion.div>
+            </section>
+
+            {/* section with three birds */}
+            <section className="w-screen h-screen relative">
+              <div className="w-[calc(100%+10rem)] top-32 -left-80 border-b border-white relative">
+                <div className="absolute right-0 bottom-0">
+                  <div className="font-Eiko text-3xl">Mist Nest</div>
+                  <div className="font-grotesk text-sm pb-2">
+                    hover to interact
+                  </div>
                 </div>
-                <motion.p
-                  className="py-12 text-xl justify-end   text-white  font-pitch"
-                  initial={{ opacity: 0, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ ease: "easeInOut", duration: 1, delay: 3 }}
-                >
-                  scroll to continue
-                </motion.p>
+                <div className="absolute top-full left-0">
+                  <p className="py-4 max-w-64 font-grotesk">
+                    For smaller birds, researchers use mist nest—tall, long nets
+                    made of very fine threads that blend into the surroundings.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
+                <div className="w-0 flex-1 self-start relative">
+                  <img
+                    src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
+                    alt="eastern meadowlark on fence"
+                    className="peer"
+                  ></img>
+                  <div className="absolute top-0 left-[85%] font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                    Eastern
+                    <br />
+                    Meadowlark
+                  </div>
+                </div>
+
+                <div className="w-0 flex-1 relative">
+                  <img
+                    src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
+                    alt="indigo bunting in tree"
+                    className="peer"
+                  ></img>
+                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                    Indigo
+                    <br />
+                    Bunting
+                  </div>
+                </div>
+
+                <div className="w-0 flex-1 self-end relative">
+                  <img
+                    src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
+                    alt="veery on branch"
+                    className="peer"
+                  ></img>
+                  <div className="absolute -top-[20%] right-0 font-Eiko font-bold text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                    Veery
+                  </div>
+                </div>
               </div>
             </section>
 
-            <section className="w-screen flex pt-[100px] items-end">
-              \
-              <motion.p
-                className="ml-40 mb-[45px] max-w-[600px] text-3xl leading-10  text-[#123CA8] font-Eiko"
-                initial={{ opacity: 0 }}
-                animate={{
-                  y: [100, 0],
-                  opacity: 1,
-                  transition: { ease: "easeInOut", duration: 0.5 },
-                }}
+            <section className="w-screen flex relative">
+              <div className="w-1/2 relative">
+                <video
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                  className="w-full h-full object-cover"
+                >
+                  <source
+                    src="https://asset.togusj.com/migratory-data/chapter-one/banding.mp4"
+                    type="video/mp4"
+                  ></source>
+                </video>
+                <p className="absolute right-0 top-1/4 mr-20 max-w-72 font-grotesk">
+                  After capture the bird, scientists then put a uniquely
+                  numbered aluminum band, and sometimes also colored plastic
+                  bands, on the bird's legs.
+                </p>
+              </div>
+
+              <div className="w-1/2 relative">
+                <video
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                  className="w-full h-full object-cover"
+                >
+                  <source
+                    src="https://asset.togusj.com/migratory-data/chapter-one/release.mp4"
+                    type="video/mp4"
+                  ></source>
+                </video>
+                <p className="absolute left-0 top-1/4 ml-20 font-grotesk">
+                  Finally, the bird is released.
+                </p>
+              </div>
+
+              <Link
+                className="absolute bottom-0 right-0 font-grotesk px-20 py-12 flex items-center gap-2"
+                href="/chapter-two"
               >
-                <span className="font-pitchSans tracking-tighter block mb-[40px] text-[14px] leading-normal">
-                  Smithsonian’s National Zoo and<br></br> Conservation Biology
-                  Institute
-                </span>
-                Bird banding is one of the oldest and most important techniques
-                used for studying and identifying individual birds. In the early
-                1800s, John James Audubon tied threads to birds’ legs to
-                identify individuals that were visiting his farm.
-              </motion.p>
-              <motion.p className=" ml-20 max-w-[600px] mb-[45px] text-3xl leading-10  text-[#003162] font-Eiko">
-                In 1902, the first scientific study to use bird banding took
-                place in the United States: Smithsonian scientists attached
-                bands to the legs of black-crowned night herons at the
-                Smithsonian’s National Zoo in Washington, D.C.
-              </motion.p>
-              <motion.img
-                className="max-w-[400px] absolute -z-10 top-40"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
-                src="https://asset.togusj.com/bird-band.jpg"
-                alt=""
-              />
-              <motion.video
-                autoPlay
-                playsInline
-                muted
-                loop
-                className="ml-[800px] mb-[200px] w-[500px] h-[700px] absolute object-cover bg-white -z-10"
-                initial={{ opacity: 0 }}
-                whileInView={{ y: [-20, 0], opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-              >
-                <source
-                  src="https://asset.togusj.com/banding.mp4"
-                  type="video/mp4"
-                ></source>
-              </motion.video>
-            </section>
-            <section className="w-screen flex items-center">
-              <motion.p
-                className="mt-[45px] max-w-[600px] text-3xl leading-10 text-blue-900 font-Eiko"
-                initial={{ opacity: 0 }}
-                animate={{
-                  y: [100, 0],
-                  opacity: 1,
-                  transition: { ease: "easeInOut", duration: 0.5 },
-                }}
-              >
-                With the bird band, the researcher can record the bird’s
-                species, physical measurements and the location and date they
-                found it. When banded birds are later recaptured or found, their
-                band numbers can be reported. This helps scientists to track
-                migration patterns and to understand population dynamics.
-              </motion.p>
-              <motion.svg
-                className="absolute"
-                width="600"
-                height="600"
-                viewBox="0 0 600 600"
-                initial="hidden"
-                animate="visible"
-              ></motion.svg>
+                click to continue
+                {/* right arrow icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="size-4"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
             </section>
           </motion.div>
         </main>
