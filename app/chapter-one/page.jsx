@@ -12,6 +12,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { ReactLenis } from "lenis/react";
+import AnimationWhiteOut from "@/components/AnimationWhiteOut";
 
 export default function ChapterOne() {
   const targetRef = useRef(null);
@@ -93,17 +94,17 @@ export default function ChapterOne() {
                   </div>
                 </Link>
 
-                <p className="mt-20">
+                <AnimationWhiteOut className="mt-20">
                   Bird banding is one of the oldest and most important
                   techniques used for studying and identifying individual birds.
-                </p>
-                <p className="mt-8">
+                </AnimationWhiteOut>
+                <AnimationWhiteOut className="mt-8">
                   Today in the U.S., bird banding is regulated and supervised by
                   the federal government. Every band placed on a wild bird in
                   the United States must be issued by the Bird Banding
                   Laboratory, ensuring that each bird receives a unique
                   identifier that can be recognized by researchers worldwide.
-                </p>
+                </AnimationWhiteOut>
                 <p className="mt-12 text-base font-light">
                   Smithsonian’s National Zoo and
                   <br />
