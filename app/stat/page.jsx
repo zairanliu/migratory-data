@@ -4,6 +4,7 @@ import { useRef } from "react";
 import useChannel from "@/hooks/useChannel";
 import { motion, useTransform, useScroll } from "motion/react";
 import { ReactLenis } from "lenis/react";
+import DateCursor from "./DateCursor";
 
 export default function ChapterOne() {
   const mouseRef = useRef(null);
@@ -33,16 +34,7 @@ export default function ChapterOne() {
       {/* This div is the scrolling area */}
       <div ref={targetRef} className="relative h-[400vh] font-mono text-base">
         <main className="fixed top-0">
-          <div
-            className="fixed z-10 bg-white border border-solid border-[#fe6c00]"
-            ref={mouseRef}
-          >
-            <p className="p-2 ">
-              12/01/2024
-              <br />
-              16:40:15
-            </p>
-          </div>
+          <DateCursor ref={mouseRef} />
 
           <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
             <span>mouse move detected</span>
