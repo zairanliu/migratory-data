@@ -15,7 +15,7 @@ import { ReactLenis } from "lenis/react";
 
 export default function ChapterOne() {
   const targetRef = useRef(null);
-  const { scrollY, scrollYProgress } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: targetRef,
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70.6%"]);
@@ -24,7 +24,7 @@ export default function ChapterOne() {
   const messageChannel = useChannel();
 
   useMotionValueEvent(
-    scrollY,
+    scrollYProgress,
     "change",
     throttle((latest) => {
       messageChannel.send({ type: "scroll", value: latest });

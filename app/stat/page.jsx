@@ -11,11 +11,15 @@ export default function ChapterOne() {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70.6%"]);
 
   useChannel((message) => {
     if (message.type === "scroll") {
-      window.scrollTo(0, message.value);
+      window.scrollTo(
+        0,
+        message.value *
+          (document.body.scrollHeight - document.documentElement.clientHeight)
+      );
     }
     if (message.type === "mousemove") {
       if (mouseRef.current) {
@@ -27,7 +31,7 @@ export default function ChapterOne() {
   return (
     <ReactLenis root>
       {/* This div is the scrolling area */}
-      <div ref={targetRef} className="relative h-[300vh] font-mono text-base">
+      <div ref={targetRef} className="relative h-[400vh] font-mono text-base">
         <main className="fixed top-0">
           <div
             className="fixed z-10 bg-white border border-solid border-[#fe6c00]"
@@ -47,7 +51,7 @@ export default function ChapterOne() {
 
           {/* This div is the scrolling content */}
           <motion.div style={{ x }} className="flex">
-            <section className="w-screen flex">
+            <section>
               <div className="font-mono w-[40vw] p-8">
                 <pre>
                   <p>&lt;p&gt;Bird Banding&lt;/p&gt;</p>
@@ -55,7 +59,8 @@ export default function ChapterOne() {
                   <p>&lt;p&gt;...&lt;/p&gt;</p>
                 </pre>
               </div>
-
+            </section>
+            <section className="w-screen flex">
               <div className="w-[100vw] h-screen p-8 bg-[#fe6c00]">
                 <p>&lt;video src="../video/bird-banding-capture.mp4" &gt;</p>
                 <p>&lt;p&gt;...&lt;/p&gt;</p>
@@ -99,8 +104,8 @@ export default function ChapterOne() {
                 </div>
               </div>
             </section>
-            <section className="w-screen h-screen font-mono text-base bg-[#fe6c00] p-8 flex">
-              <div className="flex flex-row w-screen justify-between text-left">
+            <section className="w-screen h-screen font-mono text-base bg-[#fe6c00] flex">
+              <div className="p-8 flex flex-row w-screen justify-between text-left">
                 <pre className="w-1/2 ">
                   <p>&lt;video src="../video/bird-banding-capture.mp4" &gt;</p>
                   <p>&lt;p&gt;...&lt;/p&gt;</p>
@@ -111,9 +116,6 @@ export default function ChapterOne() {
                 </pre>
               </div>
             </section>
-            <section className="w-screen h-screen flex">
-              <pre></pre>
-            </section>{" "}
           </motion.div>
         </main>
       </div>
