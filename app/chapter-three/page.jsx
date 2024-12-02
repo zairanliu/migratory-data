@@ -3,14 +3,14 @@
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
-import FlockingP5 from "./FlockingP5";
+import FlockingSimulation from "./FlockingSimulation";
 
 export default function ChapterThree() {
   useSyncInteractives();
 
   return (
     <main className="w-full h-screen text-themeblue">
-      <FlockingP5 />
+      <FlockingSimulation />
 
       <Link
         className="text-2xl absolute top-12 left-20 font-serif italic"
