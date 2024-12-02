@@ -1,19 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import throttle from "lodash-es/throttle";
-import useChannel from "@/hooks/useChannel";
-import useMousemoveEvent from "@/hooks/useMousemoveEvent";
+import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
 
-export default function ChapterOne() {
-  const messageChannel = useChannel();
-
-  useMousemoveEvent(
-    throttle(({ x, y }) => {
-      messageChannel.send({ type: "mousemove", value: { x, y } });
-    }, 10)
-  );
+export default function ChapterTwo() {
+  useSyncInteractives();
 
   return (
     <main className="w-full h-screen text-themeblue">
@@ -22,7 +14,7 @@ export default function ChapterOne() {
         playsInline
         muted
         loop
-        className="-z-10 absolute inset-0 h-screen object-cover"
+        className="-z-10 absolute inset-0 w-screen h-screen object-cover"
       >
         <source
           src="https://asset.togusj.com/migratory-data/chapter-two/migration.mp4"

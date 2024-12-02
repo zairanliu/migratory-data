@@ -4,7 +4,7 @@ import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
 
-export default function ChapterOne() {
+export default function ChapterThree() {
   useSyncInteractives();
 
   return (
