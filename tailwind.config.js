@@ -14,7 +14,7 @@ export default {
         serif: ["Saol", ...defaultTheme.fontFamily.sans],
         Eiko: ["Eiko", ...defaultTheme.fontFamily.sans],
         grotesk: ["Focal", ...defaultTheme.fontFamily.sans],
-        mono: ["Fragment", ...defaultTheme.fontFamily.sans],
+        mono: ["Fraktion", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: "var(--background)",

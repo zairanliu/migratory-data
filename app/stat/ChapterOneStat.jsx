@@ -61,7 +61,7 @@ export default function ChapterOneStat() {
                   <p>&lt;p&gt;Veery.webp&lt;/p&gt;</p> */}
               </pre>
             </div>
-            <div className="absolute flex justify-around w-screen h-[75vh] flex-row gap-20 mt-[100px]  p-8">
+            <div className="absolute flex justify-between w-screen h-[75vh] flex-row gap-20 mt-40 px-20 ">
               {" "}
               <div className="flex items-start ">
                 <img
