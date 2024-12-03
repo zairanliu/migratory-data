@@ -27,7 +27,7 @@ export default function ChapterTwo() {
         href="/"
       >
         <div className="flex">
-          {"Migration".split("").map((letter, index) => (
+          {"Eastern Meadowlark".split("").map((letter, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0 }}
@@ -53,11 +53,11 @@ export default function ChapterTwo() {
 
       <div className="w-full absolute bottom-0 left-0 right-0">
         <div className="p-20 flex justify-between items-center text-[4vw] font-Eiko font-medium leading-none">
-          <Link href="/chapter-two/meadowlark">
+          <div>
             Eastern
             <br />
             Meadowlark
-          </Link>
+          </div>
           <div>
             Indigo
             <br />
