@@ -39,7 +39,7 @@ export default function ChapterTwo() {
         <motion.div
           className="w-1/3 h-screen flex flex-col justify-between"
           initial={{ backgroundColor: "white" }}
-          animate={{ backgroundColor: "#2B6BA6" }}
+          animate={{ backgroundColor: "#653C1C" }}
           transition={{
             backgroundColor: {
               duration: 1,
@@ -66,7 +66,7 @@ export default function ChapterTwo() {
           </div>
           <div className="font-grotesk text-right text-lg mr-10 top-1/2 transform -translate-y-1/2">
             <p className="">Species Range by Season</p>
-            <p className="text-[#9b9b9b]"> Journey of a Tracked Bird</p>
+            <p className="text-[#757575]"> Journey of a Tracked Bird</p>
           </div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-center font-Eiko font-medium leading-tight">
             <motion.div
@@ -80,18 +80,16 @@ export default function ChapterTwo() {
                 },
               }}
             >
-              Indigo
-              <br />
-              Bunting
+              Veery
             </motion.div>
           </div>
         </motion.div>
-        <div className="h-screen w-2/3 relative  bg-[#090B12]">
+        <div className="h-screen w-2/3 relative  bg-[#26180D]">
           <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
             <div className="right-0 left-0 justify-between flex flex-row">
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
+                initial={{ color: "#3D2716" }}
                 whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("year-round")}
@@ -101,7 +99,7 @@ export default function ChapterTwo() {
               </motion.p>
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
+                initial={{ color: "#3D2716" }}
                 whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("summer")}
@@ -112,7 +110,7 @@ export default function ChapterTwo() {
 
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
+                initial={{ color: "#3D2716" }}
                 whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("winter")}
@@ -124,7 +122,7 @@ export default function ChapterTwo() {
           </div>
           <div className="absolute right-0 ">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/indigo/blue-map.svg"
+              src="https://asset.togusj.com/migratory-data/chapter-two/veery/brown-map.svg"
               alt="a map of the Americas"
               className="h-screen aspect-auto object-cover"
             ></img>
