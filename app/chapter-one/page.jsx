@@ -67,11 +67,11 @@ export default function ChapterOne() {
                   </div>
                 </Link>
 
-                <motion.div className="mt-20">
+                <motion.div className="mt-20 leading-tight">
                   Bird banding is one of the oldest and most important
                   techniques used for studying and identifying individual birds.
                 </motion.div>
-                <motion.div className="mt-8">
+                <motion.div className="mt-8 leading-tight">
                   Today in the U.S., bird banding is regulated and supervised by
                   the federal government. Every band placed on a wild bird in
                   the United States must be issued by the Bird Banding
@@ -188,7 +188,7 @@ export default function ChapterOne() {
                   </div>
                 </div>
                 <div className="absolute top-full left-0">
-                  <p className="py-4 max-w-64 font-grotesk">
+                  <p className="py-4 max-w-64 font-grotesk leading-tight">
                     For smaller birds, researchers use mist nest—tall, long nets
                     made of very fine threads that blend into the surroundings.
                   </p>
@@ -248,7 +248,7 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute left-20 top-1/4 mr-20 max-w-72 font-grotesk">
+                <p className="absolute left-20 top-1/4 mr-20 max-w-72 font-grotesk leading-tight">
                   After capture the bird, scientists then put a uniquely
                   numbered aluminum band, and sometimes also colored plastic
                   bands, on the bird's legs.

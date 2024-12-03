@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
@@ -37,7 +37,7 @@ export default function ChapterTwo() {
       </Link>
       <div className="max-w-screen flex flex-row">
         <motion.div
-          className="w-1/3 h-screen flex items-end"
+          className="w-1/3 h-screen flex flex-col justify-between"
           initial={{ backgroundColor: "white" }}
           animate={{ backgroundColor: "#FFEF79" }}
           transition={{
@@ -51,7 +51,20 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="p-20 flex justify-between items-center font-Eiko font-medium leading-none">
+          <div className="font-grotesk max-w-[280px] text-lg leading-tight m-20 ">
+            <p className="mt-10">
+              A familiar bird, known by the black 'V' on its chest when it sings
+              from a fencepost, or by the flash of white tail feathers when it
+              flushes from the grass.
+            </p>
+            <p className="mt-5">
+              {" "}
+              Eastern Meadowlarks are considered partial migrants. This means
+              their migratory behavior varies depending on their location and
+              local conditions.
+            </p>
+          </div>
+          <div className="p-20 flex justify-between items-center font-Eiko font-medium leading-tight">
             <motion.div
               initial={{ fontSize: "72px", color: "#123CA8" }}
               animate={{ fontSize: "28px", color: "black" }}
@@ -77,7 +90,7 @@ export default function ChapterTwo() {
               initial={{ color: "#D8D8D8" }}
               whileHover={{ color: "black", scale: 1.1 }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              onMouseEnter={() => setActiveSeason('summer')}
+              onMouseEnter={() => setActiveSeason("summer")}
               onMouseLeave={() => setActiveSeason(null)}
             >
               Summer
@@ -88,7 +101,7 @@ export default function ChapterTwo() {
               initial={{ color: "#D8D8D8" }}
               whileHover={{ color: "black", scale: 1.1 }}
               transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-              onMouseEnter={() => setActiveSeason('winter')}
+              onMouseEnter={() => setActiveSeason("winter")}
               onMouseLeave={() => setActiveSeason(null)}
             >
               Winter
@@ -101,7 +114,7 @@ export default function ChapterTwo() {
               className="h-screen aspect-auto object-cover"
             ></img>
           </div>
-          <div className="absolute right-3 scale-[103%] top-2">
+          <div className="absolute right-4 scale-[103%] top-6">
             <motion.img
               // Change this to the corresponding image to the season - summer
               src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
@@ -109,7 +122,7 @@ export default function ChapterTwo() {
               className="w-full"
               initial={{ opacity: 0 }}
               animate={{
-                opacity: activeSeason === 'summer' ? 1 : 0,
+                opacity: activeSeason === "summer" ? 1 : 0,
               }}
             ></motion.img>
             <motion.img
@@ -119,7 +132,7 @@ export default function ChapterTwo() {
               className="w-full"
               initial={{ opacity: 0 }}
               animate={{
-                opacity: activeSeason === 'winter' ? 1 : 0,
+                opacity: activeSeason === "winter" ? 1 : 0,
               }}
             ></motion.img>
           </div>
