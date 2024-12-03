@@ -8,26 +8,13 @@ export default function ChapterTwo() {
   useSyncInteractives();
 
   return (
-    <main className="w-full h-screen text-themeblue">
-      <video
-        autoPlay
-        playsInline
-        muted
-        loop
-        className="-z-10 absolute inset-0 w-screen h-screen object-cover"
-      >
-        <source
-          src="https://asset.togusj.com/migratory-data/chapter-two/migration.mp4"
-          type="video/mp4"
-        ></source>
-      </video>
-
+    <main className="h-screen">
       <Link
         className="text-2xl absolute top-12 left-20 font-serif italic"
         href="/"
       >
         <div className="flex">
-          {"Eastern Meadowlark".split("").map((letter, index) => (
+          {"Migration".split("").map((letter, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0 }}
@@ -46,24 +33,74 @@ export default function ChapterTwo() {
           ))}
         </div>
       </Link>
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-grotesk">
-        Select a bird to track
-      </div>
-
-      <div className="w-full absolute bottom-0 left-0 right-0">
-        <div className="p-20 flex justify-between items-center text-[4vw] font-Eiko font-medium leading-none">
-          <div>
-            Eastern
-            <br />
-            Meadowlark
+      <div className="max-w-screen flex flex-row">
+        <motion.div
+          className="w-1/3 h-screen flex items-end"
+          initial={{ backgroundColor: "white" }}
+          animate={{ backgroundColor: "#FFEF79" }}
+          transition={{
+            backgroundColor: {
+              duration: 1,
+              ease: "easeOut",
+              delay: 1,
+            },
+            x: {
+              duration: 1,
+            },
+          }}
+        >
+          <div className="p-20 flex justify-between items-center font-Eiko font-medium leading-none">
+            <motion.div
+              initial={{ fontSize: "72px", color: "#123CA8" }}
+              animate={{ fontSize: "28px", color: "black" }}
+              transition={{
+                fontSize: {
+                  duration: 1,
+                  ease: "easeOut",
+                  delay: 0.6,
+                },
+              }}
+            >
+              Eastern
+              <br />
+              Meadowlark
+            </motion.div>
           </div>
-          <div>
-            Indigo
-            <br />
-            Bunting
+        </motion.div>
+        <div className="h-screen w-2/3 relative">
+          <div className="absolute font-Eiko font-medium text-6xl flex justify-around left-0 right-0">
+            <p>Year-Round</p>
+            <motion.p
+              className=""
+              initial={{ color: "#D8D8D8" }}
+              whileHover={{ color: "black", scale: 1.1 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+            >
+              Summer
+            </motion.p>
+            <div className="absolute right-0">
+              <img
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+                alt="a map"
+                className="aspect-auto h-full"
+              ></img>
+            </div>
+            <motion.p
+              className=""
+              initial={{ color: "#D8D8D8" }}
+              whileHover={{ color: "black", scale: 1.1 }}
+              transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+            >
+              Winter
+            </motion.p>
           </div>
-          <div>Veery</div>
+          <div className="absolute right-0">
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/map-large.svg"
+              alt="a map of the Americas"
+              className="h-screen aspect-auto object-cover"
+            ></img>
+          </div>
         </div>
       </div>
     </main>

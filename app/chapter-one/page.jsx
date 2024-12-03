@@ -67,17 +67,17 @@ export default function ChapterOne() {
                   </div>
                 </Link>
 
-                <AnimationWhiteOut className="mt-20">
+                <motion.div className="mt-20">
                   Bird banding is one of the oldest and most important
                   techniques used for studying and identifying individual birds.
-                </AnimationWhiteOut>
-                <AnimationWhiteOut className="mt-8">
+                </motion.div>
+                <motion.div className="mt-8">
                   Today in the U.S., bird banding is regulated and supervised by
                   the federal government. Every band placed on a wild bird in
                   the United States must be issued by the Bird Banding
                   Laboratory, ensuring that each bird receives a unique
                   identifier that can be recognized by researchers worldwide.
-                </AnimationWhiteOut>
+                </motion.div>
                 <p className="mt-12 text-base font-light">
                   Smithsonian’s National Zoo and
                   <br />
@@ -248,7 +248,7 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute right-0 top-1/4 mr-20 max-w-72 font-grotesk">
+                <p className="absolute left-20 top-1/4 mr-20 max-w-72 font-grotesk">
                   After capture the bird, scientists then put a uniquely
                   numbered aluminum band, and sometimes also colored plastic
                   bands, on the bird's legs.
