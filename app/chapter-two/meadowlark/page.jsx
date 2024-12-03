@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from 'react';
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
 
 export default function ChapterTwo() {
   useSyncInteractives();
+  const [activeSeason, setActiveSeason] = useState(null);
 
   return (
     <main className="h-screen">
@@ -75,6 +77,8 @@ export default function ChapterTwo() {
               initial={{ color: "#D8D8D8" }}
               whileHover={{ color: "black", scale: 1.1 }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              onMouseEnter={() => setActiveSeason('summer')}
+              onMouseLeave={() => setActiveSeason(null)}
             >
               Summer
             </motion.p>
@@ -84,6 +88,8 @@ export default function ChapterTwo() {
               initial={{ color: "#D8D8D8" }}
               whileHover={{ color: "black", scale: 1.1 }}
               transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+              onMouseEnter={() => setActiveSeason('winter')}
+              onMouseLeave={() => setActiveSeason(null)}
             >
               Winter
             </motion.p>
@@ -96,11 +102,26 @@ export default function ChapterTwo() {
             ></img>
           </div>
           <div className="absolute right-3 scale-[103%] top-2">
-            <img
+            <motion.img
+              // Change this to the corresponding image to the season - summer
               src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
               alt="a map"
               className="w-full"
-            ></img>
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: activeSeason === 'summer' ? 1 : 0,
+              }}
+            ></motion.img>
+            <motion.img
+              // Change this to the corresponding image to the season - winter
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              alt="a map"
+              className="w-full"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: activeSeason === 'winter' ? 1 : 0,
+              }}
+            ></motion.img>
           </div>
         </div>
       </div>
