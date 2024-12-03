@@ -221,8 +221,8 @@ const FlockingSimulation = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = "rgba(0,0,0,0)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // ctx.fillStyle = "rgba(0,0,0,0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (const boid of boidsRef.current) {
         boid.run(boidsRef.current, ctx, mousePosRef.current);

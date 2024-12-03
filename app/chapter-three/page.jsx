@@ -22,7 +22,7 @@ export default function ChapterThree() {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70.6%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const largeTextOffset = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   const messageChannel = useChannel();
