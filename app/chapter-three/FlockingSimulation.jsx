@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const BOIDS_COUNT = 100;
+const BOIDS_COUNT = 50;
 
 class Vector {
   constructor(x, y) {
@@ -62,8 +62,8 @@ class Boid {
     this.position = new Vector(x, y);
     this.velocity = new Vector(Math.random() * 2 - 1, Math.random() * 2 - 1);
     this.acceleration = new Vector(0, 0);
-    this.r = 2;
-    this.maxspeed = 3;
+    this.r = 3;
+    this.maxspeed = 2.8;
     this.maxforce = 0.08;
   }
 
@@ -95,7 +95,7 @@ class Boid {
       const mouse = new Vector(mousePos.x, mousePos.y);
       const dir = mouse.sub(this.position);
       dir.normalize();
-      dir.mult(0.1);
+      dir.mult(0.15);
       this.applyForce(dir);
     }
   }
@@ -124,14 +124,16 @@ class Boid {
   }
 
   borders(canvas) {
-    if (this.position.x < -this.r) this.position.x = canvas.width + this.r;
-    if (this.position.y < -this.r) this.position.y = canvas.height + this.r;
-    if (this.position.x > canvas.width + this.r) this.position.x = -this.r;
-    if (this.position.y > canvas.height + this.r) this.position.y = -this.r;
+    // if (this.position.x < -this.r) this.position.x = canvas.width + this.r;
+    // if (this.position.y < -this.r) this.position.y = canvas.height + this.r;
+    // if (this.position.x > canvas.width + this.r) this.position.x = -this.r;
+    // if (this.position.y > canvas.height + this.r) this.position.y = -this.r;
   }
 
   separate(boids) {
-    const desiredseparation = 25;
+    // loose flock separation - 70
+    //cohesive 20
+    const desiredseparation = 20;
     const steer = new Vector(0, 0);
     let count = 0;
 
@@ -160,7 +162,7 @@ class Boid {
   }
 
   align(boids) {
-    const neighbordist = 40;
+    const neighbordist = 100;
     const sum = new Vector(0, 0);
     let count = 0;
 
@@ -219,7 +221,7 @@ const FlockingSimulation = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = "rgb(18, 60, 168)";
+      ctx.fillStyle = "rgba(0,0,0,0)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (const boid of boidsRef.current) {
