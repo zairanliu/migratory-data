@@ -63,7 +63,7 @@ export default function ChapterTwo() {
             <br />
             Bunting
           </Link>
-          <div>Veery</div>
+          <Link href="/chapter-two/veery">Veery</Link>
         </div>
       </div>
     </main>
