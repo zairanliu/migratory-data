@@ -123,10 +123,10 @@ export default function ChapterTwo() {
               className="h-screen aspect-auto object-cover"
             ></img>
           </div>
-          <div className="absolute right-4 scale-[103%] top-3">
+          <div className="absolute right-4 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - year-round
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-year.png"
               alt="a map"
               className="w-full"
               initial={{ opacity: 0 }}
@@ -135,10 +135,10 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
-          <div className="absolute right-4 scale-[103%] top-3">
+          <div className="absolute right-5 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - summer
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-summer.png"
               alt="a map"
               className="w-full"
               initial={{ opacity: 0 }}
@@ -147,10 +147,10 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
-          <div className="absolute right-3 scale-[103%] top-2">
+          <div className="absolute right-4 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - winter
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-winter.png"
               alt="a map"
               className="w-full"
               initial={{ opacity: 0 }}
