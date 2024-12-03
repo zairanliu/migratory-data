@@ -53,17 +53,32 @@ export default function ChapterTwo() {
 
       <div className="w-full absolute bottom-0 left-0 right-0">
         <div className="p-20 flex justify-between items-center text-7xl font-Eiko font-medium leading-none">
-          <Link href="/chapter-two/meadowlark">
-            Eastern
-            <br />
-            Meadowlark
-          </Link>
-          <Link href="/chapter-two/indigobunting">
-            Indigo
-            <br />
-            Bunting
-          </Link>
-          <Link href="/chapter-two/veery">Veery</Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/chapter-two/meadowlark">
+              Eastern
+              <br />
+              Meadowlark
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/chapter-two/indigobunting">
+              Indigo
+              <br />
+              Bunting
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/chapter-two/veery">Veery</Link>
+          </motion.div>
         </div>
       </div>
     </main>
