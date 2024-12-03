@@ -64,10 +64,10 @@ export default function ChapterTwo() {
               local conditions.
             </p>
           </div>
-          <div className="p-20 flex justify-between items-center font-Eiko font-medium leading-tight">
+          <div className="mb-20 flex mx-20 flex-row justify-between items-center font-Eiko font-medium leading-tight max-w-[800px]">
             <motion.div
               initial={{ fontSize: "72px", color: "#123CA8" }}
-              animate={{ fontSize: "28px", color: "black" }}
+              animate={{ fontSize: "48px", color: "black" }}
               transition={{
                 fontSize: {
                   duration: 1,
@@ -83,38 +83,44 @@ export default function ChapterTwo() {
           </div>
         </motion.div>
         <div className="h-screen w-2/3 relative">
-          <div className="z-10 absolute font-Eiko font-medium text-6xl flex justify-around left-0 right-0 bottom-20">
-            <motion.p
-              className=""
-              initial={{ color: "#D8D8D8" }}
-              whileHover={{ color: "black", scale: 1.1 }}
-              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              onMouseEnter={() => setActiveSeason("year-round")}
-              onMouseLeave={() => setActiveSeason(null)}
-            >
-              Year-Round
-            </motion.p>
-            <motion.p
-              className=""
-              initial={{ color: "#D8D8D8" }}
-              whileHover={{ color: "black", scale: 1.1 }}
-              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              onMouseEnter={() => setActiveSeason("summer")}
-              onMouseLeave={() => setActiveSeason(null)}
-            >
-              Summer
-            </motion.p>
+          <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
+            <div className="font-grotesk text-lg mb-2 ">
+              <p>Species Range by Season</p>
+              <p className="text-[#D8D8D8]"> Journey of a Tracked Bird</p>
+            </div>
+            <div className="right-0 left-0 justify-between flex flex-row">
+              <motion.p
+                className=""
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "black", scale: 1.1 }}
+                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                onMouseEnter={() => setActiveSeason("year-round")}
+                onMouseLeave={() => setActiveSeason(null)}
+              >
+                Year-Round
+              </motion.p>
+              <motion.p
+                className=""
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "black", scale: 1.1 }}
+                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                onMouseEnter={() => setActiveSeason("summer")}
+                onMouseLeave={() => setActiveSeason(null)}
+              >
+                Summer
+              </motion.p>
 
-            <motion.p
-              className=""
-              initial={{ color: "#D8D8D8" }}
-              whileHover={{ color: "black", scale: 1.1 }}
-              transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-              onMouseEnter={() => setActiveSeason("winter")}
-              onMouseLeave={() => setActiveSeason(null)}
-            >
-              Winter
-            </motion.p>
+              <motion.p
+                className=""
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "black", scale: 1.1 }}
+                transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+                onMouseEnter={() => setActiveSeason("winter")}
+                onMouseLeave={() => setActiveSeason(null)}
+              >
+                Winter
+              </motion.p>
+            </div>
           </div>
           <div className="absolute right-0">
             <img
