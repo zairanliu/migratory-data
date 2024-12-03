@@ -2,10 +2,10 @@
 
 import { useState, useRef } from "react";
 import useChannel from "@/hooks/useChannel";
-import { motion } from "motion/react";
 import { ReactLenis } from "lenis/react";
 import DateCursor from "./DateCursor";
 import ChapterOneStat from "./ChapterOneStat";
+import ChapterTwoStat from "./ChapterTwoStat";
 
 export default function ChapterOne() {
   const mouseRef = useRef(null);
@@ -25,16 +25,22 @@ export default function ChapterOne() {
     }
   });
 
+  /**
+   * Change this following array to add more pages
+   * The key is the route (of the page its referencing) and the value is the component
+   */
+  const pages = {
+    "/chapter-one": <ChapterOneStat />,
+    "/chapter-two": <ChapterTwoStat />,
+  };
+
   return (
     <ReactLenis root>
       <DateCursor ref={mouseRef} />
-      <motion.div
-        animate={{
-          opacity: route === "/chapter-one" ? 1 : 0,
-        }}
-      >
-        <ChapterOneStat />
-      </motion.div>
+
+      {Object.keys(pages).map((page) => {
+        return route === page ? pages[page] : null;
+      })}
     </ReactLenis>
   );
 }
