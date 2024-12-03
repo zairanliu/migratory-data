@@ -201,7 +201,7 @@ export default function ChapterOne() {
                     alt="eastern meadowlark on fence"
                     className="peer"
                   ></img>
-                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Eastern
                     <br />
                     Meadowlark
@@ -214,7 +214,7 @@ export default function ChapterOne() {
                     alt="indigo bunting in tree"
                     className="peer"
                   ></img>
-                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Indigo
                     <br />
                     Bunting
@@ -227,7 +227,7 @@ export default function ChapterOne() {
                     alt="veery on branch"
                     className="peer"
                   ></img>
-                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Veery
                   </div>
                 </div>
