@@ -3,10 +3,8 @@
 import { useRef } from "react";
 import useChannel from "@/hooks/useChannel";
 import { motion, useTransform, useScroll } from "motion/react";
-import DateCursor from "./DateCursor";
 
 export default function ChapterOneStat() {
-  const mouseRef = useRef(null);
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -21,18 +19,11 @@ export default function ChapterOneStat() {
           (document.body.scrollHeight - document.documentElement.clientHeight)
       );
     }
-    if (message.type === "mousemove") {
-      if (mouseRef.current) {
-        mouseRef.current.style.transform = `translate(${message.value.x}px, ${message.value.y}px)`;
-      }
-    }
   });
 
   return (
     <div ref={targetRef} className="relative h-[400vh] font-mono text-base">
       <main className="fixed top-0">
-        <DateCursor ref={mouseRef} />
-
         <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
           <span>mouse move detected</span>
           <span className="fixed left-8 bottom-8 max-w-80">
