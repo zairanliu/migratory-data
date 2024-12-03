@@ -58,11 +58,11 @@ export default function ChapterTwo() {
             <br />
             Meadowlark
           </Link>
-          <div>
+          <Link href="/chapter-two/indigobunting">
             Indigo
             <br />
             Bunting
-          </div>
+          </Link>
           <div>Veery</div>
         </div>
       </div>

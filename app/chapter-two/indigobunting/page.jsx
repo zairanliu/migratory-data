@@ -12,7 +12,7 @@ export default function ChapterTwo() {
   return (
     <main className="h-screen">
       <Link
-        className="text-2xl absolute top-12 left-20 font-serif italic"
+        className="text-2xl absolute top-12 left-20 font-serif italic  text-white"
         href="/"
       >
         <div className="flex">
@@ -35,11 +35,11 @@ export default function ChapterTwo() {
           ))}
         </div>
       </Link>
-      <div className="max-w-screen flex flex-row">
+      <div className="max-w-screen flex flex-row  text-white">
         <motion.div
           className="w-1/3 h-screen flex flex-col justify-between"
           initial={{ backgroundColor: "white" }}
-          animate={{ backgroundColor: "#FFEF79" }}
+          animate={{ backgroundColor: "#2B6BA6" }}
           transition={{
             backgroundColor: {
               duration: 1,
@@ -51,7 +51,7 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20 ">
+          <div className="font-grotesk max-w-[280px] text-lg  leading-tight mx-20 mt-20 ">
             <p className="mt-10">
               A familiar bird, known by the black 'V' on its chest when it sings
               from a fencepost, or by the flash of white tail feathers when it
@@ -66,12 +66,12 @@ export default function ChapterTwo() {
           </div>
           <div className="font-grotesk text-right text-lg mr-10 top-1/2 transform -translate-y-1/2">
             <p className="">Species Range by Season</p>
-            <p className="text-[#A3A3A3]"> Journey of a Tracked Bird</p>
+            <p className="text-[#9b9b9b]"> Journey of a Tracked Bird</p>
           </div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-center font-Eiko font-medium leading-tight">
             <motion.div
               initial={{ fontSize: "72px", color: "#123CA8" }}
-              animate={{ fontSize: "48px", color: "black" }}
+              animate={{ fontSize: "48px", color: "white" }}
               transition={{
                 fontSize: {
                   duration: 1,
@@ -80,19 +80,19 @@ export default function ChapterTwo() {
                 },
               }}
             >
-              Eastern
+              Indigo
               <br />
-              Meadowlark
+              Bunting
             </motion.div>
           </div>
         </motion.div>
-        <div className="h-screen w-2/3 relative">
+        <div className="h-screen w-2/3 relative  bg-[#1c2743]">
           <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
             <div className="right-0 left-0 justify-between flex flex-row">
               <motion.p
                 className=""
-                initial={{ color: "#D8D8D8" }}
-                whileHover={{ color: "black", scale: 1.1 }}
+                initial={{ color: "#163E63" }}
+                whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("year-round")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -101,8 +101,8 @@ export default function ChapterTwo() {
               </motion.p>
               <motion.p
                 className=""
-                initial={{ color: "#D8D8D8" }}
-                whileHover={{ color: "black", scale: 1.1 }}
+                initial={{ color: "#163E63" }}
+                whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("summer")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -112,8 +112,8 @@ export default function ChapterTwo() {
 
               <motion.p
                 className=""
-                initial={{ color: "#D8D8D8" }}
-                whileHover={{ color: "black", scale: 1.1 }}
+                initial={{ color: "#163E63" }}
+                whileHover={{ color: "white", scale: 1.1 }}
                 transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("winter")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -122,9 +122,9 @@ export default function ChapterTwo() {
               </motion.p>
             </div>
           </div>
-          <div className="absolute right-0">
+          <div className="absolute right-0 ">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/map-large.svg"
+              src="https://asset.togusj.com/migratory-data/chapter-two/indigo/blue-map.svg"
               alt="a map of the Americas"
               className="h-screen aspect-auto object-cover"
             ></img>
