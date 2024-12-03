@@ -1,50 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import throttle from "lodash-es/throttle";
-import { useRef } from "react";
-import useChannel from "@/hooks/useChannel";
-import useMousemoveEvent from "@/hooks/useMousemoveEvent";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useMotionValueEvent,
-} from "motion/react";
+import { motion, useTransform, useScroll } from "motion/react";
 import { ReactLenis } from "lenis/react";
-import AnimationWhiteOut from "@/components/AnimationWhiteOut";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import FlockingSimulation from "./FlockingSimulation";
 
 export default function ChapterThree() {
-  useSyncInteractives();
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
+  const { scrollTarget, scrollYProgress } = useSyncInteractives();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const largeTextOffset = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
-
-  const messageChannel = useChannel();
-
-  useMotionValueEvent(
-    scrollYProgress,
-    "change",
-    throttle((latest) => {
-      messageChannel.send({ type: "scroll", value: latest });
-    }, 10)
-  );
-
-  useMousemoveEvent(
-    throttle(({ x, y }) => {
-      messageChannel.send({ type: "mousemove", value: { x, y } });
-    }, 10)
-  );
 
   return (
     <ReactLenis root>
       {/* This div is the scrolling area */}
-      <div ref={targetRef} className="h-[400vh]">
+      <div ref={scrollTarget} className="h-[200vh]">
         <main className="fixed top-0">
           {/* This div is the scrolling content */}
           <motion.div
