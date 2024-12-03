@@ -51,7 +51,7 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="font-grotesk max-w-[280px] text-lg leading-tight m-20 ">
+          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20 ">
             <p className="mt-10">
               A familiar bird, known by the black 'V' on its chest when it sings
               from a fencepost, or by the flash of white tail feathers when it
@@ -63,6 +63,10 @@ export default function ChapterTwo() {
               their migratory behavior varies depending on their location and
               local conditions.
             </p>
+          </div>
+          <div className="font-grotesk text-right text-lg mr-10 top-1/2 transform -translate-y-1/2">
+            <p className="">Species Range by Season</p>
+            <p className="text-[#A3A3A3]"> Journey of a Tracked Bird</p>
           </div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-center font-Eiko font-medium leading-tight max-w-[800px]">
             <motion.div
@@ -84,10 +88,6 @@ export default function ChapterTwo() {
         </motion.div>
         <div className="h-screen w-2/3 relative">
           <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
-            <div className="font-grotesk text-lg mb-2 ">
-              <p>Species Range by Season</p>
-              <p className="text-[#D8D8D8]"> Journey of a Tracked Bird</p>
-            </div>
             <div className="right-0 left-0 justify-between flex flex-row">
               <motion.p
                 className=""
