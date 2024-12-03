@@ -64,9 +64,14 @@ export default function ChapterTwo() {
               local conditions.
             </p>
           </div>
-          <div className="font-grotesk text-right text-lg mr-10 top-1/2 transform -translate-y-1/2">
-            <p className="">Species Range by Season</p>
-            <p className="text-[#757575]"> Journey of a Tracked Bird</p>
+          <div className="font-grotesk text-right text-lg mx-10 top-1/2 transform -translate-y-1/2 flex flex-row justify-between items-center">
+            <div className="pl-10">
+              <p>return</p>
+            </div>
+            <div>
+              <p className="">Species Range by Season</p>
+              <p className="text-[#757575]"> Journey of a Tracked Bird</p>
+            </div>
           </div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-center font-Eiko font-medium leading-tight">
             <motion.div
