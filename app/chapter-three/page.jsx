@@ -9,8 +9,10 @@ export default function ChapterThree() {
   useSyncInteractives();
 
   return (
-    <main className="w-full h-screen text-themeblue">
-      <FlockingSimulation />
+    <main className="w-full h-screen text-white">
+      <section className="w-screen h-screen bg-themeblue">
+        <FlockingSimulation />
+      </section>
 
       <Link
         className="text-2xl absolute top-12 left-20 font-serif italic"

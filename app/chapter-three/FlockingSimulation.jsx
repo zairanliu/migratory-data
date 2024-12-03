@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-const BOIDS_COUNT = 150;
+const BOIDS_COUNT = 100;
 
 class Vector {
   constructor(x, y) {
@@ -51,7 +51,9 @@ class Vector {
   }
 
   static dist(v1, v2) {
-    return Math.sqrt((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y));
+    return Math.sqrt(
+      (v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y)
+    );
   }
 }
 
@@ -60,9 +62,9 @@ class Boid {
     this.position = new Vector(x, y);
     this.velocity = new Vector(Math.random() * 2 - 1, Math.random() * 2 - 1);
     this.acceleration = new Vector(0, 0);
-    this.r = 3;
+    this.r = 2;
     this.maxspeed = 3;
-    this.maxforce = 0.05;
+    this.maxforce = 0.08;
   }
 
   run(boids, ctx, mousePos) {
@@ -82,7 +84,7 @@ class Boid {
     const coh = this.cohesion(boids);
 
     sep.mult(2.5);
-    ali.mult(1);
+    ali.mult(1.5);
     coh.mult(1.0);
 
     this.applyForce(sep);
@@ -115,7 +117,7 @@ class Boid {
   }
 
   render(ctx) {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+    ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.beginPath();
     ctx.arc(this.position.x, this.position.y, this.r, 0, Math.PI * 2);
     ctx.fill();
@@ -135,7 +137,7 @@ class Boid {
 
     for (const other of boids) {
       const d = Vector.dist(this.position, other.position);
-      if ((d > 0) && (d < desiredseparation)) {
+      if (d > 0 && d < desiredseparation) {
         const diff = this.position.sub(other.position);
         diff.normalize();
         diff.div(d);
@@ -158,13 +160,13 @@ class Boid {
   }
 
   align(boids) {
-    const neighbordist = 50;
+    const neighbordist = 40;
     const sum = new Vector(0, 0);
     let count = 0;
 
     for (const other of boids) {
       const d = Vector.dist(this.position, other.position);
-      if ((d > 0) && (d < neighbordist)) {
+      if (d > 0 && d < neighbordist) {
         sum.add(other.velocity);
         count++;
       }
@@ -182,13 +184,13 @@ class Boid {
   }
 
   cohesion(boids) {
-    const neighbordist = 50;
+    const neighbordist = 40;
     const sum = new Vector(0, 0);
     let count = 0;
 
     for (const other of boids) {
       const d = Vector.dist(this.position, other.position);
-      if ((d > 0) && (d < neighbordist)) {
+      if (d > 0 && d < neighbordist) {
         sum.add(other.position);
         count++;
       }
@@ -210,20 +212,20 @@ const FlockingSimulation = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    
+    const ctx = canvas.getContext("2d");
+
     for (let i = 0; i < BOIDS_COUNT; i++) {
-      boidsRef.current.push(new Boid(canvas.width/2, canvas.height/2));
+      boidsRef.current.push(new Boid(canvas.width / 2, canvas.height / 2));
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgb(255, 255, 255)';
+      ctx.fillStyle = "rgb(18, 60, 168)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       for (const boid of boidsRef.current) {
         boid.run(boidsRef.current, ctx, mousePosRef.current);
       }
-      
+
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -240,7 +242,7 @@ const FlockingSimulation = () => {
     const rect = canvasRef.current.getBoundingClientRect();
     mousePosRef.current = {
       x: event.clientX - rect.left,
-      y: event.clientY - rect.top
+      y: event.clientY - rect.top,
     };
   };
 
