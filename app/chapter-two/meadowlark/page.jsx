@@ -66,7 +66,7 @@ export default function ChapterTwo() {
           </div>
           <div className="font-grotesk text-right text-lg mx-10 top-1/2 transform -translate-y-1/2 flex flex-row justify-between items-center">
             <div className="pl-10">
-              <p>return</p>
+              <Link href="/chapter-two">return</Link>
             </div>
             <div>
               <p className="">Species Range by Season</p>
