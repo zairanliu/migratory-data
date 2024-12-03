@@ -68,7 +68,7 @@ export default function ChapterTwo() {
           </div>
         </motion.div>
         <div className="h-screen w-2/3 relative">
-          <div className="absolute font-Eiko font-medium text-6xl flex justify-around left-0 right-0">
+          <div className="z-10 absolute font-Eiko font-medium text-6xl flex justify-around left-0 right-0 bottom-20">
             <p>Year-Round</p>
             <motion.p
               className=""
@@ -78,13 +78,7 @@ export default function ChapterTwo() {
             >
               Summer
             </motion.p>
-            <div className="absolute right-0">
-              <img
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
-                alt="a map"
-                className="aspect-auto h-full"
-              ></img>
-            </div>
+
             <motion.p
               className=""
               initial={{ color: "#D8D8D8" }}
@@ -99,6 +93,13 @@ export default function ChapterTwo() {
               src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/map-large.svg"
               alt="a map of the Americas"
               className="h-screen aspect-auto object-cover"
+            ></img>
+          </div>
+          <div className="absolute right-3 scale-[103%] top-2">
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              alt="a map"
+              className="w-full"
             ></img>
           </div>
         </div>
