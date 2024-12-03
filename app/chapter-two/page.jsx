@@ -52,7 +52,7 @@ export default function ChapterTwo() {
       </div>
 
       <div className="w-full absolute bottom-0 left-0 right-0">
-        <div className="p-20 flex justify-between items-center text-[4vw] font-Eiko font-medium leading-none">
+        <div className="p-20 flex justify-between items-center text-7xl font-Eiko font-medium leading-none">
           <Link href="/chapter-two/meadowlark">
             Eastern
             <br />
