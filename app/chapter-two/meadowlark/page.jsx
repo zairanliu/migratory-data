@@ -84,7 +84,16 @@ export default function ChapterTwo() {
         </motion.div>
         <div className="h-screen w-2/3 relative">
           <div className="z-10 absolute font-Eiko font-medium text-6xl flex justify-around left-0 right-0 bottom-20">
-            <p>Year-Round</p>
+            <motion.p
+              className=""
+              initial={{ color: "#D8D8D8" }}
+              whileHover={{ color: "black", scale: 1.1 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              onMouseEnter={() => setActiveSeason("year-round")}
+              onMouseLeave={() => setActiveSeason(null)}
+            >
+              Year-Round
+            </motion.p>
             <motion.p
               className=""
               initial={{ color: "#D8D8D8" }}
@@ -114,10 +123,22 @@ export default function ChapterTwo() {
               className="h-screen aspect-auto object-cover"
             ></img>
           </div>
-          <div className="absolute right-4 scale-[103%] top-6">
+          <div className="absolute right-4 scale-[103%] top-3">
+            <motion.img
+              // Change this to the corresponding image to the season - year-round
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              alt="a map"
+              className="w-full"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: activeSeason === "year-round" ? 1 : 0,
+              }}
+            ></motion.img>
+          </div>
+          <div className="absolute right-4 scale-[103%] top-3">
             <motion.img
               // Change this to the corresponding image to the season - summer
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.png"
               alt="a map"
               className="w-full"
               initial={{ opacity: 0 }}
@@ -125,9 +146,11 @@ export default function ChapterTwo() {
                 opacity: activeSeason === "summer" ? 1 : 0,
               }}
             ></motion.img>
+          </div>
+          <div className="absolute right-3 scale-[103%] top-2">
             <motion.img
               // Change this to the corresponding image to the season - winter
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/yearround.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.png"
               alt="a map"
               className="w-full"
               initial={{ opacity: 0 }}

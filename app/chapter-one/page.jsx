@@ -248,7 +248,7 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute left-20 top-1/4 mr-20 max-w-72 font-grotesk leading-tight">
+                <p className="absolute left-20 top-40 mr-20 max-w-72 font-grotesk leading-tight">
                   After capture the bird, scientists then put a uniquely
                   numbered aluminum band, and sometimes also colored plastic
                   bands, on the bird's legs.
@@ -268,7 +268,7 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute left-0 top-1/4 ml-20 font-grotesk">
+                <p className="absolute left-0 top-40 ml-20 font-grotesk">
                   Finally, the bird is released.
                 </p>
               </div>
