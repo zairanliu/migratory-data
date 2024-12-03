@@ -14,7 +14,7 @@ const DateCursor = forwardRef((_, ref) => {
 
   return (
     <div
-      className="fixed z-50 bg-white border border-solid border-[#fe6c00]"
+      className="fixed z-50 bg-white border border-solid border-[#fe6c00] font-mono"
       ref={ref}
     >
       <p className="p-2 ">

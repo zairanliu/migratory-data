@@ -3,9 +3,12 @@ import { useEffect } from "react";
 const useMousemoveEvent = (callback) => {
   useEffect(() => {
     const handleMouseMove = (e) => {
+      const relativeX = e.clientX / window.innerWidth;
+      const relativeY = e.clientY / window.innerHeight;
+
       callback?.({
-        x: e.clientX,
-        y: e.clientY,
+        x: relativeX,
+        y: relativeY,
       });
     };
 

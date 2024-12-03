@@ -197,11 +197,11 @@ export default function ChapterOne() {
               <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
                 <div className="w-0 flex-1 self-start relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/Meadowlark.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
                     alt="eastern meadowlark on fence"
                     className="peer"
                   ></img>
-                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Eastern
                     <br />
                     Meadowlark
@@ -210,11 +210,11 @@ export default function ChapterOne() {
 
                 <div className="w-0 flex-1 relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/Indigo-Bunting.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
                     alt="indigo bunting in tree"
                     className="peer"
                   ></img>
-                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Indigo
                     <br />
                     Bunting
@@ -223,11 +223,11 @@ export default function ChapterOne() {
 
                 <div className="w-0 flex-1 self-end relative">
                   <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/Veery.webp"
+                    src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
                     alt="veery on branch"
                     className="peer"
                   ></img>
-                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity">
+                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Veery
                   </div>
                 </div>
