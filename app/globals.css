@@ -88,11 +88,16 @@ body {
 }
 
 @font-face {
-  font-family: "Fragment";
+  font-family: "Fraktion";
   font-style: normal;
-  src: url(../font/FragmentMono-Regular.woff2) format("woff2");
+  src: url(../font/Fraktion-Regular.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: "Fraktion";
+  font-weight: 300;
+  src: url(../font/Fraktion-Light.woff2) format("woff2");
+}
 /* Keyframes */
 
 @keyframes grayOut {
