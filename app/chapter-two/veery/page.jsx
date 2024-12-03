@@ -38,7 +38,7 @@ export default function ChapterTwo() {
       <div className="max-w-screen flex flex-row  text-white">
         <motion.div
           className="w-1/3 h-screen flex flex-col justify-between"
-          initial={{ backgroundColor: "white" }}
+          initial={{ backgroundColor: "#26180D" }}
           animate={{ backgroundColor: "#653C1C" }}
           transition={{
             backgroundColor: {
@@ -125,43 +125,37 @@ export default function ChapterTwo() {
               </motion.p>
             </div>
           </div>
-          <div className="absolute right-0 ">
+          <div className="absolute inset-0">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/veery/brown-map.svg"
+              src="https://asset.togusj.com/migratory-data/chapter-two/veery/map.webp"
               alt="a map of the Americas"
-              className="h-screen aspect-auto object-cover"
+              className="absolute w-full h-screen object-cover"
             ></img>
-          </div>
-          <div className="absolute right-4 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - year-round
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-year.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
               alt="a map"
-              className="w-full"
+              className="absolute w-full h-screen object-cover"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: activeSeason === "year-round" ? 1 : 0,
               }}
             ></motion.img>
-          </div>
-          <div className="absolute right-5 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - summer
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-summer.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
               alt="a map"
-              className="w-full"
+              className="absolute w-full h-screen object-cover"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: activeSeason === "summer" ? 1 : 0,
               }}
             ></motion.img>
-          </div>
-          <div className="absolute right-4 scale-[103%] top-5">
             <motion.img
               // Change this to the corresponding image to the season - winter
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/m-winter.png"
+              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
               alt="a map"
-              className="w-full"
+              className="absolute w-full h-screen object-cover"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: activeSeason === "winter" ? 1 : 0,
