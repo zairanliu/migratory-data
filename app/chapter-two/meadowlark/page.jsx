@@ -406,10 +406,13 @@ export default function ChapterTwo() {
               opacity: activeTab === 2 ? 1 : 0,
             }}
           >
-            <img
+            <motion.img
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 90 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
               className="w-6 h-6 peer"
-            ></img>
+            ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
               <p className="font-Eiko text-3xl font-medium">
                 43°59′6″N  90°30′14″W
@@ -425,10 +428,13 @@ export default function ChapterTwo() {
               opacity: activeTab === 2 ? 1 : 0,
             }}
           >
-            <img
+            <motion.img
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 90 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
               className="w-6 h-6 peer"
-            ></img>
+            ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
               <p className="font-Eiko text-3xl font-medium">
                 35°07′03″N 89°58′16″W

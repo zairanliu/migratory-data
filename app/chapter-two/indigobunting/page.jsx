@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function ChapterTwo() {
   useSyncInteractives();
@@ -63,12 +63,12 @@ export default function ChapterTwo() {
       </motion.div>
       <div className="max-w-screen flex flex-row  text-white">
         <motion.div
-          className="w-1/3 h-screen flex flex-col justify-between"
-          initial={{ backgroundColor: "#090B12" }}
-          animate={{ backgroundColor: "#2B6BA6" }}
+          className="w-1/3 h-screen flex flex-col justify-between bg-[#2B6BA6]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{
             backgroundColor: {
-              duration: 1,
+              duration: 0.5,
               ease: "easeOut",
               delay: 1,
             },
@@ -78,44 +78,81 @@ export default function ChapterTwo() {
           }}
         >
           <div className="font-grotesk max-w-[280px] text-lg  leading-tight mx-20 mt-20 ">
-            <p className="mt-10">
+            <motion.p
+              className="mt-10"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+                delay: 0.5,
+              }}
+            >
               In parts of the East, Indigo Bunting may be the most abundant
               songbird, with the deep-blue males singing along every roadside.
               The plain brown females are seen far less often, and they have
               good reason to be inconspicuous: they do almost all the work of
               caring for the eggs and young, hidden away in dense thickets.
-            </p>
-            <p className="mt-5">
+            </motion.p>
+            <motion.p
+              className="mt-5"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+                delay: 0.5,
+              }}
+            >
               {" "}
               This species favors brushy edges rather than unbroken forest, and
               is probably far more common today than when the Pilgrims landed.
-            </p>
+            </motion.p>
           </div>
-          <motion.div
-            className="font-grotesk text-right text-lg mx-10 flex flex-row justify-end items-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-          >
-            <div>
-              <motion.p
-                onClick={() => setActiveTab(1)}
+          <div className="flex  left-[300px] top-1/2 z-20 absolute">
+            <motion.div
+              className="font-grotesk text-right text-lg mx-10 justify-end items-center"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+            >
+              <div>
+                <motion.p
+                  onClick={() => setActiveTab(1)}
+                  animate={{
+                    color: activeTab === 1 ? "#FFF" : "#939393",
+                  }}
+                >
+                  Species Range by Season
+                </motion.p>
+                <motion.p
+                  onClick={() => setActiveTab(2)}
+                  animate={{
+                    color: activeTab === 2 ? "#FFF" : "#939393",
+                  }}
+                >
+                  Journey of a Tracked Bird
+                </motion.p>
+              </div>
+            </motion.div>
+            <AnimatePresence>
+              <motion.div
+                className="leading-tight text-white font-grotesk w-[280px] pt-8
+            "
+                initial={{ y: 10, opacity: 0 }}
                 animate={{
-                  color: activeTab === 1 ? "#FFF" : "#939393",
+                  opacity: activeTab === 2 ? 1 : 0,
+                  y: 0,
                 }}
+                transition={{ duration: 1 }}
               >
-                Species Range by Season
-              </motion.p>
-              <motion.p
-                onClick={() => setActiveTab(2)}
-                animate={{
-                  color: activeTab === 2 ? "#FFF" : "#939393",
-                }}
-              >
-                Journey of a Tracked Bird
-              </motion.p>
-            </div>
-          </motion.div>
+                Two Eastern Meadowlarks are being monitored by the Audubon
+                Society. One bird's tracking data shows its movements through
+                Central America, while the other's movements are confined to New
+                England.
+              </motion.div>
+            </AnimatePresence>
+          </div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">
             <Link
               href="/chapter-two"
@@ -142,13 +179,125 @@ export default function ChapterTwo() {
             </motion.div>
           </div>
         </motion.div>
-        <div className="h-screen w-2/3 relative  bg-[#090B12]">
+        <motion.div
+          className="h-screen w-2/3 relative"
+          animate={{
+            backgroundColor: activeTab === 1 ? "#FFF" : "#090B12",
+          }}
+          transition={{
+            backgroundColor: {
+              duration: 1,
+              ease: "easeOut",
+            },
+          }}
+        >
           <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
-            <div className="right-0 left-0 justify-between flex flex-row">
+            <motion.div
+              className="justify-between flex flex-row"
+              animate={{
+                opacity: activeTab === 2 ? 1 : 0,
+                display: activeTab === 2 ? "flex" : "none",
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <AnimatePresence mode="wait">
+                {activeTab === 2 && (
+                  <>
+                    <motion.p
+                      key="firstDate"
+                      className="text-white"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                      }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <motion.span
+                        initial={{ opacity: 1 }}
+                        animate={{
+                          opacity: [1, 0],
+                          transition: {
+                            duration: 1,
+                            ease: "easeOut",
+                            delay: 6,
+                          },
+                        }}
+                      >
+                        03/11
+                      </motion.span>
+                      <motion.span
+                        initial={{
+                          opacity: 0,
+                          position: "absolute",
+                          left: 0,
+                        }}
+                        animate={{
+                          opacity: [0, 1],
+                          transition: {
+                            duration: 1,
+                            ease: "easeOut",
+                            delay: 7,
+                          },
+                        }}
+                      >
+                        10/22
+                      </motion.span>
+                    </motion.p>
+                    <motion.p
+                      key="secondDate"
+                      className="text-white"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                      }}
+                      transition={{ duration: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <motion.span
+                        initial={{ opacity: 1 }}
+                        animate={{
+                          opacity: [1, 0],
+                          transition: {
+                            duration: 1,
+                            ease: "easeOut",
+                            delay: 6,
+                          },
+                        }}
+                      >
+                        04/02
+                      </motion.span>
+                      <motion.span
+                        initial={{ opacity: 0, position: "absolute", right: 0 }}
+                        animate={{
+                          opacity: [0, 1],
+                          transition: {
+                            duration: 1,
+                            ease: "easeOut",
+                            delay: 7,
+                          },
+                        }}
+                      >
+                        11/14
+                      </motion.span>
+                    </motion.p>
+                  </>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+          <div className="z-10 absolute font-Eiko font-medium text-6xl flex bottom-20 right-10 left-10 flex-col">
+            <motion.div
+              className="justify-between flex flex-row"
+              animate={{
+                opacity: activeTab === 1 ? 1 : 0,
+                display: activeTab === 1 ? "flex" : "none",
+              }}
+              transition={{ duration: 0.5 }}
+            >
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
-                whileHover={{ color: "#FFF", scale: 1.1 }}
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "#000", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("year-round")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -157,26 +306,25 @@ export default function ChapterTwo() {
               </motion.p>
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
-                whileHover={{ color: "#FFF", scale: 1.1 }}
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "#000", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("summer")}
                 onMouseLeave={() => setActiveSeason(null)}
               >
                 Summer
               </motion.p>
-
               <motion.p
                 className=""
-                initial={{ color: "#163E63" }}
-                whileHover={{ color: "#FFF", scale: 1.1 }}
+                initial={{ color: "#D8D8D8" }}
+                whileHover={{ color: "#000", scale: 1.1 }}
                 transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("winter")}
                 onMouseLeave={() => setActiveSeason(null)}
               >
                 Winter
               </motion.p>
-            </div>
+            </motion.div>
           </div>
           <div className="absolute inset-0">
             <img
@@ -215,18 +363,70 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
+          <div className="absolute">
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
+              <AnimatePresence>
+                {activeTab === 2 && (
+                  <>
+                    <motion.path
+                      d="M 510 170 Q 390 400 380 830"
+                      fill="transparent"
+                      strokeWidth="1"
+                      stroke="rgba(0,0,0)"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0.001, opacity: 1 }}
+                      animate={{ pathLength: 1 }}
+                      exit={{
+                        opacity: 0,
+                      }}
+                      transition={{
+                        pathLength: {
+                          duration: 4,
+                          yoyo: Infinity,
+                          ease: "easeInOut",
+                        },
+                      }}
+                    />
+                    <motion.path
+                      d="M  410 830 Q 550 450 540 170"
+                      fill="transparent"
+                      strokeWidth="1"
+                      stroke="rgba(0,0,0)"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0.001, opacity: 1 }}
+                      animate={{ pathLength: 1 }}
+                      exit={{
+                        opacity: 0,
+                      }}
+                      transition={{
+                        pathLength: {
+                          duration: 4,
+                          yoyo: Infinity,
+                          ease: "easeInOut",
+                          delay: 6,
+                        },
+                      }}
+                    />
+                  </>
+                )}
+              </AnimatePresence>
+            </svg>
+          </div>
           <motion.div
             className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}
           >
-            <img
+            <motion.img
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 90 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
               className="w-6 h-6 peer"
-            ></img>
+            ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
-              <p className="font-Eiko text-3xl  text-white font-medium">
+              <p className="font-Eiko text-3xl font-medium">
                 43°59′6″N  90°30′14″W
               </p>
               <p className="font-grotesk text-lg">
@@ -240,12 +440,15 @@ export default function ChapterTwo() {
               opacity: activeTab === 2 ? 1 : 0,
             }}
           >
-            <img
+            <motion.img
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 90 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
               className="w-6 h-6 peer"
-            ></img>
+            ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
-              <p className="font-Eiko text-white text-3xl font-medium">
+              <p className="font-Eiko text-3xl font-medium">
                 35°07′03″N 89°58′16″W
               </p>
               <p className="font-grotesk text-lg">
@@ -253,7 +456,7 @@ export default function ChapterTwo() {
               </p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </main>
   );
