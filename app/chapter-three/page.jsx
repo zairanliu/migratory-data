@@ -119,7 +119,7 @@ export default function ChapterThree() {
             </section>
 
             <section className="w-[100vw] h-screen relative">
-              <div className="font-grotesk text-lg mx-20 top-1/2 flex flex-col items-end justify-center h-screen">
+              <div className="font-grotesk text-lg mx-20 flex flex-col items-end justify-center h-screen absolute inset-0">
                 <div className="flex flex-row items-center gap-4">
                   {" "}
                   <p className="">Read more</p>
