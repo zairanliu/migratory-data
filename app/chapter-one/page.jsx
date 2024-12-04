@@ -183,7 +183,7 @@ export default function ChapterOne() {
               >
                 <div className="absolute right-0 bottom-0">
                   <div className="font-Eiko text-3xl">Mist Nest</div>
-                  <div className="font-grotesk text-sm pb-2">
+                  <div className="font-grotesk text-base pb-2 text-[#939393]">
                     hover to interact
                   </div>
                 </div>

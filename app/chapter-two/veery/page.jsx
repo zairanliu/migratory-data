@@ -35,6 +35,31 @@ export default function ChapterTwo() {
           ))}
         </div>
       </Link>
+      <motion.div
+        className="font-grotesk  text-xl flex flex-row right-20 z-20 top-10 absolute text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+      >
+        <Link
+          href="/chapter-three"
+          className="flex flex-row items-center gap-3"
+        >
+          <span>continue</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="size-4"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Link>
+      </motion.div>
       <div className="max-w-screen flex flex-row  text-white">
         <motion.div
           className="w-1/3 h-screen flex flex-col justify-between"
@@ -53,18 +78,19 @@ export default function ChapterTwo() {
         >
           <div className="font-grotesk max-w-[280px] text-lg  leading-tight mx-20 mt-20 ">
             <p className="mt-10">
-              A familiar bird, known by the black 'V' on its chest when it sings
-              from a fencepost, or by the flash of white tail feathers when it
-              flushes from the grass.
+              In moist leafy woods across the northern states and southern
+              Canada, the breezy spiraling song of this thrush is a common sound
+              in summer. An observer who waits patiently inside the woods may
+              see the Veery itself, bounding across the forest floor with long
             </p>
             <p className="mt-5">
               {" "}
-              Eastern Meadowlarks are considered partial migrants. This means
-              their migratory behavior varies depending on their location and
-              local conditions.
+              Staying with us for less than half the year, the bird spends the
+              balance of its time living in the shadowy undergrowth of tropical
+              rain forest.
             </p>
           </div>
-          <div className="font-grotesk text-right text-lg mx-10 top-1/2 transform -translate-y-1/2 flex flex-row justify-end items-center">
+          <div className="font-grotesk text-lg mx-10 flex flex-row justify-end items-center">
             <div>
               <p className="">Species Range by Season</p>
               <p className="text-[#757575]"> Journey of a Tracked Bird</p>
@@ -73,7 +99,7 @@ export default function ChapterTwo() {
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">
             <Link
               href="/chapter-two"
-              className="flex font-grotesk items-center gap-2 pb-2"
+              className="flex font-normal font-grotesk items-center gap-2 pb-2 text-xl"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
