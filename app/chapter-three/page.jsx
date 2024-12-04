@@ -5,12 +5,13 @@ import { ReactLenis } from "lenis/react";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import FlockingSimulation from "./FlockingSimulation";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ChapterThree() {
   const { scrollTarget, scrollYProgress } = useSyncInteractives();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const largeTextOffset = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
-
+  const [activeTab, setActiveTab] = useState(1);
   return (
     <ReactLenis root>
       {/* This div is the scrolling area */}
@@ -79,8 +80,22 @@ export default function ChapterThree() {
                     <span> variations</span>
                     <div className="text-xl flex flex-row font-grotesk mt-20 justify-end gap-10 mr-20 not-italic">
                       <div className="">
-                        <p>Loose Flock</p>
-                        <p className="text-[#939393]">Cohesive Flock</p>
+                        <motion.p
+                          onClick={() => setActiveTab(1)}
+                          animate={{
+                            color: activeTab === 1 ? "#FFF" : "#939393",
+                          }}
+                        >
+                          Loose Flock
+                        </motion.p>
+                        <motion.p
+                          onClick={() => setActiveTab(2)}
+                          animate={{
+                            color: activeTab === 2 ? "#FFF" : "#939393",
+                          }}
+                        >
+                          Cohesive Flock
+                        </motion.p>
                       </div>
                       <p className=" max-w-[400px] font-grotesk text-base">
                         {" "}

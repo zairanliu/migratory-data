@@ -101,7 +101,7 @@ export default function ChapterTwo() {
               <motion.p
                 onClick={() => setActiveTab(1)}
                 animate={{
-                  color: activeTab === 1 ? "" : "#939393",
+                  color: activeTab === 1 ? "#FFF" : "#939393",
                 }}
               >
                 Species Range by Season
@@ -109,7 +109,7 @@ export default function ChapterTwo() {
               <motion.p
                 onClick={() => setActiveTab(2)}
                 animate={{
-                  color: activeTab === 2 ? "" : "#939393",
+                  color: activeTab === 2 ? "#FFF" : "#939393",
                 }}
               >
                 Journey of a Tracked Bird
@@ -148,7 +148,7 @@ export default function ChapterTwo() {
               <motion.p
                 className=""
                 initial={{ color: "#163E63" }}
-                whileHover={{ color: "white", scale: 1.1 }}
+                whileHover={{ color: "#FFF", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("year-round")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -158,7 +158,7 @@ export default function ChapterTwo() {
               <motion.p
                 className=""
                 initial={{ color: "#163E63" }}
-                whileHover={{ color: "white", scale: 1.1 }}
+                whileHover={{ color: "#FFF", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("summer")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -169,7 +169,7 @@ export default function ChapterTwo() {
               <motion.p
                 className=""
                 initial={{ color: "#163E63" }}
-                whileHover={{ color: "white", scale: 1.1 }}
+                whileHover={{ color: "#FFF", scale: 1.1 }}
                 transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
                 onMouseEnter={() => setActiveSeason("winter")}
                 onMouseLeave={() => setActiveSeason(null)}
@@ -215,6 +215,44 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
+          <motion.div
+            className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
+              <p className="font-Eiko text-3xl  text-white font-medium">
+                43°59′6″N  90°30′14″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Tomah, Wisconsin, United States
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
+              <p className="font-Eiko text-white text-3xl font-medium">
+                35°07′03″N 89°58′16″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Memphis, Tennessee, United States
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </main>

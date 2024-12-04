@@ -9,6 +9,7 @@ export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
 
+  const [activeTab, setActiveTab] = useState(1);
   return (
     <main className="h-screen">
       <Link
@@ -90,12 +91,31 @@ export default function ChapterTwo() {
               rain forest.
             </p>
           </div>
-          <div className="font-grotesk text-lg mx-10 flex flex-row justify-end items-center">
+          <motion.div
+            className="font-grotesk text-right text-lg mx-10 left-[280px] justify-end items-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          >
             <div>
-              <p className="">Species Range by Season</p>
-              <p className="text-[#757575]"> Journey of a Tracked Bird</p>
+              <motion.p
+                onClick={() => setActiveTab(1)}
+                animate={{
+                  color: activeTab === 1 ? "#FFF" : "#939393",
+                }}
+              >
+                Species Range by Season
+              </motion.p>
+              <motion.p
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "#FFF" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">
             <Link
               href="/chapter-two"
@@ -203,6 +223,44 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
+          <motion.div
+            className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
+              <p className="font-Eiko text-3xl  text-white font-medium">
+                43°59′6″N  90°30′14″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Tomah, Wisconsin, United States
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/white-single.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
+              <p className="font-Eiko text-white text-3xl font-medium">
+                35°07′03″N 89°58′16″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Memphis, Tennessee, United States
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </main>
