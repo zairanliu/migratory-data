@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
+  const transition = { duration: 4, yoyo: Infinity, ease: "easeInOut" };
 
   return (
     <main className="h-screen">
@@ -194,6 +195,48 @@ export default function ChapterTwo() {
                 opacity: activeSeason === "winter" ? 1 : 0,
               }}
             ></motion.img>
+          </div>
+          <div className=" absolute">
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
+              <motion.path
+                d="M 520 160 Q 400 400 380 800"
+                fill="transparent"
+                strokeWidth="1"
+                stroke="rgba(0,0,0)"
+                strokeLinecap="round"
+                initial={{ pathLength: 0.001 }}
+                animate={{ pathLength: 1 }}
+                transition={transition}
+              />
+            </svg>
+          </div>
+          <div className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2">
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
+              <p className="font-Eiko text-3xl font-medium">
+                43°59′6″N  90°30′14″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Tomah, Wisconsin, United States
+              </p>
+            </div>
+          </div>
+          <div className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+            <img
+              src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
+              className="w-6 h-6 peer"
+            ></img>
+            <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
+              <p className="font-Eiko text-3xl font-medium">
+                35°07′03″N 89°58′16″W
+              </p>
+              <p className="font-grotesk text-lg">
+                Memphis, Tennessee, United States
+              </p>
+            </div>
           </div>
         </div>
       </div>
