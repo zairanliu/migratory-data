@@ -6,6 +6,10 @@ import { ReactLenis } from "lenis/react";
 import DateCursor from "./DateCursor";
 import ChapterOneStat from "./ChapterOneStat";
 import ChapterTwoStat from "./ChapterTwoStat";
+import ChapterThreeStat from "./ChapterThreeStat";
+import MeadowLark from "./MeadowLark";
+import IndigoBunting from "./IndigoBunting";
+import Veery from "./Veery";
 
 export default function ChapterOne() {
   const mouseRef = useRef(null);
@@ -32,6 +36,10 @@ export default function ChapterOne() {
   const pages = {
     "/chapter-one": <ChapterOneStat />,
     "/chapter-two": <ChapterTwoStat />,
+    "/chapter-two/meadowlark": <MeadowLark />,
+    "/chapter-two/indigobunting": <IndigoBunting />,
+    "/chapter-two/veery": <Veery />,
+    "/chapter-three": <ChapterThreeStat />,
   };
 
   return (

@@ -73,7 +73,7 @@ export default function ChapterTwo() {
           <div className="mb-20 flex mx-10 flex-row justify-between font-Eiko font-medium leading-tight">
             <Link
               href="/chapter-two"
-              className="flex items-end gap-2 pl-10 font-grotesk"
+              className="flex items-end gap-2 pl-10 pb-2 font-grotesk"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
