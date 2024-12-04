@@ -17,21 +17,21 @@ export default function Veery() {
         <div className="flex flex-row w-screen justify-between items-end h-screen pb-8 px-10 font-light   text-white">
           <div className="flex  w-[300px]  justify-between flex-row text-8xl">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/black-frame.png"
+              src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
             ></img>
           </div>
           <div className="flex flex-row  w-[300px] justify-between  text-8xl">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/black-frame.png"
+              src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
             ></img>
           </div>
           <div className="flex flex-row text-8xl w-[300px] justify-between ">
             <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/black-frame.png"
+              src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
             ></img>
