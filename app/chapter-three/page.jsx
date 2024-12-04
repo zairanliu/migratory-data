@@ -77,13 +77,16 @@ export default function ChapterThree() {
                     <div className="text-xl flex flex-row font-grotesk mt-20 justify-end gap-10 mr-20">
                       <div className="">
                         <p>Loose Flock</p>
-                        <p>Cohesive Flock</p>
+                        <p className="text-[#939393]">Cohesive Flock</p>
                       </div>
-                      <p className=" max-w-[400px] font-grotesk normal">
+                      <p className=" max-w-[400px] font-grotesk text-base normal">
                         {" "}
                         Eastern Meadowlarks, Indigo Buntings, and Veeries tend
                         to form small loose flocks ranging from a few birds to
-                        around two dozen during the winter migration.This
+                        around two dozen during the winter migration. Loose
+                        flocks maintain a more relaxed social structure where
+                        birds stay within sight or calling distance of each
+                        other while preserving their personal space. This
                         arrangement allows birds to benefit from group vigilance
                         against predators while still having the freedom to
                         exploit different feeding opportunities.
@@ -116,6 +119,24 @@ export default function ChapterThree() {
             </section>
 
             <section className="w-[100vw] h-screen relative">
+              <div className="font-grotesk text-lg mx-20 top-1/2 flex flex-col items-end justify-center h-screen">
+                <div className="flex flex-row items-center gap-4">
+                  {" "}
+                  <p className="">Read more</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="size-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>{" "}
+                </div>
+              </div>
               <FlockingSimulation />
             </section>
           </motion.div>
