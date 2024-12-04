@@ -74,12 +74,12 @@ export default function ChapterThree() {
                   in countless
                   <div className="inline max-w-[700px]">
                     <span> variations</span>
-                    <div className="text-xl flex flex-row font-grotesk mt-20 justify-end gap-10 mr-20">
+                    <div className="text-xl flex flex-row font-grotesk mt-20 justify-end gap-10 mr-20 not-italic">
                       <div className="">
                         <p>Loose Flock</p>
                         <p className="text-[#939393]">Cohesive Flock</p>
                       </div>
-                      <p className=" max-w-[400px] font-grotesk text-base normal">
+                      <p className=" max-w-[400px] font-grotesk text-base">
                         {" "}
                         Eastern Meadowlarks, Indigo Buntings, and Veeries tend
                         to form small loose flocks ranging from a few birds to
