@@ -4,9 +4,11 @@ import Link from "next/link";
 import { motion, useTransform } from "motion/react";
 import { ReactLenis } from "lenis/react";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
+import useSharedState from "@/hooks/useSharedState";
 import AnimationWhiteOut from "@/components/AnimationWhiteOut";
 
 export default function ChapterOne() {
+  const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   const { scrollTarget, scrollYProgress } = useSyncInteractives();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70.6%"]);
   const largeTextOffset = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
@@ -200,6 +202,10 @@ export default function ChapterOne() {
                     src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
                     alt="eastern meadowlark on fence"
                     className="peer"
+                    onMouseEnter={() =>
+                      setHoveringItem("chapter-one-eastern-meadowlark-image")
+                    }
+                    onMouseLeave={() => setHoveringItem(null)}
                   ></img>
                   <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Eastern
@@ -213,6 +219,10 @@ export default function ChapterOne() {
                     src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
                     alt="indigo bunting in tree"
                     className="peer"
+                    onMouseEnter={() =>
+                      setHoveringItem("chapter-one-indigo-bunting-image")
+                    }
+                    onMouseLeave={() => setHoveringItem(null)}
                   ></img>
                   <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Indigo
@@ -226,6 +236,10 @@ export default function ChapterOne() {
                     src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
                     alt="veery on branch"
                     className="peer"
+                    onMouseEnter={() =>
+                      setHoveringItem("chapter-one-veery-image")
+                    }
+                    onMouseLeave={() => setHoveringItem(null)}
                   ></img>
                   <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
                     Veery
