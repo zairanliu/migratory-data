@@ -74,16 +74,19 @@ export default function ChapterThree() {
                   in countless
                   <div className="inline max-w-[700px]">
                     <span> variations</span>
-                    <div className="text-xl flex flex-row font-grotesk  justify-end gap-10 mr-20">
+                    <div className="text-xl flex flex-row font-grotesk mt-20 justify-end gap-10 mr-20">
                       <div className="">
                         <p>Loose Flock</p>
                         <p>Cohesive Flock</p>
                       </div>
-                      <p className=" max-w-[400px] font-Eiko text-2xl normal">
+                      <p className=" max-w-[400px] font-grotesk normal">
                         {" "}
                         Eastern Meadowlarks, Indigo Buntings, and Veeries tend
                         to form small loose flocks ranging from a few birds to
-                        around two dozen during the winter migration.
+                        around two dozen during the winter migration.This
+                        arrangement allows birds to benefit from group vigilance
+                        against predators while still having the freedom to
+                        exploit different feeding opportunities.
                       </p>
                     </div>
                   </div>
@@ -95,7 +98,7 @@ export default function ChapterThree() {
                   migration as experienced birds guide the group.
                 </div>
                 <motion.div
-                  className=" mt-[150px] self-end italic"
+                  className=" mt-[5px] self-end italic"
                   initial={{ opacity: 0 }}
                   whileInView={{
                     y: [20, 0],
