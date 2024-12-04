@@ -4,6 +4,7 @@ import { motion, useTransform, useScroll } from "motion/react";
 import { ReactLenis } from "lenis/react";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import FlockingSimulation from "./FlockingSimulation";
+import Link from "next/link";
 
 export default function ChapterThree() {
   const { scrollTarget, scrollYProgress } = useSyncInteractives();
@@ -121,9 +122,11 @@ export default function ChapterThree() {
             </section>
 
             <section className="w-[100vw] h-screen relative">
-              <div className="flex flex-row items-center gap-4 absolute right-20 top-1/2 -translate-y-1/2 font-grotesk text-lg pointer-events-none">
-                {" "}
-                <p className="">Read more</p>
+              <Link
+                href="/about"
+                className="flex flex-row items-center gap-4 absolute right-20 top-1/2 -translate-y-1/2 font-grotesk text-lg "
+              >
+                <span className="">Read more</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -136,7 +139,8 @@ export default function ChapterThree() {
                     clipRule="evenodd"
                   />
                 </svg>{" "}
-              </div>
+              </Link>
+
               <FlockingSimulation />
             </section>
           </motion.div>
