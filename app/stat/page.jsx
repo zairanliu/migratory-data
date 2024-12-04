@@ -10,6 +10,7 @@ import ChapterThreeStat from "./ChapterThreeStat";
 import MeadowLark from "./MeadowLark";
 import IndigoBunting from "./IndigoBunting";
 import Veery from "./Veery";
+import AboutStat from "./AboutStat";
 
 export default function ChapterOne() {
   const mouseRef = useRef(null);
@@ -40,6 +41,7 @@ export default function ChapterOne() {
     "/chapter-two/indigobunting": <IndigoBunting />,
     "/chapter-two/veery": <Veery />,
     "/chapter-three": <ChapterThreeStat />,
+    "/about": <AboutStat />,
   };
 
   return (

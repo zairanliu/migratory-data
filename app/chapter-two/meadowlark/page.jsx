@@ -3,12 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
-  const transition = { duration: 4, yoyo: Infinity, ease: "easeInOut" };
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
     <main className="h-screen">
@@ -93,8 +93,22 @@ export default function ChapterTwo() {
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
             <div>
-              <p className="">Species Range by Season</p>
-              <p className="text-[#a8a793]"> Journey of a Tracked Bird</p>
+              <motion.p
+                onClick={() => setActiveTab(1)}
+                animate={{
+                  color: activeTab === 1 ? "#000" : "#939393",
+                }}
+              >
+                Species Range by Season
+              </motion.p>
+              <motion.p
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "#000" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+              </motion.p>
             </div>
           </motion.div>
           <div className="mb-20 flex mx-10 flex-row justify-between font-Eiko font-medium leading-tight items-end">
@@ -196,21 +210,39 @@ export default function ChapterTwo() {
               }}
             ></motion.img>
           </div>
-          <div className=" absolute">
+          <div className="absolute">
             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
-              <motion.path
-                d="M 520 160 Q 400 400 380 800"
-                fill="transparent"
-                strokeWidth="1"
-                stroke="rgba(0,0,0)"
-                strokeLinecap="round"
-                initial={{ pathLength: 0.001 }}
-                animate={{ pathLength: 1 }}
-                transition={transition}
-              />
+              <AnimatePresence>
+                {activeTab === 2 && (
+                  <motion.path
+                    d="M 520 160 Q 400 400 380 800"
+                    fill="transparent"
+                    strokeWidth="1"
+                    stroke="rgba(0,0,0)"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0.001, opacity: 1 }}
+                    animate={{ pathLength: 1 }}
+                    exit={{
+                      opacity: 0,
+                    }}
+                    transition={{
+                      pathLength: {
+                        duration: 4,
+                        yoyo: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }}
+                  />
+                )}
+              </AnimatePresence>
             </svg>
           </div>
-          <div className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2">
+          <motion.div
+            className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
             <img
               src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
               className="w-6 h-6 peer"
@@ -223,8 +255,13 @@ export default function ChapterTwo() {
                 Tomah, Wisconsin, United States
               </p>
             </div>
-          </div>
-          <div className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+          </motion.div>
+          <motion.div
+            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            animate={{
+              opacity: activeTab === 2 ? 1 : 0,
+            }}
+          >
             <img
               src="https://asset.togusj.com/migratory-data/chapter-two/single-frame.webp"
               className="w-6 h-6 peer"
@@ -237,7 +274,7 @@ export default function ChapterTwo() {
                 Memphis, Tennessee, United States
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </main>

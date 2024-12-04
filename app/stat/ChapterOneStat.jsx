@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import useChannel from "@/hooks/useChannel";
 import useSharedState from "@/hooks/useSharedState";
+import LoopedUserAgent from "@/components/LoopedUserAgent";
 import { motion, useTransform, useScroll } from "motion/react";
 
 export default function ChapterOneStat() {
@@ -29,7 +30,7 @@ export default function ChapterOneStat() {
         <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
           <span>mouse move detected</span>
           <span className="fixed left-8 bottom-8 max-w-80">
-            {navigator.userAgent}
+            <LoopedUserAgent />
           </span>
         </div>
 

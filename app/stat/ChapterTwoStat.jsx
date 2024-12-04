@@ -1,6 +1,10 @@
 "use client";
 
+import useIPAddress from "@/hooks/useIPAddress";
+
 export default function ChapterTwoStat() {
+  const { ip, loading } = useIPAddress();
+
   return (
     <div className="bg-[#fe6c00] h-screen w-screen font-mono relative ">
       <div className="fixed z-10 flex  w-screen h-screen items-center justify-center ">
@@ -37,7 +41,7 @@ export default function ChapterTwoStat() {
       </div>
 
       <div className="absolute bottom-8 left-8">
-        <p>User IP Detected:68.229.79.117</p>
+        <p>User IP {loading ? "Detecting" : `Detected: ${ip}`}</p>
       </div>
     </div>
   );

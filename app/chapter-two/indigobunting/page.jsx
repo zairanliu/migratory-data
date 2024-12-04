@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
     <main className="h-screen">
@@ -97,8 +98,22 @@ export default function ChapterTwo() {
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
             <div>
-              <p className="">Species Range by Season</p>
-              <p className="text-[#939393]"> Journey of a Tracked Bird</p>
+              <motion.p
+                onClick={() => setActiveTab(1)}
+                animate={{
+                  color: activeTab === 1 ? "" : "#939393",
+                }}
+              >
+                Species Range by Season
+              </motion.p>
+              <motion.p
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+              </motion.p>
             </div>
           </motion.div>
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">

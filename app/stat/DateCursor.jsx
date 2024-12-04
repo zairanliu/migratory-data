@@ -1,16 +1,18 @@
+"use client";
+
 import { forwardRef, useState, useEffect } from "react";
 
 const DateCursor = forwardRef((_, ref) => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(null);
 
   useEffect(() => {
+    setDate(new Date());
+
     const interval = setInterval(() => {
       setDate(new Date());
     }, 1000);
     return () => clearInterval(interval);
-  });
-
-  const time = date.toLocaleTimeString();
+  }, []);
 
   return (
     <div
@@ -18,9 +20,9 @@ const DateCursor = forwardRef((_, ref) => {
       ref={ref}
     >
       <p className="p-2 ">
-        {date.toLocaleDateString()}
+        {date?.toLocaleDateString()}
         <br />
-        {time}
+        {date?.toLocaleTimeString()}
       </p>
     </div>
   );
