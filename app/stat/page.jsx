@@ -47,7 +47,7 @@ export default function ChapterOne() {
       <DateCursor ref={mouseRef} />
 
       {Object.keys(pages).map((page) => {
-        return route === page ? pages[page] : null;
+        return route === page ? <div key={page}>{pages[page]}</div> : null;
       })}
     </ReactLenis>
   );
