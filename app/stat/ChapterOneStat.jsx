@@ -2,9 +2,11 @@
 
 import { useRef } from "react";
 import useChannel from "@/hooks/useChannel";
+import useSharedState from "@/hooks/useSharedState";
 import { motion, useTransform, useScroll } from "motion/react";
 
 export default function ChapterOneStat() {
+  const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -56,33 +58,54 @@ export default function ChapterOneStat() {
                 <p>&lt;img&gt;Veery.webp&lt;/img&gt;</p>
               </pre>
               <pre>
-                <p>&lt;p&gt;Eastern-Meadowlark.webp&lt;/p&gt;</p>
-                {/* <p>&lt;p&gt;Indigo-Bunting.webp&lt;/p&gt;</p>
-                  <p>&lt;p&gt;Veery.webp&lt;/p&gt;</p> */}
+                {hoveringItem === "chapter-one-eastern-meadowlark-image" && (
+                  <p>&lt;p&gt;Eastern-Meadowlark.webp&lt;/p&gt;</p>
+                )}
+                {hoveringItem === "chapter-one-indigo-bunting-image" && (
+                  <p>&lt;p&gt;Indigo-Bunting.webp&lt;/p&gt;</p>
+                )}
+                {hoveringItem === "chapter-one-veery-image" && (
+                  <p>&lt;p&gt;Veery.webp&lt;/p&gt;</p>
+                )}
               </pre>
             </div>
             <div className="absolute flex justify-between w-screen h-[75vh] flex-row gap-20 mt-40 px-20 ">
               {" "}
               <div className="flex items-start ">
-                <img
+                <motion.img
                   src="https://asset.togusj.com/migratory-data/stat/image-frame.svg"
                   alt=""
                   className="w-full"
-                ></img>
+                  animate={{
+                    opacity:
+                      hoveringItem === "chapter-one-eastern-meadowlark-image"
+                        ? 1
+                        : 0,
+                  }}
+                ></motion.img>
               </div>
               <div className="flex items-center">
-                <img
+                <motion.img
                   src="https://asset.togusj.com/migratory-data/stat/image-frame.svg"
                   alt=""
                   className="w-full"
-                ></img>
+                  animate={{
+                    opacity:
+                      hoveringItem === "chapter-one-indigo-bunting-image"
+                        ? 1
+                        : 0,
+                  }}
+                ></motion.img>
               </div>
               <div className="flex items-end">
-                <img
+                <motion.img
                   src="https://asset.togusj.com/migratory-data/stat/image-frame.svg"
                   alt=""
                   className="w-full"
-                ></img>
+                  animate={{
+                    opacity: hoveringItem === "chapter-one-veery-image" ? 1 : 0,
+                  }}
+                ></motion.img>
               </div>
             </div>
           </section>
