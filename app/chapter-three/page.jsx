@@ -120,23 +120,35 @@ export default function ChapterThree() {
                           Cohesive Flock
                         </motion.p>
                       </div>
-                      <p className=" max-w-[400px] font-grotesk text-base">
-                        {" "}
-                        Eastern Meadowlarks, Indigo Buntings, and Veeries tend
-                        to form small loose flocks ranging from a few birds to
-                        around two dozen during the winter migration. Loose
-                        flocks maintain a more relaxed social structure where
-                        birds stay within sight or calling distance of each
-                        other while preserving their personal space. This
-                        arrangement allows birds to benefit from group vigilance
-                        against predators while still having the freedom to
-                        exploit different feeding opportunities.
-                      </p>
+                      <motion.div className=" max-w-[350px] font-grotesk text-lg">
+                        {activeTab === 1 && (
+                          <motion.p transition={{ duration: 0.5 }}>
+                            Eastern Meadowlarks, Indigo Buntings, and Veeries
+                            tend to form small loose flocks which maintain a
+                            more relaxed social structure where birds stay
+                            within sight or calling distance of each other while
+                            preserving their personal space. This arrangement
+                            allows birds to benefit from group vigilance against
+                            predators while still having the freedom.
+                          </motion.p>
+                        )}
+                        {activeTab === 2 && (
+                          <motion.p transition={{ duration: 0.5 }}>
+                            In cohesive flocks, each bird follows simple rules,
+                            maintaining a specific distance from its neighbors
+                            while matching their speed and direction. Starlings
+                            are particularly famous for their murmurations. This
+                            self-organizing system allows hundreds or even
+                            thousands of birds to respond to threats or changes
+                            in direction almost instantaneously.
+                          </motion.p>
+                        )}
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
                 <motion.div
-                  className="font-grotesk normal max-w-[250px] text-base mt-[10px] leading-tight"
+                  className="font-grotesk normal max-w-[280px] text-lg mt-[10px] leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -147,7 +159,7 @@ export default function ChapterThree() {
                   migration as experienced birds guide the group.
                 </motion.div>
                 <motion.div
-                  className=" mt-[5px] self-end italic"
+                  className="mt-2 self-end italic"
                   initial={{ opacity: 0 }}
                   whileInView={{
                     y: [20, 0],
