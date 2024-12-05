@@ -362,7 +362,7 @@ export default function ChapterTwo() {
               ></img>
               <motion.img
                 // Change this to the corresponding image to the season - year-round
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
+                src="https://asset.togusj.com/migratory-data/chapter-two/indigo/year-round.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
                 initial={{ opacity: 0 }}
@@ -372,7 +372,7 @@ export default function ChapterTwo() {
               ></motion.img>
               <motion.img
                 // Change this to the corresponding image to the season - summer
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
+                src="https://asset.togusj.com/migratory-data/chapter-two/indigo/summer.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
                 initial={{ opacity: 0 }}
@@ -382,7 +382,7 @@ export default function ChapterTwo() {
               ></motion.img>
               <motion.img
                 // Change this to the corresponding image to the season - winter
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
+                src="https://asset.togusj.com/migratory-data/chapter-two/indigo/winter.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
                 initial={{ opacity: 0 }}

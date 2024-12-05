@@ -307,22 +307,7 @@ export default function ChapterTwo() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <motion.p
-                className=""
-                initial={{ color: "#D8D8D8" }}
-                whileHover={{ color: "#3D2716", scale: 1.1 }}
-                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                onMouseEnter={() => {
-                  setActiveSeason("year-round");
-                  setHoveringItem("chapter-two-veery-year");
-                }}
-                onMouseLeave={() => {
-                  setActiveSeason(null);
-                  setHoveringItem(null);
-                }}
-              >
-                Year-Round
-              </motion.p>
+              <p className="text-[#D8D8D8] line-through">Year-Round</p>
               <motion.p
                 className=""
                 initial={{ color: "#D8D8D8" }}
@@ -373,18 +358,8 @@ export default function ChapterTwo() {
                 className="absolute w-full h-screen object-cover"
               ></img>
               <motion.img
-                // Change this to the corresponding image to the season - year-round
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
-                alt="a map"
-                className="absolute w-full h-screen object-cover"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: activeSeason === "year-round" ? 1 : 0,
-                }}
-              ></motion.img>
-              <motion.img
                 // Change this to the corresponding image to the season - summer
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
+                src="https://asset.togusj.com/migratory-data/chapter-two/veery/summer.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
                 initial={{ opacity: 0 }}
@@ -394,7 +369,7 @@ export default function ChapterTwo() {
               ></motion.img>
               <motion.img
                 // Change this to the corresponding image to the season - winter
-                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
+                src="https://asset.togusj.com/migratory-data/chapter-two/veery/winter.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
                 initial={{ opacity: 0 }}
