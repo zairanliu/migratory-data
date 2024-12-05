@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import useMousemoveEvent from "@/hooks/useMousemoveEvent";
 
 const BOIDS_COUNT = 50;
+const CANVAS_WIDTH = 1200;
+const CANVAS_HEIGHT = 900;
 
 class Vector {
   constructor(x, y) {
@@ -244,8 +246,8 @@ const FlockingSimulation = () => {
   useMousemoveEvent((pos) => {
     const rect = canvasRef.current.getBoundingClientRect();
     mousePosRef.current = {
-      x: pos.x * window.innerWidth - rect.left,
-      y: pos.y * window.innerHeight - rect.top,
+      x: (pos.x - rect.left / window.innerWidth) * CANVAS_WIDTH,
+      y: (pos.y - rect.top / window.innerWidth) * CANVAS_HEIGHT,
     };
   });
 
@@ -253,8 +255,8 @@ const FlockingSimulation = () => {
     <div className="flex justify-center items-center min-h-screen bg-transparent">
       <canvas
         ref={canvasRef}
-        width={1280}
-        height={720}
+        width={CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
         className="opacity-100 w-screen h-screen object-cover"
       />
     </div>
