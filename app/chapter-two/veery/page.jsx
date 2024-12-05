@@ -39,7 +39,7 @@ export default function ChapterTwo() {
         </div>
       </Link>
       <motion.div
-        className="font-grotesk  text-xl flex flex-row right-20 z-20 top-10 absolute text-white"
+        className="font-grotesk  text-xl flex flex-row right-20 z-20 top-10 absolute text-[#9b643b]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut", delay: 2 }}
@@ -405,12 +405,12 @@ export default function ChapterTwo() {
             </motion.div>
           </div>
           <div className="absolute">
-            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500">
               <AnimatePresence>
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 510 170 Q 390 400 380 830"
+                      d="M 110 110 Q 500 700 1020 840"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -429,7 +429,7 @@ export default function ChapterTwo() {
                       }}
                     />
                     <motion.path
-                      d="M  410 830 Q 550 450 540 170"
+                      d="M 1040 800 Q 750 450  140 80 "
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -454,7 +454,7 @@ export default function ChapterTwo() {
             </svg>
           </div>
           <motion.div
-            className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute flex flex-row gap-4 items-center top-[50px] left-[100px]"
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}
@@ -476,7 +476,7 @@ export default function ChapterTwo() {
             </div>
           </motion.div>
           <motion.div
-            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            className="absolute font-grotesk flex flex-col-reverse gap-4 items-end bottom-40 right-20 "
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}
@@ -490,7 +490,7 @@ export default function ChapterTwo() {
             ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
               <p className="font-Eiko text-3xl font-medium">
-                35°07′03″N 89°58′16″W
+                35°07′03″N  89°58′16″W
               </p>
               <p className="font-grotesk text-lg">
                 Memphis, Tennessee, United States

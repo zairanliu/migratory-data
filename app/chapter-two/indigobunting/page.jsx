@@ -39,7 +39,7 @@ export default function ChapterTwo() {
         </div>
       </Link>
       <motion.div
-        className="font-grotesk  text-xl flex flex-row right-20 z-20 top-10 absolute text-white"
+        className="font-grotesk  text-xl flex flex-row right-20 z-20 top-10 absolute text-[#2B6BA6]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut", delay: 2 }}
