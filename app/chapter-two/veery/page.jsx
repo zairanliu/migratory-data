@@ -174,7 +174,7 @@ export default function ChapterTwo() {
           </motion.div>
           <AnimatePresence>
             <motion.div
-              className="leading-tight text-white font-grotesk w-[280px] pt-8 pl-5
+              className="leading-tight text-white font-grotesk w-[250px] pt-8 pl-5
             "
               initial={{ y: 10, opacity: 0 }}
               animate={{
@@ -183,10 +183,9 @@ export default function ChapterTwo() {
               }}
               transition={{ duration: 1 }}
             >
-              Two Eastern Meadowlarks are being monitored by the Audubon
-              Society. One bird's tracking data shows its movements through
-              Central America, while the other's movements are confined to New
-              England.
+              Migrates mostly at night. They winter east of the Andes in South
+              America. During fall migration, populations from western breeding
+              grounds move eastward before heading south.
             </motion.div>
           </AnimatePresence>
         </div>
@@ -236,7 +235,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        03/11
+                        04/08
                       </motion.span>
                       <motion.span
                         initial={{
@@ -253,7 +252,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        10/22
+                        08/08
                       </motion.span>
                     </motion.p>
                     <motion.p
@@ -277,7 +276,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        04/02
+                        05/10
                       </motion.span>
                       <motion.span
                         initial={{ opacity: 0, position: "absolute", right: 0 }}
@@ -290,7 +289,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        11/14
+                        08/26
                       </motion.span>
                     </motion.p>
                   </>
@@ -385,7 +384,7 @@ export default function ChapterTwo() {
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 110 110 Q 500 700 1020 840"
+                      d="M 1020 840 Q 500 700 110 110"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -404,7 +403,7 @@ export default function ChapterTwo() {
                       }}
                     />
                     <motion.path
-                      d="M 1040 800 Q 750 450  140 80 "
+                      d="M  140 80 Q 750 450  1040 800"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"

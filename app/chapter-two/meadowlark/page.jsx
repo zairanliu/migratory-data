@@ -337,8 +337,9 @@ export default function ChapterTwo() {
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
               animate={{
-                scale: activeTab === 1 ? 1 : 2,
-                x: activeTab === 1 ? 0 : -200,
+                scale: activeTab === 1 ? 1 : 1.8,
+                x: activeTab === 1 ? 0 : -400,
+                y: activeTab === 1 ? 0 : 0,
               }}
               transition={{ duration: 1 }}
             >
@@ -385,7 +386,7 @@ export default function ChapterTwo() {
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 510 170 Q 390 400 380 830"
+                      d="M 460 430 Q 450 270  510 170"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(0,0,0)"
@@ -404,7 +405,7 @@ export default function ChapterTwo() {
                       }}
                     />
                     <motion.path
-                      d="M  410 830 Q 550 450 540 170"
+                      d="M  540 170 Q 550 290 490 430"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(0,0,0)"
@@ -451,7 +452,7 @@ export default function ChapterTwo() {
             </div>
           </motion.div>
           <motion.div
-            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[500px] left-[650px] transform -translate-x-1/2 -translate-y-1/2 "
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}

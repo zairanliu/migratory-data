@@ -139,7 +139,7 @@ export default function ChapterTwo() {
             </motion.div>
             <AnimatePresence>
               <motion.div
-                className="leading-tight text-white font-grotesk w-[280px] pt-8 pl-5 
+                className="leading-tight text-white font-grotesk w-[250px] pt-8 pl-5 
             "
                 initial={{ y: 10, opacity: 0 }}
                 animate={{
@@ -148,10 +148,8 @@ export default function ChapterTwo() {
                 }}
                 transition={{ duration: 1 }}
               >
-                Two Eastern Meadowlarks are being monitored by the Audubon
-                Society. One bird's tracking data shows its movements through
-                Central America, while the other's movements are confined to New
-                England.
+                Migrates at night, and can navigate by the stars. Many migrate
+                across Gulf of Mexico in both spring and fall.
               </motion.div>
             </AnimatePresence>
           </div>
@@ -221,7 +219,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 6,
+                            delay: 5,
                           },
                         }}
                       >
@@ -238,7 +236,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 7,
+                            delay: 6,
                           },
                         }}
                       >
@@ -262,7 +260,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 6,
+                            delay: 5,
                           },
                         }}
                       >
@@ -275,7 +273,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 7,
+                            delay: 6,
                           },
                         }}
                       >
@@ -398,7 +396,7 @@ export default function ChapterTwo() {
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 560 270 Q 450 400 450 660"
+                      d="M  450 660  Q 450 400 560 270 "
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -417,7 +415,7 @@ export default function ChapterTwo() {
                       }}
                     />
                     <motion.path
-                      d="M 480 670 Q 590 480 590 280"
+                      d="M  590 280 Q 590 480  480 670"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -432,7 +430,7 @@ export default function ChapterTwo() {
                           duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
-                          delay: 6,
+                          delay: 5,
                         },
                       }}
                     />

@@ -25,6 +25,29 @@ export default function ChapterThree() {
           >
             {/* section with video and large text */}
             <section className="w-[100vw] relative">
+              <Link
+                className="text-xl font-Eiko italic tracking-wide z-10 absolute top-12 left-20 "
+                href="/"
+              >
+                <div className=" flex">
+                  {"Flocking".split("").map((letter, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: {
+                          ease: "easeOut",
+                          duration: 0.6,
+                          delay: index * 0.02,
+                        },
+                      }}
+                    >
+                      {letter}
+                    </motion.div>
+                  ))}
+                </div>
+              </Link>
               <motion.video
                 autoPlay
                 playsInline
@@ -112,12 +135,17 @@ export default function ChapterThree() {
                     </div>
                   </div>
                 </motion.div>
-                <div className="font-grotesk normal max-w-[250px] text-base mt-[10px]">
+                <motion.div
+                  className="font-grotesk normal max-w-[250px] text-base mt-[10px] leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                >
                   Birds flock together for several compelling reasons: safety in
                   numbers against predators, improved foraging efficiency as
                   many eyes spot food sources, and enhanced navigation during
                   migration as experienced birds guide the group.
-                </div>
+                </motion.div>
                 <motion.div
                   className=" mt-[5px] self-end italic"
                   initial={{ opacity: 0 }}

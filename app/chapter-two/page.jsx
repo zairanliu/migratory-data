@@ -25,7 +25,7 @@ export default function ChapterTwo() {
       </video>
 
       <Link
-        className="text-2xl absolute top-12 left-20 font-serif italic"
+        className=" text-xl tracking-wide absolute top-12 left-20 font-Eiko italic"
         href="/"
       >
         <div className="flex">
