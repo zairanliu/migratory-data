@@ -24,7 +24,7 @@ export default function Home() {
           }}
           animate={{
             opacity: 1,
-            scale: 2,
+            scale: 1.5,
             y: 0,
           }}
           transition={{ ease: "easeInOut", duration: 2.5, delay: 3 }}
