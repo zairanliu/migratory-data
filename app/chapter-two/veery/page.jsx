@@ -4,12 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion, AnimatePresence } from "motion/react";
+import useSharedState from "@/hooks/useSharedState";
 
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
-
   const [activeTab, setActiveTab] = useState(1);
+  const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
+
   return (
     <main className="h-screen">
       <Link
@@ -310,8 +312,14 @@ export default function ChapterTwo() {
                 initial={{ color: "#D8D8D8" }}
                 whileHover={{ color: "#3D2716", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                onMouseEnter={() => setActiveSeason("year-round")}
-                onMouseLeave={() => setActiveSeason(null)}
+                onMouseEnter={() => {
+                  setActiveSeason("year-round");
+                  setHoveringItem("chapter-two-veery-year");
+                }}
+                onMouseLeave={() => {
+                  setActiveSeason(null);
+                  setHoveringItem(null);
+                }}
               >
                 Year-Round
               </motion.p>
@@ -320,8 +328,14 @@ export default function ChapterTwo() {
                 initial={{ color: "#D8D8D8" }}
                 whileHover={{ color: "#3D2716", scale: 1.1 }}
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                onMouseEnter={() => setActiveSeason("summer")}
-                onMouseLeave={() => setActiveSeason(null)}
+                onMouseEnter={() => {
+                  setActiveSeason("summer");
+                  setHoveringItem("chapter-two-veery-summer");
+                }}
+                onMouseLeave={() => {
+                  setActiveSeason(null);
+                  setHoveringItem(null);
+                }}
               >
                 Summer
               </motion.p>
@@ -331,8 +345,14 @@ export default function ChapterTwo() {
                 initial={{ color: "#D8D8D8" }}
                 whileHover={{ color: "#3D2716", scale: 1.1 }}
                 transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-                onMouseEnter={() => setActiveSeason("winter")}
-                onMouseLeave={() => setActiveSeason(null)}
+                onMouseEnter={() => {
+                  setActiveSeason("winter");
+                  setHoveringItem("chapter-two-veery-winter");
+                }}
+                onMouseLeave={() => {
+                  setActiveSeason(null);
+                  setHoveringItem(null);
+                }}
               >
                 Winter
               </motion.p>

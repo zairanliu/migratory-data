@@ -3,8 +3,10 @@
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
+import useSharedState from "@/hooks/useSharedState";
 
 export default function ChapterTwo() {
+  const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   useSyncInteractives();
 
   return (
@@ -56,6 +58,10 @@ export default function ChapterTwo() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
+            onMouseEnter={() =>
+              setHoveringItem("chapter-two-eastern-meadowlark-title")
+            }
+            onMouseLeave={() => setHoveringItem(null)}
           >
             <Link href="/chapter-two/meadowlark">
               Eastern
@@ -66,6 +72,8 @@ export default function ChapterTwo() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
+            onMouseEnter={() => setHoveringItem("chapter-two-indigo-title")}
+            onMouseLeave={() => setHoveringItem(null)}
           >
             <Link href="/chapter-two/indigobunting">
               Indigo
@@ -76,6 +84,8 @@ export default function ChapterTwo() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
+            onMouseEnter={() => setHoveringItem("chapter-two-veery-title")}
+            onMouseLeave={() => setHoveringItem(null)}
           >
             <Link href="/chapter-two/veery">Veery</Link>
           </motion.div>

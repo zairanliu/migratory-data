@@ -1,6 +1,10 @@
 "use client";
 
+import useSharedState from "@/hooks/useSharedState";
+import { motion } from "motion/react";
+
 export default function MeadowLark() {
+  const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   return (
     <main>
       <div className="fixed z-10 flex  w-screen h-screen items-center justify-center font-mono ">
@@ -15,27 +19,68 @@ export default function MeadowLark() {
         </div>
 
         <div className="flex flex-row w-screen justify-between items-end h-screen pb-8 px-10 font-light ">
-          <div className="flex  w-[300px]  justify-between flex-row text-8xl">
-            <img
+          <div className="flex  w-[300px]  justify-between flex-row text-8xl z-10">
+            <motion.img
               src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
-            ></img>
+              animate={{
+                opacity: hoveringItem === "chapter-two-meadowlark-year" ? 1 : 0,
+              }}
+            ></motion.img>
           </div>
-          <div className="flex flex-row  w-[300px] justify-between  text-8xl">
-            <img
+          <div className="flex flex-row  w-[300px] justify-between text-8xl z-10">
+            <motion.img
               src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
-            ></img>
+              animate={{
+                opacity:
+                  hoveringItem === "chapter-two-meadowlark-summer" ? 1 : 0,
+              }}
+            ></motion.img>
           </div>
-          <div className="flex flex-row text-8xl w-[300px] justify-between ">
-            <img
+          <div className="flex flex-row text-8xl w-[300px] justify-between z-10 ">
+            <motion.img
               src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"
               alt="frame"
               className=""
-            ></img>
+              animate={{
+                opacity:
+                  hoveringItem === "chapter-two-meadowlark-winter" ? 1 : 0,
+              }}
+            ></motion.img>
           </div>
+        </div>
+        <div className="absolute right-2 top-10">
+          <motion.img
+            src="https://asset.togusj.com/migratory-data/stat/meadowlark-year-map.webp"
+            alt=""
+            className="w-[500px]"
+            animate={{
+              opacity: hoveringItem === "chapter-two-meadowlark-year" ? 1 : 0,
+            }}
+          />
+        </div>
+        <div className="absolute right-2 top-2">
+          <motion.img
+            src="https://asset.togusj.com/migratory-data/stat/meadowlark-summer-map.webp"
+            alt=""
+            className="w-[500px]"
+            animate={{
+              opacity: hoveringItem === "chapter-two-meadowlark-summer" ? 1 : 0,
+            }}
+          />
+        </div>
+        <div className="absolute right-2 top-10">
+          <motion.img
+            src="https://asset.togusj.com/migratory-data/stat/meadowlark-winter-map.webp"
+            alt=""
+            className="w-[600px]"
+            animate={{
+              opacity: hoveringItem === "chapter-two-meadowlark-winter" ? 1 : 0,
+            }}
+          />
         </div>
 
         <div className="absolute bottom-8 left-8">
