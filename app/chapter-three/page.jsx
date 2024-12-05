@@ -136,7 +136,7 @@ export default function ChapterThree() {
               </motion.div>
             </section>
 
-            <section className="w-[100vw] h-screen relative">
+            <section className="w-[100vw] h-screen relative -z-10">
               <Link
                 href="/about"
                 className="flex flex-row items-center gap-4 absolute right-20 top-1/2 -translate-y-1/2 font-grotesk text-lg "

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import useMousemoveEvent from "@/hooks/useMousemoveEvent";
 
 const BOIDS_COUNT = 50;
 
@@ -240,13 +241,13 @@ const FlockingSimulation = () => {
     };
   }, []);
 
-  const handleMouseMove = (event) => {
+  useMousemoveEvent((pos) => {
     const rect = canvasRef.current.getBoundingClientRect();
     mousePosRef.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
+      x: pos.x * window.innerWidth - rect.left,
+      y: pos.y * window.innerHeight - rect.top,
     };
-  };
+  });
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-transparent">
@@ -254,7 +255,6 @@ const FlockingSimulation = () => {
         ref={canvasRef}
         width={1280}
         height={720}
-        onMouseMove={handleMouseMove}
         className="opacity-100 w-screen h-screen object-cover"
       />
     </div>
