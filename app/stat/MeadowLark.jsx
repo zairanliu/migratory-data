@@ -4,11 +4,13 @@ import useSharedState from "@/hooks/useSharedState";
 import { motion } from "motion/react";
 
 export default function MeadowLark() {
+  const [activeTab, setActiveTab] = useSharedState("active-tab", 1);
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   return (
     <main>
-      <div className="fixed z-10 flex  w-screen h-screen items-center justify-center font-mono ">
+      <div className="fixed z-10 flex flex-col w-screen h-screen items-center justify-center font-mono ">
         <span>mouse move detected</span>
+        <span>{activeTab === 1 ? "range by season" : "journey"}</span>
       </div>
       <div className=" h-screen w-screen font-mono flex flex-row bg-[#FFEF79] ">
         <div className="w-1/3 bg-white">
