@@ -61,13 +61,14 @@ class Vector {
 }
 
 class Boid {
-  constructor(x, y) {
+  constructor(x, y, r = 3, isTight = false) {
     this.position = new Vector(x, y);
     this.velocity = new Vector(Math.random() * 2 - 1, Math.random() * 2 - 1);
     this.acceleration = new Vector(0, 0);
-    this.r = 3;
-    this.maxspeed = 2.8;
-    this.maxforce = 0.08;
+    this.r = r;
+    this.maxspeed = (2.8 * r) / 3;
+    this.maxforce = ((isTight ? 0.08 : 0.008) * r) / 3;
+    this.isTight = isTight;
   }
 
   run(boids, ctx, mousePos) {
@@ -86,7 +87,7 @@ class Boid {
     const ali = this.align(boids);
     const coh = this.cohesion(boids);
 
-    sep.mult(2.5);
+    sep.mult(this.isTight ? 2.5 : 25);
     ali.mult(1.5);
     coh.mult(1.0);
 
@@ -209,26 +210,45 @@ class Boid {
   }
 }
 
-const FlockingSimulation = () => {
+const FlockingSimulation = ({ isTight = false }) => {
   const canvasRef = useRef(null);
   const mousePosRef = useRef(null);
-  const boidsRef = useRef([]);
   const animationFrameRef = useRef();
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const ctx = canvas.getContext("2d");
 
+    const boids = [];
+    const boidSize = (3 / 1200) * canvas.width;
+
     for (let i = 0; i < BOIDS_COUNT; i++) {
-      boidsRef.current.push(new Boid(canvas.width / 2, canvas.height / 2));
+      boids.push(
+        new Boid(canvas.width / 2, canvas.height / 2, boidSize, isTight)
+      );
     }
 
     const animate = () => {
       // ctx.fillStyle = "rgba(0,0,0,0)";
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (const boid of boidsRef.current) {
-        boid.run(boidsRef.current, ctx, mousePosRef.current);
+      if (mousePosRef.current) {
+        const mouseX = mousePosRef.current.x * canvas.width;
+        const mouseY = mousePosRef.current.y * canvas.height;
+
+        for (const boid of boids) {
+          boid.run(boids, ctx, {
+            x: mouseX,
+            y: mouseY,
+          });
+        }
+
+        // draw the cursor
+        ctx.beginPath();
+        ctx.ellipse(mouseX, mouseY, 20, 20, 0, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       animationFrameRef.current = requestAnimationFrame(animate);
@@ -241,13 +261,13 @@ const FlockingSimulation = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [isTight]);
 
   useMousemoveEvent((pos) => {
     const rect = canvasRef.current.getBoundingClientRect();
     mousePosRef.current = {
-      x: (pos.x - rect.left / window.innerWidth) * CANVAS_WIDTH,
-      y: (pos.y - rect.top / window.innerWidth) * CANVAS_HEIGHT,
+      x: pos.x - rect.left / window.innerWidth,
+      y: pos.y,
     };
   });
 
