@@ -9,7 +9,7 @@ import useSharedState from "@/hooks/useSharedState";
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useSharedState("active-tab", 1);
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
 
   return (
@@ -358,42 +358,51 @@ export default function ChapterTwo() {
               </motion.p>
             </motion.div>
           </div>
-          <div className="absolute inset-0">
-            <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/veery/map.webp"
-              alt="a map of the Americas"
-              className="absolute w-full h-screen object-cover"
-            ></img>
-            <motion.img
-              // Change this to the corresponding image to the season - year-round
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
               animate={{
-                opacity: activeSeason === "year-round" ? 1 : 0,
+                scale: activeTab === 1 ? 1 : 1.2,
+                x: activeTab === 1 ? 0 : -100,
+                y: activeTab === 1 ? 0 : -100,
               }}
-            ></motion.img>
-            <motion.img
-              // Change this to the corresponding image to the season - summer
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeSeason === "summer" ? 1 : 0,
-              }}
-            ></motion.img>
-            <motion.img
-              // Change this to the corresponding image to the season - winter
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeSeason === "winter" ? 1 : 0,
-              }}
-            ></motion.img>
+              transition={{ duration: 1 }}
+            >
+              <img
+                src="https://asset.togusj.com/migratory-data/chapter-two/veery/map.webp"
+                alt="a map of the Americas"
+                className="absolute w-full h-screen object-cover"
+              ></img>
+              <motion.img
+                // Change this to the corresponding image to the season - year-round
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "year-round" ? 1 : 0,
+                }}
+              ></motion.img>
+              <motion.img
+                // Change this to the corresponding image to the season - summer
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "summer" ? 1 : 0,
+                }}
+              ></motion.img>
+              <motion.img
+                // Change this to the corresponding image to the season - winter
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "winter" ? 1 : 0,
+                }}
+              ></motion.img>
+            </motion.div>
           </div>
           <div className="absolute">
             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">

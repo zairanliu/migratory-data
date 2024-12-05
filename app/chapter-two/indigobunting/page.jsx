@@ -9,7 +9,7 @@ import useSharedState from "@/hooks/useSharedState";
 export default function ChapterTwo() {
   useSyncInteractives();
   const [activeSeason, setActiveSeason] = useState(null);
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useSharedState("active-tab", 1);
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
 
   return (
@@ -225,7 +225,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        03/11
+                        03/20
                       </motion.span>
                       <motion.span
                         initial={{
@@ -242,7 +242,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        10/22
+                        09/04
                       </motion.span>
                     </motion.p>
                     <motion.p
@@ -266,7 +266,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        04/02
+                        04/10
                       </motion.span>
                       <motion.span
                         initial={{ opacity: 0, position: "absolute", right: 0 }}
@@ -279,7 +279,7 @@ export default function ChapterTwo() {
                           },
                         }}
                       >
-                        11/14
+                        10/11
                       </motion.span>
                     </motion.p>
                   </>
@@ -346,42 +346,51 @@ export default function ChapterTwo() {
               </motion.p>
             </motion.div>
           </div>
-          <div className="absolute inset-0">
-            <img
-              src="https://asset.togusj.com/migratory-data/chapter-two/indigo/map.webp"
-              alt="a map of the Americas"
-              className="absolute w-full h-screen object-cover"
-            ></img>
-            <motion.img
-              // Change this to the corresponding image to the season - year-round
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
               animate={{
-                opacity: activeSeason === "year-round" ? 1 : 0,
+                scale: activeTab === 1 ? 1 : 2,
+                x: activeTab === 1 ? 0 : -400,
+                y: activeTab === 1 ? 0 : -400,
               }}
-            ></motion.img>
-            <motion.img
-              // Change this to the corresponding image to the season - summer
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeSeason === "summer" ? 1 : 0,
-              }}
-            ></motion.img>
-            <motion.img
-              // Change this to the corresponding image to the season - winter
-              src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
-              alt="a map"
-              className="absolute w-full h-screen object-cover"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeSeason === "winter" ? 1 : 0,
-              }}
-            ></motion.img>
+              transition={{ duration: 2 }}
+            >
+              <img
+                src="https://asset.togusj.com/migratory-data/chapter-two/indigo/map.webp"
+                alt="a map of the Americas"
+                className="absolute w-full h-screen object-cover"
+              ></img>
+              <motion.img
+                // Change this to the corresponding image to the season - year-round
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "year-round" ? 1 : 0,
+                }}
+              ></motion.img>
+              <motion.img
+                // Change this to the corresponding image to the season - summer
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "summer" ? 1 : 0,
+                }}
+              ></motion.img>
+              <motion.img
+                // Change this to the corresponding image to the season - winter
+                src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
+                alt="a map"
+                className="absolute w-full h-screen object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSeason === "winter" ? 1 : 0,
+                }}
+              ></motion.img>
+            </motion.div>
           </div>
           <div className="absolute">
             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
@@ -389,7 +398,7 @@ export default function ChapterTwo() {
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 510 170 Q 390 400 380 830"
+                      d="M 560 270 Q 450 400 450 660"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -401,14 +410,14 @@ export default function ChapterTwo() {
                       }}
                       transition={{
                         pathLength: {
-                          duration: 4,
+                          duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
                         },
                       }}
                     />
                     <motion.path
-                      d="M  410 830 Q 550 450 540 170"
+                      d="M 480 670 Q 590 480 590 280"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -420,7 +429,7 @@ export default function ChapterTwo() {
                       }}
                       transition={{
                         pathLength: {
-                          duration: 4,
+                          duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
                           delay: 6,
@@ -433,7 +442,7 @@ export default function ChapterTwo() {
             </svg>
           </div>
           <motion.div
-            className="absolute flex flex-row gap-4 items-center top-[150px] left-[700px] transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute flex flex-row gap-4 items-center top-[250px] left-[750px]  -translate-x-1/2 -translate-y-1/2"
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}
@@ -447,15 +456,15 @@ export default function ChapterTwo() {
             ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
               <p className="font-Eiko text-3xl font-medium">
-                43°59′6″N  90°30′14″W
+                30°26′51″N 91°10′43″W
               </p>
               <p className="font-grotesk text-lg">
-                Tomah, Wisconsin, United States
+                Baton Rouge, Louisiana, United States
               </p>
             </div>
           </motion.div>
           <motion.div
-            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+            className="absolute font-grotesk flex flex-row gap-4 items-center bottom-[300px] left-[450px] "
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}
@@ -469,11 +478,9 @@ export default function ChapterTwo() {
             ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
               <p className="font-Eiko text-3xl font-medium">
-                35°07′03″N 89°58′16″W
+                20°58′12″N 89°37′12″W
               </p>
-              <p className="font-grotesk text-lg">
-                Memphis, Tennessee, United States
-              </p>
+              <p className="font-grotesk text-lg">Mérida, Yucatán, Mexico</p>
             </div>
           </motion.div>
         </motion.div>
