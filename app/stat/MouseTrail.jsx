@@ -16,13 +16,18 @@ const sketch = (p) => {
     p.textAlign(p.CENTER);
     p.noStroke();
 
-    mouseTrailData.forEach(({ x, y, timestamp }) => {
+    mouseTrailData.forEach(({ x, y, timestamp }, index) => {
+      if (index > mouseTrailData.length - 2) return;
+
+      const duration = mouseTrailData[index + 1].timestamp - timestamp;
+      const alpha = p.map(duration, 0, 100, 0, 255);
+      p.fill(p.color(255, 255, 255, alpha));
+      p.circle(x * p.width, y * p.height, 10, 10);
       p.text(
         new Date(timestamp).toLocaleTimeString(),
         x * p.width,
         y * p.height - 10
       );
-      p.circle(x * p.width, y * p.height, 10, 10);
     });
   };
 
