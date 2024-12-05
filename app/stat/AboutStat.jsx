@@ -11,8 +11,8 @@ export default function AboutStat() {
       className="bg-[#fe6c00] h-screen w-screen font-mono relative"
       onClick={clearCanvas}
     >
-      <div className="fixed z-10 flex  w-screen h-screen items-center justify-center ">
-        <span>ur trace</span>
+      <div className="fixed z-10 flex  w-screen left-8 bottom-8 max-w-80">
+        <span>Tracking Data Saved</span>
       </div>
       <MouseTrail />
     </div>

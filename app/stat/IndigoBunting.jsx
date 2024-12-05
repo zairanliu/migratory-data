@@ -13,8 +13,14 @@ export default function IndigoBunting() {
             <p>&lt;svg src="../migration-map.svg"&gt;</p>
           </div>
         </div>
-
-        <div className="flex flex-row w-screen justify-between items-end h-screen pb-8 px-10 font-light   text-white">
+        <div className="absolute top-1/4 left-2/3 ">
+          <img
+            src="https://asset.togusj.com/migratory-data/stat/indigo-zoom.webp"
+            alt="frame"
+            className="w-[400px]"
+          ></img>
+        </div>
+        <div className="flex flex-row w-screen justify-between items-end h-screen pb-8 px-10 text-white">
           <div className="flex  w-[300px]  justify-between flex-row text-8xl">
             <img
               src="https://asset.togusj.com/migratory-data/stat/black-frame.webp"

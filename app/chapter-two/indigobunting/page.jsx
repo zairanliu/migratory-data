@@ -137,7 +137,7 @@ export default function ChapterTwo() {
             </motion.div>
             <AnimatePresence>
               <motion.div
-                className="leading-tight text-white font-grotesk w-[280px] pt-8
+                className="leading-tight text-white font-grotesk w-[280px] pt-8 pl-5 cursor-pointer
             "
                 initial={{ y: 10, opacity: 0 }}
                 animate={{
@@ -372,7 +372,7 @@ export default function ChapterTwo() {
                       d="M 510 170 Q 390 400 380 830"
                       fill="transparent"
                       strokeWidth="1"
-                      stroke="rgba(0,0,0)"
+                      stroke="rgba(255,255,255)"
                       strokeLinecap="round"
                       initial={{ pathLength: 0.001, opacity: 1 }}
                       animate={{ pathLength: 1 }}
@@ -391,7 +391,7 @@ export default function ChapterTwo() {
                       d="M  410 830 Q 550 450 540 170"
                       fill="transparent"
                       strokeWidth="1"
-                      stroke="rgba(0,0,0)"
+                      stroke="rgba(255,255,255)"
                       strokeLinecap="round"
                       initial={{ pathLength: 0.001, opacity: 1 }}
                       animate={{ pathLength: 1 }}

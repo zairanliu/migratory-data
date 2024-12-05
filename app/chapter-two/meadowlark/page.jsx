@@ -135,7 +135,7 @@ export default function ChapterTwo() {
             </motion.div>
             <AnimatePresence>
               <motion.div
-                className="leading-tight font-grotesk w-[280px] pt-8
+                className="leading-tight font-grotesk w-[280px] pt-8 pl-5 cursor-pointer
             "
                 initial={{ y: 10, opacity: 0 }}
                 animate={{

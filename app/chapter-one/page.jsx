@@ -196,6 +196,7 @@ export default function ChapterOne() {
                   </p>
                 </div>
               </motion.div>
+
               <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
                 <div className="w-0 flex-1 self-start relative">
                   <img

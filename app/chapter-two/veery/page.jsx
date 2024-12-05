@@ -146,7 +146,7 @@ export default function ChapterTwo() {
         </motion.div>
         <div className="flex  left-[300px] top-1/2 z-20 absolute">
           <motion.div
-            className="font-grotesk text-right text-lg mx-10 justify-end items-center"
+            className="font-grotesk text-right text-lg mx-10 justify-end items-center cursor-pointer"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
@@ -172,7 +172,7 @@ export default function ChapterTwo() {
           </motion.div>
           <AnimatePresence>
             <motion.div
-              className="leading-tight text-white font-grotesk w-[280px] pt-8
+              className="leading-tight text-white font-grotesk w-[280px] pt-8 pl-5
             "
               initial={{ y: 10, opacity: 0 }}
               animate={{
