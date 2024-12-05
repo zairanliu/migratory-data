@@ -48,7 +48,8 @@ export default function ChapterOne() {
 
   return (
     <ReactLenis root>
-      <DateCursor ref={mouseRef} />
+      {/* Hide cursor on index stat */}
+      { route !== '/' && <DateCursor ref={mouseRef} /> }
 
       {Object.keys(pages).map((page) => {
         return route === page ? <div key={page}>{pages[page]}</div> : null;
