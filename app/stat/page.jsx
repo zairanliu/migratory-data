@@ -11,6 +11,7 @@ import MeadowLark from "./MeadowLark";
 import IndigoBunting from "./IndigoBunting";
 import Veery from "./Veery";
 import AboutStat from "./AboutStat";
+import LandingStat from "./LandingStat";
 
 export default function ChapterOne() {
   const mouseRef = useRef(null);
@@ -35,6 +36,7 @@ export default function ChapterOne() {
    * The key is the route (of the page its referencing) and the value is the component
    */
   const pages = {
+    "/": <LandingStat />,
     "/chapter-one": <ChapterOneStat />,
     "/chapter-two": <ChapterTwoStat />,
     "/chapter-two/meadowlark": <MeadowLark />,

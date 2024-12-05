@@ -71,6 +71,13 @@ body {
 }
 
 @font-face {
+  font-family: "Eiko";
+  font-weight: 300;
+  font-style: italic;
+  src: url(../font/Eiko-ThinItalic.woff2) format("woff2");
+}
+
+@font-face {
   font-family: "Focal";
   font-style: normal;
   src: url(../font/Focal-Regular.woff2) format("woff2");

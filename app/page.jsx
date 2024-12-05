@@ -2,12 +2,15 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import useSyncInteractives from "@/hooks/useSyncInteractives";
 
 export default function Home() {
+  useSyncInteractives();
+
   return (
     <div className="w-fit mx-auto min-h-screen flex flex-col items-start justify-center">
       <motion.main
-        className="flex flex-col gap-8 row-start-2"
+        className="flex flex-col gap-8 row-start-2 font-Eiko font-light italic"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 1 }}
@@ -15,26 +18,35 @@ export default function Home() {
         <motion.h1
           className="text-[#103081] text-8xl"
           initial={{
-            scale: 1,
             opacity: 0,
+            scale: 1,
+            y: -100,
           }}
           animate={{
             opacity: 1,
-            scale: 2,
+            scale: 1.1,
+            y: 0,
           }}
-          transition={{ ease: "easeInOut", duration: 3, delay: 3 }}
+          transition={{ ease: "easeInOut", duration: 2.5, delay: 3 }}
         >
           Migratory Data
         </motion.h1>
 
         <Link
-          className="flex items-center mt-[400px] mx-auto text-3xl transition-colors font-pitch text-[#103081] hover:underline decoration-1 underline-offset-4"
+          className="flex items-center mt-[400px] mx-auto text-xl transition-colors font-grotesk font-normal text-[#103081] not-italic hover:underline decoration-1 underline-offset-4"
           href="/chapter-one"
         >
           Launch story
         </Link>
       </motion.main>
-      <video
+      <motion.video
+        initial={{ filter: "blur(8px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{
+          duration: 0.5,
+          delay: 1.5,
+          ease: "easeOut",
+        }}
         autoPlay
         playsInline
         muted
@@ -49,7 +61,7 @@ export default function Home() {
           src="https://asset.togusj.com/intro.mp4"
           type="video/mp4"
         ></source>
-      </video>
+      </motion.video>
 
       <svg width="100%" height="100%" className="absolute inset-0 -z-10">
         <defs>
