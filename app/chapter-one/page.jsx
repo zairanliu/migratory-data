@@ -72,7 +72,7 @@ export default function ChapterOne() {
                   </div>
                 </Link>
 
-                <motion.div className="mt-20 leading-tight">
+                <motion.div className="mt-20 text-lg leading-tight">
                   Bird banding is one of the oldest and most important
                   techniques used for studying and identifying individual birds.
                 </motion.div>
@@ -109,7 +109,7 @@ export default function ChapterOne() {
 
             {/* section with video and large text */}
             <section className="w-[100vw] relative">
-              <div className="font-grotesk text-base text-white absolute left-10 bottom-20">
+              <div className="font-grotesk text-base text-white absolute left-10 bottom-20 font-light z-10">
                 <p className="italic">"What is Bird Banding"</p>
                 <p>Rhode Island PBS"</p>
               </div>
@@ -198,7 +198,7 @@ export default function ChapterOne() {
                 </div>
                 <div className="absolute top-full left-0">
                   <motion.p
-                    className="py-4 max-w-64 font-grotesk leading-tight"
+                    className="py-4 max-w-64 font-grotesk  text-lg leading-tight"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
@@ -298,7 +298,7 @@ export default function ChapterOne() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-                  className="absolute left-20 top-40 mr-20 max-w-72 font-grotesk leading-tight"
+                  className="absolute left-20 top-40 mr-20 max-w-64 font-grotesk leading-tight  text-lg"
                 >
                   After capture the bird, scientists then put a uniquely
                   numbered aluminum band, and sometimes also colored plastic
@@ -320,7 +320,7 @@ export default function ChapterOne() {
                   ></source>
                 </video>
                 <motion.p
-                  className="absolute left-0 top-40 ml-20 font-grotesk"
+                  className="absolute left-0 top-40 ml-20 font-grotesk  text-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}

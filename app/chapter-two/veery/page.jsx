@@ -306,7 +306,9 @@ export default function ChapterTwo() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-[#D8D8D8] line-through">Year-Round</p>
+              <p className="text-[#D8D8D8] line-through decoration-2 ">
+                Year Round
+              </p>
               <motion.p
                 className=""
                 initial={{ color: "#D8D8D8" }}
@@ -347,7 +349,7 @@ export default function ChapterTwo() {
               animate={{
                 scale: activeTab === 1 ? 1 : 1.2,
                 x: activeTab === 1 ? 0 : -100,
-                y: activeTab === 1 ? 0 : -100,
+                y: activeTab === 1 ? 0 : 0,
               }}
               transition={{ duration: 1 }}
             >
@@ -379,12 +381,12 @@ export default function ChapterTwo() {
             </motion.div>
           </div>
           <div className="absolute">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000">
               <AnimatePresence>
                 {activeTab === 2 && (
                   <>
                     <motion.path
-                      d="M 1020 840 Q 500 700 110 110"
+                      d="M 1020 980 Q 500 700 110 110"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -403,7 +405,7 @@ export default function ChapterTwo() {
                       }}
                     />
                     <motion.path
-                      d="M  140 80 Q 750 450  1040 800"
+                      d="M  140 80 Q 750 450  1040 960"
                       fill="transparent"
                       strokeWidth="1"
                       stroke="rgba(255,255,255)"
@@ -450,7 +452,7 @@ export default function ChapterTwo() {
             </div>
           </motion.div>
           <motion.div
-            className="absolute font-grotesk flex flex-col-reverse gap-4 items-end bottom-40 right-20 "
+            className="absolute font-grotesk flex flex-row-reverse gap-4 items-end bottom-2 right-20 "
             animate={{
               opacity: activeTab === 2 ? 1 : 0,
             }}

@@ -26,9 +26,6 @@ export default function ChapterThreeStat() {
       <main className="fixed top-0">
         <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
           <span>mouse move detected</span>
-          <span className="fixed left-8 bottom-8 max-w-80">
-            {navigator.userAgent}
-          </span>
         </div>
 
         {/* This div is the scrolling content */}

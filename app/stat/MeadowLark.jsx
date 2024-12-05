@@ -10,7 +10,6 @@ export default function MeadowLark() {
     <main>
       <div className="fixed z-10 flex flex-col w-screen h-screen items-center justify-center font-mono ">
         <span>mouse move detected</span>
-        <span>{activeTab === 1 ? "range by season" : "journey"}</span>
       </div>
       <div className=" h-screen w-screen font-mono flex flex-row bg-[#FFEF79] ">
         <div className="w-1/3 bg-white">
