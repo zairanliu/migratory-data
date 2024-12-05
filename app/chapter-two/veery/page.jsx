@@ -468,10 +468,10 @@ export default function ChapterTwo() {
             ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity ">
               <p className="font-Eiko text-3xl font-medium">
-                43°59′6″N  90°30′14″W
+                45.5155° N, 122.6789° W
               </p>
               <p className="font-grotesk text-lg">
-                Tomah, Wisconsin, United States
+                Portland, Oregon, United States
               </p>
             </div>
           </motion.div>
@@ -490,10 +490,10 @@ export default function ChapterTwo() {
             ></motion.img>
             <div className="opacity-0 peer-hover:opacity-100 transition-opacity">
               <p className="font-Eiko text-3xl font-medium">
-                35°07′03″N  89°58′16″W
+                8.75° N, 75.87° W
               </p>
               <p className="font-grotesk text-lg">
-                Memphis, Tennessee, United States
+                Montería, Cordoba, Colombia
               </p>
             </div>
           </motion.div>
