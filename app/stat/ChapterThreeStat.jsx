@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import useChannel from "@/hooks/useChannel";
 import { motion, useTransform, useScroll } from "motion/react";
+import LiveMouse from "./ChapterThreeStatLiveMouse";
 
 export default function ChapterThreeStat() {
   const targetRef = useRef(null);
@@ -24,10 +25,6 @@ export default function ChapterThreeStat() {
   return (
     <div ref={targetRef} className="relative h-[400vh] font-mono text-base">
       <main className="fixed top-0">
-        <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
-          <span>mouse move detected</span>
-        </div>
-
         {/* This div is the scrolling content */}
         <motion.div style={{ x }} className="flex">
           <section className="w-screen flex">
@@ -36,7 +33,7 @@ export default function ChapterThreeStat() {
               <p>&lt;p&gt;...&lt;/p&gt;</p>
             </div>
           </section>
-          <section className="w-screen h-screen font-mono text-base p-8 flex">
+          <section className="w-screen h-screen font-mono text-base p-8 flex relative">
             <div className="flex w-screen justify-between">
               <pre>
                 <p>&lt;p&gt;...&lt;/p&gt;</p>
@@ -47,6 +44,7 @@ export default function ChapterThreeStat() {
                   <p>&lt;p&gt;Veery.webp&lt;/p&gt;</p> */}
               </pre>
             </div>
+            <LiveMouse />
           </section>
         </motion.div>
       </main>

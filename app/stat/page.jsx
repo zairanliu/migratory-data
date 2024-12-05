@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import useChannel from "@/hooks/useChannel";
 import { ReactLenis } from "lenis/react";
 import DateCursor from "./DateCursor";
+import MouseDetective from "./MouseDetective";
 import ChapterOneStat from "./ChapterOneStat";
 import ChapterTwoStat from "./ChapterTwoStat";
 import ChapterThreeStat from "./ChapterThreeStat";
@@ -49,7 +50,9 @@ export default function ChapterOne() {
   return (
     <ReactLenis root>
       {/* Hide cursor on index stat */}
-      { route !== '/' && <DateCursor ref={mouseRef} /> }
+      {route !== "/" && <DateCursor ref={mouseRef} />}
+      {/* Hide mouse detective on index stat */}
+      {route !== "/" && <MouseDetective />}
 
       {Object.keys(pages).map((page) => {
         return route === page ? <div key={page}>{pages[page]}</div> : null;

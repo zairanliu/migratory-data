@@ -27,12 +27,9 @@ export default function ChapterOneStat() {
   return (
     <div ref={targetRef} className="relative h-[400vh] font-mono text-base">
       <main className="fixed top-0">
-        <div className="w-screen h-screen fixed z-10 flex items-center justify-center">
-          <span>mouse move detected</span>
-          <span className="fixed left-8 bottom-8 max-w-80">
-            <LoopedUserAgent />
-          </span>
-        </div>
+        <span className="fixed left-8 bottom-8 max-w-80 z-10">
+          <LoopedUserAgent />
+        </span>
 
         {/* This div is the scrolling content */}
         <motion.div style={{ x }} className="flex">

@@ -10,10 +10,6 @@ export default function ChapterTwoStat() {
 
   return (
     <div className="bg-[#fe6c00] h-screen w-screen font-mono relative ">
-      <div className="fixed z-10 flex  w-screen h-screen items-center justify-center ">
-        <span>mouse move detected</span>
-      </div>
-
       <div className="absolute top-8 left-8 text-base">
         <p>&lt;video src="../video/bird-migration.mp4"&gt;</p>
         <p>&lt;p&gt;...&lt;/p&gt;</p>

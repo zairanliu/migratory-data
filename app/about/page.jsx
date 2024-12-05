@@ -3,6 +3,7 @@
 import Link from "next/link";
 import useSyncInteractives from "@/hooks/useSyncInteractives";
 import { motion } from "motion/react";
+import FlipCard from "@/components/FlipCard";
 
 export default function about() {
   useSyncInteractives();
@@ -13,7 +14,7 @@ export default function about() {
         <div className="font-grotesk">about</div>
       </div>
 
-      <div className="flex flex-row w-screen mx-40 gap-40">
+      <div className="flex flex-row justify-between mx-40 gap-40">
         <div className="max-w-[500px]">
           <p className="font-grotesk text-lg">
             This project draws parallels between bird tracking and user tracking
@@ -52,82 +53,52 @@ export default function about() {
       </div>
       <div className="grid grid-cols-4 grid-rows-3 gap-4 mt-20">
         {/* Row 1 */}
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 1"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 2"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 3"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square" />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/1.webp"
+          back="https://asset.togusj.com/migratory-data/about/2.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/3.webp"
+          back="https://asset.togusj.com/migratory-data/about/4.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/5.webp"
+          back="https://asset.togusj.com/migratory-data/about/6.webp"
+        />
+        <div />
 
         {/* Row 2 */}
-        <div className="aspect-square" />
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 5"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 6"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 7"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
+        <div />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/7.webp"
+          back="https://asset.togusj.com/migratory-data/about/8.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/9.webp"
+          back="https://asset.togusj.com/migratory-data/about/10.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/11.webp"
+          back="https://asset.togusj.com/migratory-data/about/12.webp"
+        />
 
         {/* Row 3 */}
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 8"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 9"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 10"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="aspect-square bg-gray-700 rounded-lg">
-          <img
-            src="/api/placeholder/300/300"
-            alt="Grid image 11"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/13.webp"
+          back="https://asset.togusj.com/migratory-data/about/14.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/15.webp"
+          back="https://asset.togusj.com/migratory-data/about/16.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/17.webp"
+          back="https://asset.togusj.com/migratory-data/about/18.webp"
+        />
+        <FlipCard
+          front="https://asset.togusj.com/migratory-data/about/19.webp"
+          back="https://asset.togusj.com/migratory-data/about/20.webp"
+        />
       </div>
     </section>
   );

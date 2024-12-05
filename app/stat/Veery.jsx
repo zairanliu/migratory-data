@@ -6,9 +6,6 @@ export default function Veery() {
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   return (
     <main>
-      <div className="fixed z-10 flex  w-screen h-screen items-center justify-center font-mono text-white ">
-        <span>mouse move detected</span>
-      </div>
       <div className=" h-screen w-screen font-mono flex flex-row bg-[#653C1C] text-black">
         <div className="w-1/3 bg-white ">
           <div className="absolute top-8 left-8 text-base ">

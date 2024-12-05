@@ -8,9 +8,6 @@ export default function MeadowLark() {
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
   return (
     <main>
-      <div className="fixed z-10 flex flex-col w-screen h-screen items-center justify-center font-mono ">
-        <span>mouse move detected</span>
-      </div>
       <div className=" h-screen w-screen font-mono flex flex-row bg-[#FFEF79] ">
         <div className="w-1/3 bg-white">
           <div className="absolute top-8 left-8 text-base">
