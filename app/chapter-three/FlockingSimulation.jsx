@@ -245,10 +245,10 @@ const FlockingSimulation = ({ isTight = false }) => {
           });
         }
 
-        // draw the cursor
-        ctx.beginPath();
-        ctx.ellipse(mouseX, mouseY, 20, 20, 0, 0, Math.PI * 2);
-        ctx.fill();
+        // draw a ball at the cursor
+        // ctx.beginPath();
+        // ctx.ellipse(mouseX, mouseY, 20, 20, 0, 0, Math.PI * 2);
+        // ctx.fill();
       }
 
       animationFrameRef.current = requestAnimationFrame(animate);
