@@ -25,7 +25,10 @@ export default function ChapterOne() {
           >
             <section className="w-[40vw] flex flex-col justify-between">
               <div className="max-w-[36rem] px-20 py-12 font-grotesk text-lg">
-                <Link className="text-2xl font-serif italic " href="/">
+                <Link
+                  className="text-xl font-Eiko  italic tracking-wide"
+                  href="/"
+                >
                   <div className="flex">
                     <div className=" flex">
                       {"Bird".split("").map((letter, index) => (
@@ -87,7 +90,7 @@ export default function ChapterOne() {
                 </p>
               </div>
               <div className="font-grotesk px-20 py-12 flex items-center gap-2 animate-oscillating">
-                scroll to continue
+                scroll up
                 {/* right arrow icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +109,10 @@ export default function ChapterOne() {
 
             {/* section with video and large text */}
             <section className="w-[100vw] relative">
+              <div className="font-grotesk text-base text-white absolute left-10 bottom-20">
+                <p className="italic">"What is Bird Banding"</p>
+                <p>Rhode Island PBS"</p>
+              </div>
               <motion.video
                 autoPlay
                 playsInline
@@ -185,65 +192,85 @@ export default function ChapterOne() {
               >
                 <div className="absolute right-0 bottom-0">
                   <div className="font-Eiko text-3xl">Mist Nest</div>
-                  <div className="font-grotesk text-base pb-2 text-[#939393]">
+                  <div className="font-grotesk text-base text-center pb-2 text-[#d8d8d8]">
                     hover to interact
                   </div>
                 </div>
                 <div className="absolute top-full left-0">
-                  <p className="py-4 max-w-64 font-grotesk leading-tight">
+                  <motion.p
+                    className="py-4 max-w-64 font-grotesk leading-tight"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                  >
                     For smaller birds, researchers use mist nest—tall, long nets
                     made of very fine threads that blend into the surroundings.
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
 
               <div className="absolute inset-0 top-32 px-[10vw] py-[4vw] flex items-center gap-[8vw]">
                 <div className="w-0 flex-1 self-start relative">
-                  <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
-                    alt="eastern meadowlark on fence"
-                    className="peer"
-                    onMouseEnter={() =>
-                      setHoveringItem("chapter-one-eastern-meadowlark-image")
-                    }
-                    onMouseLeave={() => setHoveringItem(null)}
-                  ></img>
-                  <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
-                    Eastern
-                    <br />
-                    Meadowlark
+                  <div className="overflow-hidden">
+                    <motion.img
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8 }}
+                      src="https://asset.togusj.com/migratory-data/chapter-one/eastern-meadowlark.webp"
+                      alt="eastern meadowlark on fence"
+                      className="peer"
+                      onMouseEnter={() =>
+                        setHoveringItem("chapter-one-eastern-meadowlark-image")
+                      }
+                      onMouseLeave={() => setHoveringItem(null)}
+                    ></motion.img>
+                    <div className="absolute top-0 left-[85%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
+                      Eastern
+                      <br />
+                      Meadowlark
+                    </div>
                   </div>
                 </div>
 
                 <div className="w-0 flex-1 relative">
-                  <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
-                    alt="indigo bunting in tree"
-                    className="peer"
-                    onMouseEnter={() =>
-                      setHoveringItem("chapter-one-indigo-bunting-image")
-                    }
-                    onMouseLeave={() => setHoveringItem(null)}
-                  ></img>
-                  <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
-                    Indigo
-                    <br />
-                    Bunting
+                  <div className="overflow-hidden">
+                    <motion.img
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8 }}
+                      src="https://asset.togusj.com/migratory-data/chapter-one/indigo-bunting.webp"
+                      alt="indigo bunting in tree"
+                      className="peer"
+                      onMouseEnter={() =>
+                        setHoveringItem("chapter-one-indigo-bunting-image")
+                      }
+                      onMouseLeave={() => setHoveringItem(null)}
+                    ></motion.img>
+                    <div className="absolute top-[50%] -left-[55%] font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
+                      Indigo
+                      <br />
+                      Bunting
+                    </div>
                   </div>
                 </div>
 
                 <div className="w-0 flex-1 self-end relative">
-                  <img
-                    src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
-                    alt="veery on branch"
-                    className="peer"
-                    onMouseEnter={() =>
-                      setHoveringItem("chapter-one-veery-image")
-                    }
-                    onMouseLeave={() => setHoveringItem(null)}
-                  ></img>
-                  <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
-                    Veery
+                  <div className="overflow-hidden">
+                    <motion.img
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8 }}
+                      src="https://asset.togusj.com/migratory-data/chapter-one/veery.webp"
+                      alt="veery on branch"
+                      className="peer"
+                      onMouseEnter={() =>
+                        setHoveringItem("chapter-one-veery-image")
+                      }
+                      onMouseLeave={() => setHoveringItem(null)}
+                    ></motion.img>
+                    <div className="absolute -top-[20%] right-0 font-Eiko font-medium text-7xl opacity-0 peer-hover:opacity-100 transition-opacity pointer-events-none">
+                      Veery
+                    </div>
                   </div>
                 </div>
               </div>
@@ -263,11 +290,20 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute left-20 top-40 mr-20 max-w-72 font-grotesk leading-tight">
+                <div className="font-grotesk text-base text-white absolute left-20 bottom-20">
+                  <p className="italic">"What is Bird Banding"</p>
+                  <p>Rhode Island PBS"</p>
+                </div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                  className="absolute left-20 top-40 mr-20 max-w-72 font-grotesk leading-tight"
+                >
                   After capture the bird, scientists then put a uniquely
                   numbered aluminum band, and sometimes also colored plastic
                   bands, on the bird's legs.
-                </p>
+                </motion.p>
               </div>
 
               <div className="w-1/2 relative">
@@ -283,9 +319,14 @@ export default function ChapterOne() {
                     type="video/mp4"
                   ></source>
                 </video>
-                <p className="absolute left-0 top-40 ml-20 font-grotesk">
+                <motion.p
+                  className="absolute left-0 top-40 ml-20 font-grotesk"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                >
                   Finally, the bird is released.
-                </p>
+                </motion.p>
               </div>
 
               <Link
