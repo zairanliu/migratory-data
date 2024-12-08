@@ -1,4 +1,4 @@
-import PageTransitionEffect from "@/components/PageTransitionEffect";
+import RootClientLayout from "./ClientLayout";
 import "./globals.css";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <PageTransitionEffect>{children}</PageTransitionEffect>
+        <RootClientLayout>{children}</RootClientLayout>
       </body>
     </html>
   );
