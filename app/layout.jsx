@@ -2,8 +2,8 @@ import RootClientLayout from "./ClientLayout";
 import "./globals.css";
 
 export const metadata = {
-  title: "Birds as Data",
-  description: "A story",
+  title: "Migratory Data",
+  description: "bird tracking and user tracking in digital spaces",
 };
 
 export default function RootLayout({ children }) {
