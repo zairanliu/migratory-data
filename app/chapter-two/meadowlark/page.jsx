@@ -210,7 +210,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 6,
+                            delay: 5.5,
                           },
                         }}
                       >
@@ -227,7 +227,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 7,
+                            delay: 6,
                           },
                         }}
                       >
@@ -251,7 +251,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 6,
+                            delay: 5.5,
                           },
                         }}
                       >
@@ -264,7 +264,7 @@ export default function ChapterTwo() {
                           transition: {
                             duration: 1,
                             ease: "easeOut",
-                            delay: 7,
+                            delay: 6,
                           },
                         }}
                       >
@@ -399,7 +399,7 @@ export default function ChapterTwo() {
                       }}
                       transition={{
                         pathLength: {
-                          duration: 4,
+                          duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
                         },
@@ -418,10 +418,10 @@ export default function ChapterTwo() {
                       }}
                       transition={{
                         pathLength: {
-                          duration: 4,
+                          duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
-                          delay: 6,
+                          delay: 5,
                         },
                       }}
                     />
