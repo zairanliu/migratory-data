@@ -196,7 +196,7 @@ export default function ChapterThree() {
                 </svg>{" "}
               </Link>
 
-              <FlockingSimulation isTight={activeTab === 1} />
+              <FlockingSimulation isTight={activeTab === 2} />
             </section>
           </motion.div>
         </main>

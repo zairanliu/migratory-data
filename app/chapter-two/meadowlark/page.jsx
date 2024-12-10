@@ -79,7 +79,7 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20 ">
+          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20">
             <motion.p
               className="mt-10"
               initial={{ opacity: 0, y: 10 }}
@@ -109,36 +109,34 @@ export default function ChapterTwo() {
               local conditions.
             </motion.p>
           </div>
-          <div className="flex  left-[300px] top-1/2 z-20 absolute">
-            <motion.div
-              className="font-grotesk text-right text-lg mx-10 justify-end items-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-            >
-              <div className="cursor-pointer">
-                <motion.p
-                  onClick={() => setActiveTab(1)}
-                  animate={{
-                    color: activeTab === 1 ? "#000" : "#939393",
-                  }}
-                >
-                  Species Range by Season
-                </motion.p>
-                <motion.p
-                  onClick={() => setActiveTab(2)}
-                  animate={{
-                    color: activeTab === 2 ? "#000" : "#939393",
-                  }}
-                >
-                  Journey of a Tracked Bird
-                </motion.p>
-              </div>
-            </motion.div>
+
+          <motion.div
+            className="font-grotesk text-lg mx-20 text-right"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          >
+            <div className="cursor-pointer space-y-2">
+              <motion.p
+                onClick={() => setActiveTab(1)}
+                animate={{
+                  color: activeTab === 1 ? "#000" : "#939393",
+                }}
+              >
+                Species Range by Season
+              </motion.p>
+              <motion.p
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "#000" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+              </motion.p>
+            </div>
             <AnimatePresence>
               <motion.div
-                className="leading-tight font-grotesk w-[280px] pt-8 pl-5 
-            "
+                className="leading-tight font-grotesk w-[280px] pt-8 text-left"
                 initial={{ y: 10, opacity: 0 }}
                 animate={{
                   opacity: activeTab === 2 ? 1 : 0,
@@ -152,7 +150,7 @@ export default function ChapterTwo() {
                 England.
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
 
           <div className="mb-20 flex mx-10 flex-row justify-between font-Eiko font-medium leading-tight items-end">
             <Link

@@ -25,8 +25,8 @@ export default function about() {
           </p>
           <p className="font-grotesk text-lg mt-5">
             Through my ten plates reinterpreting John James Audubon's original
-            drawings, I examine several ideas that intrigue me: seeing birds as
-            both living organisms and data points, the growing dependence on
+            drawings, I have found several ideas that intrigued me: seeing birds
+            as both living organisms and data points, the growing dependence on
             digital tools for birdwatching, and the ethical considerations
             surrounding database construction. This project sits at the
             intersection of these themes.
@@ -51,7 +51,7 @@ export default function about() {
       <div className=" flex items-center justify-center mt-20">
         <div className="font-grotesk">10 plates</div>
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-4 mt-20">
+      <div className="grid grid-cols-4 grid-rows-3 gap-4 mt-20 pb-20 mx-20">
         {/* Row 1 */}
         <FlipCard
           front="https://asset.togusj.com/migratory-data/about/1.webp"
