@@ -433,7 +433,7 @@ export default function ChapterTwo() {
                           duration: 3,
                           yoyo: Infinity,
                           ease: "easeInOut",
-                          delay: 5,
+                          delay: 5.5,
                         },
                       }}
                     />
