@@ -72,11 +72,11 @@ export default function ChapterOne() {
                   </div>
                 </Link>
 
-                <motion.div className="mt-20 text-lg leading-tight">
+                <motion.div className="mt-20 text-lg leading-tight min-w-[250px] max-w-[350px]">
                   Bird banding is one of the oldest and most important
                   techniques used for studying and identifying individual birds.
                 </motion.div>
-                <motion.div className="mt-8 leading-tight">
+                <motion.div className="mt-8 leading-tight min-w-[250px]  max-w-[350px]">
                   Today in the U.S., bird banding is regulated and supervised by
                   the federal government. Every band placed on a wild bird in
                   the United States must be issued by the Bird Banding
