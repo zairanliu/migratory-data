@@ -79,7 +79,7 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="font-grotesk max-w-[280px] text-lg  leading-tight mx-20 mt-20 ">
+          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20 ">
             <motion.p
               className="mt-10"
               initial={{ opacity: 0, y: 10 }}
@@ -111,48 +111,51 @@ export default function ChapterTwo() {
               is probably far more common today than when the Pilgrims landed.
             </motion.p>
           </div>
-          <div className="flex  left-[300px] top-1/2 z-20 absolute">
-            <motion.div
-              className="font-grotesk text-right text-lg mx-10 justify-end items-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-            >
-              <div className="cursor-pointer">
-                <motion.p
-                  onClick={() => setActiveTab(1)}
-                  animate={{
-                    color: activeTab === 1 ? "#FFF" : "#939393",
-                  }}
-                >
-                  Species Range by Season
-                </motion.p>
-                <motion.p
-                  onClick={() => setActiveTab(2)}
-                  animate={{
-                    color: activeTab === 2 ? "#FFF" : "#939393",
-                  }}
-                >
-                  Journey of a Tracked Bird
-                </motion.p>
-              </div>
-            </motion.div>
-            <AnimatePresence>
-              <motion.div
-                className="leading-tight text-white font-grotesk w-[250px] pt-8 pl-5 
-            "
-                initial={{ y: 10, opacity: 0 }}
+
+          <motion.div
+            className="font-grotesk text-lg"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          >
+            <div className="cursor-pointer text-right mr-10">
+              <motion.p
+                onClick={() => setActiveTab(1)}
                 animate={{
-                  opacity: activeTab === 2 ? 1 : 0,
-                  y: 0,
+                  color: activeTab === 1 ? "#FFF" : "#939393",
                 }}
-                transition={{ duration: 1 }}
               >
-                Migrates at night, and can navigate by the stars. Many migrate
-                across Gulf of Mexico in both spring and fall.
+                Species Range by Season
+              </motion.p>
+              <motion.div
+                className="relative"
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "#FFF" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+                <div className="absolute left-full top-0 z-10">
+                  <AnimatePresence>
+                    <motion.div
+                      className="ml-20 leading-tight font-grotesk w-[280px] mt-1 text-left
+            "
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{
+                        opacity: activeTab === 2 ? 1 : 0,
+                        y: 0,
+                      }}
+                      transition={{ duration: 1 }}
+                    >
+                      Migrates at night, and can navigate by the stars. Many
+                      migrate across Gulf of Mexico in both spring and fall.
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </motion.div>
-            </AnimatePresence>
-          </div>
+            </div>
+          </motion.div>
+
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">
             <Link
               href="/chapter-two"

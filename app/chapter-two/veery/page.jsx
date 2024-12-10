@@ -63,7 +63,7 @@ export default function ChapterTwo() {
           </svg>
         </Link>
       </motion.div>
-      <div className="max-w-screen flex flex-row  text-white">
+      <div className="max-w-screen flex flex-row text-white">
         <motion.div
           className="w-1/3 h-screen flex flex-col justify-between bg-[#653C1C]"
           initial={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export default function ChapterTwo() {
             },
           }}
         >
-          <div className="font-grotesk max-w-[280px] text-lg  leading-tight mx-20 mt-20 ">
+          <div className="font-grotesk max-w-[280px] text-lg leading-tight mx-20 mt-20">
             <motion.p
               className="mt-10"
               initial={{ opacity: 0, y: 10 }}
@@ -96,7 +96,6 @@ export default function ChapterTwo() {
               see the Veery itself, bounding across the forest floor with long
             </motion.p>
             <motion.p
-              className="mt-5"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -104,6 +103,7 @@ export default function ChapterTwo() {
                 ease: "easeOut",
                 delay: 0.5,
               }}
+              className="mt-5"
             >
               {" "}
               Staying with us for less than half the year, the bird spends the
@@ -111,6 +111,51 @@ export default function ChapterTwo() {
               rain forest.
             </motion.p>
           </div>
+
+          <motion.div
+            className="font-grotesk text-lg"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          >
+            <div className="cursor-pointer text-right mr-10">
+              <motion.p
+                onClick={() => setActiveTab(1)}
+                animate={{
+                  color: activeTab === 1 ? "#FFF" : "#939393",
+                }}
+              >
+                Species Range by Season
+              </motion.p>
+              <motion.div
+                className="relative"
+                onClick={() => setActiveTab(2)}
+                animate={{
+                  color: activeTab === 2 ? "#FFF" : "#939393",
+                }}
+              >
+                Journey of a Tracked Bird
+                <div className="absolute left-full top-0 z-10">
+                  <AnimatePresence>
+                    <motion.div
+                      className="ml-20 leading-tight font-grotesk w-[280px] mt-1 text-left"
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{
+                        opacity: activeTab === 2 ? 1 : 0,
+                        y: 0,
+                      }}
+                      transition={{ duration: 1 }}
+                    >
+                      Migrates mostly at night. They winter east of the Andes in
+                      South America. During fall migration, populations from
+                      western breeding grounds move eastward before heading
+                      south.
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
 
           <div className="mb-20 flex mx-20 flex-row justify-between items-end font-Eiko font-medium leading-tight">
             <Link
@@ -146,49 +191,7 @@ export default function ChapterTwo() {
             </motion.div>
           </div>
         </motion.div>
-        <div className="flex  left-[300px] top-1/2 z-20 absolute">
-          <motion.div
-            className="font-grotesk text-right text-lg mx-10 justify-end items-center cursor-pointer"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-          >
-            <div>
-              <motion.p
-                onClick={() => setActiveTab(1)}
-                animate={{
-                  color: activeTab === 1 ? "#FFF" : "#939393",
-                }}
-              >
-                Species Range by Season
-              </motion.p>
-              <motion.p
-                onClick={() => setActiveTab(2)}
-                animate={{
-                  color: activeTab === 2 ? "#FFF" : "#939393",
-                }}
-              >
-                Journey of a Tracked Bird
-              </motion.p>
-            </div>
-          </motion.div>
-          <AnimatePresence>
-            <motion.div
-              className="leading-tight text-white font-grotesk w-[250px] pt-8 pl-5
-            "
-              initial={{ y: 10, opacity: 0 }}
-              animate={{
-                opacity: activeTab === 2 ? 1 : 0,
-                y: 0,
-              }}
-              transition={{ duration: 1 }}
-            >
-              Migrates mostly at night. They winter east of the Andes in South
-              America. During fall migration, populations from western breeding
-              grounds move eastward before heading south.
-            </motion.div>
-          </AnimatePresence>
-        </div>
+
         <motion.div
           className="h-screen w-2/3 relative 
         "

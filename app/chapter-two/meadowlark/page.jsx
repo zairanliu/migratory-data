@@ -116,7 +116,7 @@ export default function ChapterTwo() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
-            <div className="cursor-pointer space-y-2 text-right mr-10">
+            <div className="cursor-pointer text-right mr-10">
               <motion.p
                 onClick={() => setActiveTab(1)}
                 animate={{
@@ -350,7 +350,7 @@ export default function ChapterTwo() {
                 className="absolute w-full h-screen object-cover"
               ></img>
               <motion.img
-                // Change this to the corresponding image to the season - year-round
+                //year-round
                 src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/year-round.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
@@ -360,7 +360,7 @@ export default function ChapterTwo() {
                 }}
               ></motion.img>
               <motion.img
-                // Change this to the corresponding image to the season - summer
+                // summer
                 src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/summer.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
@@ -370,7 +370,7 @@ export default function ChapterTwo() {
                 }}
               ></motion.img>
               <motion.img
-                // Change this to the corresponding image to the season - winter
+                // winter
                 src="https://asset.togusj.com/migratory-data/chapter-two/meadowlark/winter.webp"
                 alt="a map"
                 className="absolute w-full h-screen object-cover"
