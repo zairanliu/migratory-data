@@ -111,12 +111,12 @@ export default function ChapterTwo() {
           </div>
 
           <motion.div
-            className="font-grotesk text-lg mx-20 text-right"
+            className="font-grotesk text-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
-            <div className="cursor-pointer space-y-2">
+            <div className="cursor-pointer space-y-2 text-right mr-10">
               <motion.p
                 onClick={() => setActiveTab(1)}
                 animate={{
@@ -125,31 +125,34 @@ export default function ChapterTwo() {
               >
                 Species Range by Season
               </motion.p>
-              <motion.p
+              <motion.div
+                className="relative"
                 onClick={() => setActiveTab(2)}
                 animate={{
                   color: activeTab === 2 ? "#000" : "#939393",
                 }}
               >
                 Journey of a Tracked Bird
-              </motion.p>
-            </div>
-            <AnimatePresence>
-              <motion.div
-                className="leading-tight font-grotesk w-[280px] pt-8 text-left"
-                initial={{ y: 10, opacity: 0 }}
-                animate={{
-                  opacity: activeTab === 2 ? 1 : 0,
-                  y: 0,
-                }}
-                transition={{ duration: 1 }}
-              >
-                Two Eastern Meadowlarks are being monitored by the Audubon
-                Society. One bird's tracking data shows its movements through
-                Central America, while the other's movements are confined to New
-                England.
+                <div className="absolute left-full top-0 z-10">
+                  <AnimatePresence>
+                    <motion.div
+                      className="ml-20 leading-tight font-grotesk w-[280px] mt-1 text-left"
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{
+                        opacity: activeTab === 2 ? 1 : 0,
+                        y: 0,
+                      }}
+                      transition={{ duration: 1 }}
+                    >
+                      Two Eastern Meadowlarks are being monitored by the Audubon
+                      Society. One bird's tracking data shows its movements
+                      through Central America, while the other's movements are
+                      confined to New England.
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </motion.div>
-            </AnimatePresence>
+            </div>
           </motion.div>
 
           <div className="mb-20 flex mx-10 flex-row justify-between font-Eiko font-medium leading-tight items-end">
