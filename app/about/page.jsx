@@ -9,7 +9,7 @@ export default function about() {
   useSyncInteractives();
 
   return (
-    <section className=" bg-themeblue w-screen  text-white">
+    <section className=" bg-themeblue w-screen text-white">
       <div className=" flex items-center justify-center p-20">
         <div className="font-grotesk">about</div>
       </div>
@@ -95,11 +95,11 @@ export default function about() {
             back="https://asset.togusj.com/migratory-data/about/20.webp"
           />
         </div>
-        <p className="font-grotesk text-lg mt-5">
-          Thanks for the help of Jason Gao, Claude by Anthropic and Github
-          Copilot
-        </p>
       </div>
+
+      <p className="font-grotesk text-sm mt-5 bg-themeblue text-center pb-5 h-[50px]">
+        Thanks for the help of Jason Gao, Claude by Anthropic and Github Copilot
+      </p>
     </section>
   );
 }
