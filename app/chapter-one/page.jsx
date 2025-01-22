@@ -90,7 +90,7 @@ export default function ChapterOne() {
                 </p>
               </div>
               <div className="font-grotesk px-20 py-12 flex items-center gap-2 animate-oscillating">
-                scroll up
+                scroll
                 {/* right arrow icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
