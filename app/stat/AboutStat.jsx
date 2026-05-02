@@ -8,7 +8,7 @@ export default function AboutStat() {
 
   return (
     <div
-      className="bg-[#fe6c00] h-screen w-screen font-mono relative"
+      className="bg-[#737373] h-screen w-screen font-mono relative text-white"
       onClick={clearCanvas}
     >
       <div className="fixed z-10 flex  w-screen left-8 bottom-8 max-w-80">

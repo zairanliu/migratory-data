@@ -28,7 +28,7 @@ export default function ChapterThreeStat() {
         {/* This div is the scrolling content */}
         <motion.div style={{ x }} className="flex">
           <section className="w-screen flex">
-            <div className="w-[100vw] h-screen p-8 bg-[#fe6c00]">
+            <div className="w-[100vw] h-screen p-8 bg-[#737373] text-white">
               <p>&lt;video src="../video/bird-flocking.mp4" &gt;</p>
               <p>&lt;p&gt;...&lt;/p&gt;</p>
             </div>

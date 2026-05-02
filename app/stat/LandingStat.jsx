@@ -8,7 +8,7 @@ export default function LandingStat() {
     <main className="w-screen h-screen bg-white">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <motion.span
-          className="font-mono text-[#fe6c00]"
+          className="font-mono text-[#737373]"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ duration: 0.1, delay: 4.1 }}

@@ -9,7 +9,7 @@ export default function ChapterTwoStat() {
   const [hoveringItem, setHoveringItem] = useSharedState("hovering-item", null);
 
   return (
-    <div className="bg-[#fe6c00] h-screen w-screen font-mono relative ">
+    <div className="bg-[#737373] h-screen w-screen font-mono relative text-white">
       <div className="absolute top-8 left-8 text-base">
         <p>&lt;video src="../video/bird-migration.mp4"&gt;</p>
         <p>&lt;p&gt;...&lt;/p&gt;</p>

@@ -43,7 +43,7 @@ export default function ChapterOneStat() {
             </div>
           </section>
           <section className="w-screen flex">
-            <div className="w-[100vw] h-screen p-8 bg-[#fe6c00]">
+            <div className="w-[100vw] h-screen p-8 bg-[#737373] text-white">
               <p>&lt;video src="../video/bird-banding-capture.mp4" &gt;</p>
               <p>&lt;p&gt;...&lt;/p&gt;</p>
             </div>
@@ -107,7 +107,7 @@ export default function ChapterOneStat() {
               </div>
             </div>
           </section>
-          <section className="w-screen h-screen font-mono text-base bg-[#fe6c00] flex">
+          <section className="w-screen h-screen font-mono text-base bg-[#737373] text-white flex">
             <div className="p-8 flex flex-row w-screen justify-between text-left">
               <pre className="w-1/2 ">
                 <p>&lt;video src="../video/bird-banding-capture.mp4" &gt;</p>

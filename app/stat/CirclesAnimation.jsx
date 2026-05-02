@@ -15,7 +15,7 @@ const sketch = (p) => {
 
   p.draw = () => {
     // Draw circle at center
-    p.background("#fe6c00");
+    p.background("#737373");
     p.fill(255);
     p.circle(p.width / 2, p.height / 2, circleSize);
 
